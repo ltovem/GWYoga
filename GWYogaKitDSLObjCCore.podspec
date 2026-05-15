@@ -10,4 +10,5 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/ltovem/GWYoga.git', :tag => s.version.to_s }
   s.source_files = 'GWYogaKit/DSL/ObjC/**/*.swift'
   s.dependency 'GWYogaKitDSL', '~> 1.0'
+  s.dependency 'GWYogaKitObjCCore', '~> 1.0'
 end
