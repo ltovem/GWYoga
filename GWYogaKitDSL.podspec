@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'GWYogaKitDSL'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'Declarative DSL for GWYogaKit'
   s.description      = <<-DESC
     Declarative layout DSL with VStack, HStack, ZStack, and controls.

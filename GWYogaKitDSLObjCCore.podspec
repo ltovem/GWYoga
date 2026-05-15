@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'GWYogaKitDSLObjCCore'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'Objective-C bridge for GWYogaKitDSL'
   s.homepage         = 'https://github.com/ltovem/GWYoga'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }

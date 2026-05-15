@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'GWYogaKitStylesheet'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'CSS stylesheet support for GWYogaKit'
   s.description      = <<-DESC
     Parse and apply CSS stylesheets to GWYogaKit layout views.

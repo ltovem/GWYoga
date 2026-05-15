@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'GWYogaKitObjCCore'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'Objective-C bridge for GWYogaKit'
   s.description      = <<-DESC
     Objective-C compatible wrappers for GWYogaKit, exposing

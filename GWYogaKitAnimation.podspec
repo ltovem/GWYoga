@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'GWYogaKitAnimation'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'Animation support for GWYogaKit'
   s.description      = <<-DESC
     Animation and transition support for GWYoga layout engine.

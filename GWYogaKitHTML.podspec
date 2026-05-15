@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'GWYogaKitHTML'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'HTML-style tag DSL for GWYogaKit'
   s.description      = <<-DESC
     HTML-style layout tags (div, section, h1, row, etc.) for GWYogaKit.
