@@ -14,12 +14,14 @@
     // div { h1, p }
     {
         YGKLayoutView *div = [YGKHTMLFactory makeDiv];
+        div.backgroundColor = UIColor.redColor;
+        [div.yogaProperties setWidthPercent:100];
         div.yogaProperties.width = 300;
         [div addSubview:[YGKHTMLFactory makeHeading:@"Page Title" level:1]];
         [div addSubview:[YGKHTMLFactory makeParagraph:@"This is a paragraph of text."]];
         [div performYogaLayout];
 
-        [s addObject:[self sectionWithTitle:@"div { h1, p }" preview:[self styleContainer:div]]];
+        [s addObject:[self sectionWithTitle:@"div { h1, psss }" preview:[self styleContainer:div]]];
     }
 
     // section { row }
