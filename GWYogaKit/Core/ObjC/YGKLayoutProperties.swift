@@ -83,7 +83,7 @@ public class YGKGridTrackSize: NSObject {
 @objc(YGKLayoutProperties)
 public class YGKLayoutProperties: NSObject {
 
-    internal let yoga: YogaProperties
+    public let yoga: YogaProperties
 
     internal init(yoga: YogaProperties) {
         self.yoga = yoga
@@ -250,11 +250,13 @@ public class YGKLayoutProperties: NSObject {
 
     // MARK: - Margin
 
-    @objc public func setMargin(_ edge: YGKEdge, _ value: CGFloat) {
+    @objc(setMargin:value:)
+    public func setMargin(_ edge: YGKEdge, _ value: CGFloat) {
         yoga.setMargin(edge.swiftValue, .points(Float(value)))
     }
 
-    @objc public func setMarginPercent(_ edge: YGKEdge, _ percent: CGFloat) {
+    @objc(setMarginPercent:percent:)
+    public func setMarginPercent(_ edge: YGKEdge, _ percent: CGFloat) {
         yoga.setMargin(edge.swiftValue, .percent(Float(percent)))
     }
 
@@ -283,27 +285,32 @@ public class YGKLayoutProperties: NSObject {
 
     // MARK: - Padding
 
-    @objc public func setPadding(_ edge: YGKEdge, _ value: CGFloat) {
+    @objc(setPadding:value:)
+    public func setPadding(_ edge: YGKEdge, _ value: CGFloat) {
         yoga.setPadding(edge.swiftValue, .points(Float(value)))
     }
 
-    @objc public func setPaddingPercent(_ edge: YGKEdge, _ percent: CGFloat) {
+    @objc(setPaddingPercent:percent:)
+    public func setPaddingPercent(_ edge: YGKEdge, _ percent: CGFloat) {
         yoga.setPadding(edge.swiftValue, .percent(Float(percent)))
     }
 
     // MARK: - Border
 
-    @objc public func setBorder(_ edge: YGKEdge, _ width: CGFloat) {
+    @objc(setBorder:width:)
+    public func setBorder(_ edge: YGKEdge, _ width: CGFloat) {
         yoga.setBorder(edge.swiftValue, Float(width))
     }
 
     // MARK: - Position Offsets
 
-    @objc public func setPosition(_ edge: YGKEdge, _ value: CGFloat) {
+    @objc(setPosition:value:)
+    public func setPosition(_ edge: YGKEdge, _ value: CGFloat) {
         yoga.setPosition(edge.swiftValue, .points(Float(value)))
     }
 
-    @objc public func setPositionPercent(_ edge: YGKEdge, _ percent: CGFloat) {
+    @objc(setPositionPercent:percent:)
+    public func setPositionPercent(_ edge: YGKEdge, _ percent: CGFloat) {
         yoga.setPosition(edge.swiftValue, .percent(Float(percent)))
     }
 
@@ -403,7 +410,8 @@ public class YGKLayoutProperties: NSObject {
 
     // MARK: - Gap by gutter type
 
-    @objc public func setGap(_ gutter: YGKGutter, _ value: CGFloat) {
+    @objc(setGap:value:)
+    public func setGap(_ gutter: YGKGutter, _ value: CGFloat) {
         yoga.node.style.setGap(for: gutter.swiftValue, .points(Float(value)))
         yoga.node.markDirty()
     }

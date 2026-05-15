@@ -54,35 +54,35 @@ let package = Package(
         // ── LayoutCache 缓存模块 ──
         .target(
             name: "GWYogaKitLayoutCache",
-            dependencies: ["GWYogaKit"],
+            dependencies: ["GWYoga", "GWYogaKit"],
             path: "GWYogaKit/LayoutCache/Swift"
         ),
 
         // ── Animation 动画模块 ──
         .target(
             name: "GWYogaKitAnimation",
-            dependencies: ["GWYogaKit"],
+            dependencies: ["GWYoga", "GWYogaKit"],
             path: "GWYogaKit/Animation/Swift"
         ),
 
         // ── DSL 声明式布局模块 ──
         .target(
             name: "GWYogaKitDSL",
-            dependencies: ["GWYogaKit"],
+            dependencies: ["GWYoga", "GWYogaKit"],
             path: "GWYogaKit/DSL/Swift"
         ),
 
         // ── Stylesheet CSS 样式表模块 ──
         .target(
             name: "GWYogaKitStylesheet",
-            dependencies: ["GWYogaKit"],
+            dependencies: ["GWYoga", "GWYogaKit"],
             path: "GWYogaKit/Stylesheet/Swift"
         ),
 
         // ── HTML 标签 DSL 模块 ──
         .target(
             name: "GWYogaKitHTML",
-            dependencies: ["GWYogaKitDSL", "GWYogaKitStylesheet"],
+            dependencies: ["GWYoga", "GWYogaKitDSL", "GWYogaKitStylesheet"],
             path: "GWYogaKit/HTML/Swift"
         ),
 
@@ -103,14 +103,14 @@ let package = Package(
         // ── ObjC LayoutCache 桥接 ──
         .target(
             name: "GWYogaKitLayoutCacheObjCCore",
-            dependencies: ["GWYogaKit", "GWYogaKitLayoutCache"],
+            dependencies: ["GWYogaKit", "GWYogaKitLayoutCache", "GWYogaKitObjCCore"],
             path: "GWYogaKit/LayoutCache/ObjC"
         ),
 
         // ── ObjC DSL 桥接 ──
         .target(
             name: "GWYogaKitDSLObjCCore",
-            dependencies: ["GWYogaKit", "GWYogaKitDSL"],
+            dependencies: ["GWYogaKit", "GWYogaKitDSL", "GWYogaKitObjCCore"],
             path: "GWYogaKit/DSL/ObjC"
         ),
 
@@ -124,15 +124,50 @@ let package = Package(
         // ── ObjC HTML 桥接 ──
         .target(
             name: "GWYogaKitHTMLObjCCore",
-            dependencies: ["GWYogaKit", "GWYogaKitHTML"],
+            dependencies: ["GWYogaKit", "GWYogaKitHTML", "GWYogaKitObjCCore"],
             path: "GWYogaKit/HTML/ObjC"
         ),
 
         // ── Stylesheet 测试 ──
         .testTarget(
             name: "GWYogaKitStylesheetTests",
-            dependencies: ["GWYoga", "GWYogaKitStylesheet"],
+            dependencies: ["GWYoga", "GWYogaKit", "GWYogaKitStylesheet"],
             path: "GWYogaKitStylesheetTests"
+        ),
+
+        // ── GWYogaKit 测试 ──
+        .testTarget(
+            name: "GWYogaKitTests",
+            dependencies: ["GWYoga", "GWYogaKit"],
+            path: "GWYogaKitTests"
+        ),
+
+        // ── DSL 测试 ──
+        .testTarget(
+            name: "GWYogaKitDSLTests",
+            dependencies: ["GWYoga", "GWYogaKit", "GWYogaKitDSL"],
+            path: "GWYogaKitDSLTests"
+        ),
+
+        // ── Animation 测试 ──
+        .testTarget(
+            name: "GWYogaKitAnimationTests",
+            dependencies: ["GWYoga", "GWYogaKit", "GWYogaKitAnimation"],
+            path: "GWYogaKitAnimationTests"
+        ),
+
+        // ── LayoutCache 测试 ──
+        .testTarget(
+            name: "GWYogaKitLayoutCacheTests",
+            dependencies: ["GWYoga", "GWYogaKit", "GWYogaKitLayoutCache"],
+            path: "GWYogaKitLayoutCacheTests"
+        ),
+
+        // ── HTML 测试 ──
+        .testTarget(
+            name: "GWYogaKitHTMLTests",
+            dependencies: ["GWYoga", "GWYogaKit", "GWYogaKitDSL", "GWYogaKitHTML"],
+            path: "GWYogaKitHTMLTests"
         ),
 
         // ── API 演示 ──
@@ -140,6 +175,13 @@ let package = Package(
             name: "GWYogaAPIDemo",
             dependencies: ["GWYoga", "GWYogaKit", "GWYogaKitStylesheet"],
             path: "GWYogaAPIDemo"
+        ),
+
+        // ── ObjC Bridge 测试 ──
+        .testTarget(
+            name: "GWYogaKitObjCTests",
+            dependencies: ["GWYoga", "GWYogaKit", "GWYogaKitObjCCore", "GWYogaKitDSLObjCCore", "GWYogaKitLayoutCacheObjCCore", "GWYogaKitHTMLObjCCore"],
+            path: "GWYogaKitObjCTests"
         ),
 
         // ── 可视化 Demo App ──

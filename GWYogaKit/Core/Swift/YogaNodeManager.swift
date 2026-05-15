@@ -42,9 +42,11 @@ internal final class YogaNodeManager {
     /// 递归构建节点树
     @discardableResult
     internal static func buildNodeTree(parentView: YKLView, parentNode: GWYogaNode) -> GWYogaNode {
+        // 先清除旧子节点，避免 stale children 导致 insertChild 中 removeFromOwner 破坏数组
+        parentNode.removeAllChildren()
         for subview in parentView.subviews {
             let childNode = subview.yoga.node
-            parentNode.insertChild(childNode, at: parentNode.children.count)
+            parentNode.appendChild(childNode)
             buildNodeTree(parentView: subview, parentNode: childNode)
         }
         return parentNode

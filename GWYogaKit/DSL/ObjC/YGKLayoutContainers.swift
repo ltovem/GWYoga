@@ -1,6 +1,7 @@
 import Foundation
 import GWYoga
 import GWYogaKit
+import GWYogaKitObjCCore
 #if os(iOS)
 import UIKit
 

@@ -115,8 +115,18 @@ internal enum GWGridLayoutEngine {
             + node.style.computeInlineStartBorder(.row, direction)
         let leadingRowOffset = node.style.computeInlineStartPadding(.column, direction, ownerWidth)
             + node.style.computeInlineStartBorder(.column, direction)
+        assert(!leadingColOffset.isNaN, "leadingColOffset is NaN")
+        assert(!leadingRowOffset.isNaN, "leadingRowOffset is NaN")
+        assert(!columnGap.isNaN, "columnGap is NaN")
+        assert(!rowGap.isNaN, "rowGap is NaN")
         let colPositions = computeTrackPositions(colTracks, gap: columnGap, start: leadingColOffset)
         let rowPositions = computeTrackPositions(rowTracks, gap: rowGap, start: leadingRowOffset)
+        for (idx, pos) in colPositions.enumerated() {
+            assert(!pos.isNaN, "colPositions[\(idx)] is NaN")
+        }
+        for (idx, pos) in rowPositions.enumerated() {
+            assert(!pos.isNaN, "rowPositions[\(idx)] is NaN")
+        }
 
         // --- Step 6: Position grid items ---
         if performLayout {
@@ -128,11 +138,20 @@ internal enum GWGridLayoutEngine {
                 let rs = placement.rowStart - 1
                 let re = placement.rowEnd - 1
 
+                assert(cs >= 0 && cs < colPositions.count, "child \(i): cs=\(cs) out of colPositions[0..<\(colPositions.count)]")
+                assert(ce >= 0 && ce < colPositions.count, "child \(i): ce=\(ce) out of colPositions[0..<\(colPositions.count)]")
+                assert(rs >= 0 && rs < rowPositions.count, "child \(i): rs=\(rs) out of rowPositions[0..<\(rowPositions.count)]")
+                assert(re >= 0 && re < rowPositions.count, "child \(i): re=\(re) out of rowPositions[0..<\(rowPositions.count)]")
+
                 // Compute physical position + size, accounting for gaps between tracks
                 var itemX = colPositions[cs] + Float(cs) * columnGap
                 var itemY = rowPositions[rs] + Float(rs) * rowGap
                 let itemWidth = (colPositions[ce] - colPositions[cs]) + max(0, Float(ce - cs - 1)) * columnGap
                 let itemHeight = (rowPositions[re] - rowPositions[rs]) + max(0, Float(re - rs - 1)) * rowGap
+                assert(!itemX.isNaN, "child \(i): itemX is NaN")
+                assert(!itemY.isNaN, "child \(i): itemY is NaN")
+                assert(!itemWidth.isNaN, "child \(i): itemWidth is NaN")
+                assert(!itemHeight.isNaN, "child \(i): itemHeight is NaN")
 
                 // Account for child margins
                 let marginLeft = child.style.resolvedMargin(for: .left, direction: direction)
@@ -199,9 +218,13 @@ internal enum GWGridLayoutEngine {
                     // Position within grid area based on alignment
                     let childW = child.layout.dimension(.width)
                     let childH = child.layout.dimension(.height)
+                    assert(!childW.isNaN, "child \(i): childW is NaN")
+                    assert(!childH.isNaN, "child \(i): childH is NaN")
 
                     itemX += marginLeft + alignInAxis(availableSize: availableWidth, childSize: childW, align: justifySelf)
                     itemY += marginTop + alignInAxis(availableSize: availableHeight, childSize: childH, align: alignmentToFallback(alignSelf))
+                    assert(!itemX.isNaN, "child \(i): final itemX is NaN")
+                    assert(!itemY.isNaN, "child \(i): final itemY is NaN")
 
                     child.layout.setPosition(.left, itemX)
                     child.layout.setPosition(.top, itemY)

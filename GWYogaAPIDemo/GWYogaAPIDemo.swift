@@ -1676,6 +1676,348 @@ final class GWYogaAPIDemoTests: XCTestCase {
         print("  [GWYogaKit 不可用]")
 #endif
     }
+
+    // ============================================================
+    // 23. boxSizing contentBox
+    // ============================================================
+
+    func testDemoBoxSizing() {
+        section("23. boxSizing: contentBox / borderBox")
+        subsection("默认 borderBox: width=200, padding=10, border=5 → 内容区=170")
+        let node1 = GWYogaNode()
+        node1.style.boxSizing = .borderBox
+        node1.style.setWidth(.points(200))
+        node1.style.setHeight(.points(100))
+        node1.style.setPadding(for: .all, .points(10))
+        node1.style.setBorder(for: .all, 5)
+        node1.calculateLayout(width: 200, height: 100, direction: .ltr)
+        print("  borderBox 总宽=\(node1.layoutResult.width, spec: "0.0") 内容宽=\(node1.layoutResult.width - 10*2 - 5*2, spec: "0.0")")
+
+        subsection("contentBox: width=200, padding=10, border=5 → 总宽=230")
+        let node2 = GWYogaNode()
+        node2.style.boxSizing = .contentBox
+        node2.style.setWidth(.points(200))
+        node2.style.setHeight(.points(100))
+        node2.style.setPadding(for: .all, .points(10))
+        node2.style.setBorder(for: .all, 5)
+        node2.calculateLayout(width: 200, height: 100, direction: .ltr)
+        print("  contentBox 总宽=\(node2.layoutResult.width, spec: "0.0") (200+20+10=230)")
+    }
+
+    // ============================================================
+    // 24. Direction RTL
+    // ============================================================
+
+    func testDemoDirectionRTL() {
+        section("24. Direction RTL (右向左)")
+        let root = GWYogaNode()
+        root.style.direction = .rtl
+        root.style.setWidth(.points(400))
+        root.style.setHeight(.points(60))
+        root.style.flexDirection = .row
+        for i in 0..<3 {
+            let c = GWYogaNode()
+            c.style.setWidth(.points(80))
+            c.style.setHeight(.points(30))
+            root.insertChild(c, at: i)
+        }
+        root.calculateLayout(width: 400, height: 60, direction: .rtl)
+        print("  RTL row 布局:")
+        for (i, c) in root.children.enumerated() {
+            print("    child\(i+1): left=\(c.layoutResult.left, spec: "0.0") (从右往左排列)")
+        }
+    }
+
+    // ============================================================
+    // 25. Node Clone / Reset
+    // ============================================================
+
+    func testDemoNodeCloneReset() {
+        section("25. 节点克隆与重置 (Clone & Reset)")
+        let node = GWYogaNode()
+        node.style.setWidth(.points(200))
+        node.style.setHeight(.points(100))
+        let child = GWYogaNode()
+        child.style.setWidth(.points(80))
+        child.style.setHeight(.points(50))
+        node.insertChild(child, at: 0)
+        print("  原节点: \(node.children.count) 个子节点")
+
+        // 创建新节点并复制样式
+        let cloned = GWYogaNode()
+        cloned.copyStyle(from: node)
+        print("  样式复制: width=\(node.style.width.value.value, spec: "0.0") → \(cloned.style.width.value.value, spec: "0.0")")
+
+        cloned.reset()
+        print("  重置后: \(cloned.children.count) 个子节点")
+    }
+
+    // ============================================================
+    // 26. Display: Contents
+    // ============================================================
+
+    func testDemoDisplayContents() {
+        section("26. Display: contents")
+        let root = GWYogaNode()
+        root.style.setWidth(.points(300))
+        root.style.setHeight(.points(100))
+        root.style.flexDirection = .row
+
+        let wrapper = GWYogaNode()
+        wrapper.style.display = .contents
+        root.insertChild(wrapper, at: 0)
+
+        let item = GWYogaNode()
+        item.style.setWidth(.points(100))
+        item.style.setHeight(.points(50))
+        wrapper.insertChild(item, at: 0)
+
+        root.calculateLayout(width: 300, height: 100, direction: .ltr)
+        print("  wrapper 不占空间: left=\(wrapper.layoutResult.left, spec: "0.0"), width=\(wrapper.layoutResult.width, spec: "0.0")")
+        print("  item 作为 root 的直接子节点排列: left=\(item.layoutResult.left, spec: "0.0")")
+    }
+
+    // ============================================================
+    // 27. Config 配置
+    // ============================================================
+
+    func testDemoConfigAdvanced() {
+        section("27. Config 配置 (useWebDefaults / pointScaleFactor)")
+        let config1 = GWYogaConfig()
+        config1.useWebDefaults = true
+        let root1 = GWYogaNode(config: config1)
+        root1.style.setWidth(.points(300))
+        root1.style.setHeight(.points(50))
+        root1.style.flexDirection = .row
+        let c1 = GWYogaNode(config: config1)
+        c1.style.setHeight(.points(30))
+        root1.insertChild(c1, at: 0)
+        root1.calculateLayout(width: 300, height: 50, direction: .ltr)
+        print("  useWebDefaults: 子节点 width=\(c1.layoutResult.width, spec: "0.0") (flexBasis 默认为 0%)")
+
+        let config2 = GWYogaConfig()
+        config2.pointScaleFactor = 3.0
+        let root2 = GWYogaNode(config: config2)
+        root2.style.setWidth(.points(100))
+        root2.style.setHeight(.points(50))
+        root2.calculateLayout(width: 100, height: 50, direction: .ltr)
+        print("  pointScaleFactor=3: width=\(root2.layoutResult.width, spec: "0.0") (按 1/3 四舍五入)")
+    }
+
+    // ============================================================
+    // 28. Grid: autoRows/autoColumns
+    // ============================================================
+
+    func testDemoGridAuto() {
+        section("28. Grid autoRows / autoColumns")
+        subsection("autoRows=80, 4 个子节点在 1 列中")
+        let r1 = GWYogaNode()
+        r1.style.display = .grid
+        r1.style.setWidth(.points(200))
+        r1.style.gridTemplateColumns = [.points(200)]
+        r1.style.gridAutoRows = [.points(80)]
+        for _ in 0..<4 { r1.insertChild(GWYogaNode(), at: r1.children.count) }
+        r1.calculateLayout(width: 200, height: .nan, direction: .ltr)
+        print("  容器高度=\(r1.layoutResult.height, spec: "0.0") (4*80=320)")
+
+        subsection("autoColumns=100, 3 个子节点在 1 行中")
+        let r2 = GWYogaNode()
+        r2.style.display = .grid
+        r2.style.gridTemplateRows = [.points(50)]
+        r2.style.gridAutoColumns = [.points(100)]
+        for _ in 0..<3 { r2.insertChild(GWYogaNode(), at: r2.children.count) }
+        r2.calculateLayout(width: .nan, height: .nan, direction: .ltr)
+        print("  容器宽度=\(r2.layoutResult.width, spec: "0.0") (3*100=300)")
+    }
+
+    // ============================================================
+    // 29. Animation / Transition 完整用法
+    // ============================================================
+
+    func testDemoAnimation() {
+        section("29. Animation & Transition 完整用法")
+        print("""
+        ✅ Animation API:
+
+        --- YogaTimingFunction: 时间函数 ---
+        let linear = YogaTimingFunction.linear()
+        let ease = YogaTimingFunction.ease()
+        let easeIn = YogaTimingFunction.easeIn()
+        let easeOut = YogaTimingFunction.easeOut()
+        let easeInOut = YogaTimingFunction.easeInOut()
+        let cubic = YogaTimingFunction.cubicBezier(0.25, 0.1, 0.25, 1.0)
+        let stepFunc = YogaTimingFunction.steps(4, position: .end)
+
+        --- YogaAnimation: 动画配置 ---
+        let anim = YogaAnimation(
+            name: "fadeIn",
+            duration: 0.3,
+            timingFunction: .easeInOut(),
+            delay: 0.1,
+            direction: .normal,
+            fillMode: .forwards
+        )
+
+        --- YogaTransition: 过渡配置 ---
+        let transition = YogaTransition(
+            duration: 0.3,
+            timingFunction: .ease(),
+            delay: 0,
+            propertyFilter: .layout
+        )
+
+        --- 插值 (Interpolation) ---
+        //  YogaInterpolation.interpolate(from: 100, to: 200, progress: 0.5)
+        //  → 150.0
+
+        --- 关键帧 (Keyframes) ---
+        //  let frames = YogaKeyframes {
+        //      YogaKeyframe(at: 0.0) { $0.width = 100 }
+        //      YogaKeyframe(at: 0.5) { $0.width = 200 }
+        //      YogaKeyframe(at: 1.0) { $0.width = 150 }
+        //  }
+        """)
+    }
+
+    // ============================================================
+    // 30. LayoutCache 完整用法
+    // ============================================================
+
+    func testDemoLayoutCache() {
+        section("30. LayoutCache 预测量 & 缓存")
+        print("""
+        ✅ LayoutCache API:
+
+        --- YogaPreLayout: 预测量 ---
+        //  let preLayout = YogaPreLayout(for: someView)
+        //  let size = preLayout.measure(width: 200)      // 给定宽度测量
+        //  let exact = preLayout.measure(width: 200, height: 100) // 精确测量
+        //  preLayout.invalidateCache()                    // 使缓存失效
+
+        --- YogaLayoutCache: 缓存管理器 ---
+        //  let cache = YogaLayoutCache()
+        //  cache.invalidate()     // 失效
+        //  let stale = cache.isStale  // 检查是否过期
+
+        --- 预渲染缓存 ---
+        //  在后台线程测量布局，在主线程应用结果，避免阻塞 UI
+        //  结合 PreLayoutManager 使用，适用于列表/滚动视图场景
+        """)
+    }
+
+    // ============================================================
+    // 31. DSL 完整用法
+    // ============================================================
+
+    func testDemoDSLAdvanced() {
+        section("31. DSL 声明式布局完整用法")
+        print("""
+        ✅ DSL API (声明式布局):
+
+        --- 容器 ---
+        //  VStack {          // 垂直排列 (flexDirection: column)
+        //      Text("A")      // 文本节点
+        //      Text("B")
+        //  }
+        //
+        //  HStack {          // 水平排列 (flexDirection: row)
+        //      Text("A")
+        //      Text("B")
+        //  }
+        //
+        //  ZStack {          // 重叠布局 (absolute 定位)
+        //      Text("背景")
+        //      Text("前景")
+        //  }
+
+        --- 控件 ---
+        //  Text("Hello")               // UILabel 封装
+        //  Image(UIImage(named: "x"))  // UIImageView 封装
+        //  Button("Tap") { }           // UIButton 封装
+        //  Spacer()                    // 弹性间距 (flexGrow: 1)
+        //  Divider()                   // 分割线
+
+        --- 修饰符 ---
+        //  Text("Hello")
+        //      .padding(16)            // 内边距
+        //      .margin(.top(8))        // 外边距
+        //      .frame(width: 100, height: 50)  // 尺寸
+        //      .background(.blue)      // 背景色
+        //      .flex(grow: 1, shrink: 0) // flex 属性
+
+        --- 滚动容器 ---
+        //  ScrollView(.vertical) {
+        //      VStack { ... }
+        //  }
+        """)
+    }
+
+    // ============================================================
+    // 32. HTML 标签 DSL
+    // ============================================================
+
+    func testDemoHTMLAdvanced() {
+        section("32. HTML 标签 DSL")
+        print("""
+        ✅ HTML 标签 API:
+
+        --- 标签 ---
+        //  div { ... }          // block 容器
+        //  section { ... }      // 区块容器 (flexDirection: column)
+        //  header { ... }       // 头部 (flexDirection: row, alignItems: center)
+        //  row { ... }          // 行容器 (flexDirection: row)
+        //  h1("标题") ... h6("标题")  // 标题 (size 28~14)
+        //  p("段落文本")         // 段落
+
+        --- 修饰符 ---
+        //  div {
+        //      h1("大标题")
+        //          .padding(8)
+        //          .margin(.bottom(4))
+        //      p("说明文字")
+        //  }
+        //  .backgroundColor(.systemGray6)
+
+        --- 结合 Stylesheet ---
+        //  let css = try YogaStylesheet.parse("div { margin: 10px }")
+        //  css.apply(to: view)
+        """)
+    }
+
+    // ============================================================
+    // 33. Grid 高级用法
+    // ============================================================
+
+    func testDemoGridAdvanced() {
+        section("33. Grid 高级用法")
+        subsection("minmax + stretch 分布")
+        let r1 = GWYogaNode()
+        r1.style.display = .grid
+        r1.style.setWidth(.points(300))
+        r1.style.gridTemplateColumns = [
+            .minmax(min: .points(50), max: .points(100)),
+            .minmax(min: .points(80), max: .points(200))
+        ]
+        r1.style.justifyContent = .stretch
+        for _ in 0..<2 { r1.insertChild(GWYogaNode(), at: r1.children.count) }
+        r1.calculateLayout(width: 300, height: .nan, direction: .ltr)
+        print("  minmax+stretch: col0=\(r1.children[0].layoutResult.width, spec: "0.0") col1=\(r1.children[1].layoutResult.width, spec: "0.0")")
+
+        subsection("explicit row+column placement")
+        let r2 = GWYogaNode()
+        r2.style.display = .grid
+        r2.style.gridTemplateColumns = [.points(60), .points(60), .points(60)]
+        r2.style.gridTemplateRows = [.points(40), .points(40), .points(40)]
+        let span = GWYogaNode()
+        span.style.gridColumnStart = GWGridLine(type: .integer, value: 1)
+        span.style.gridColumnEnd = GWGridLine(type: .integer, value: 3)
+        span.style.gridRowStart = GWGridLine(type: .integer, value: 1)
+        span.style.gridRowEnd = GWGridLine(type: .integer, value: 3)
+        r2.insertChild(span, at: 0)
+        for _ in 0..<3 { r2.insertChild(GWYogaNode(), at: r2.children.count) }
+        r2.calculateLayout(width: .nan, height: .nan, direction: .ltr)
+        print("  跨2列2行: width=\(span.layoutResult.width, spec: "0.0") height=\(span.layoutResult.height, spec: "0.0") (期望 120×80)")
+    }
 }
 
 // MARK: - Float 格式化扩展

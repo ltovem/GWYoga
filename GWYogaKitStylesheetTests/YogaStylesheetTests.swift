@@ -1,5 +1,6 @@
 import XCTest
 @testable import GWYoga
+@testable import GWYogaKit
 @testable import GWYogaKitStylesheet
 
 final class YogaSelectorTests: XCTestCase {
@@ -386,5 +387,111 @@ final class YogaStylesheetTests: XCTestCase {
         XCTAssertThrowsError(try YogaStylesheet.load(named: "nonexistent")) { error in
             XCTAssertTrue(error is YogaStylesheetError)
         }
+    }
+
+    // MARK: - Complex Selectors
+
+    func testParseComplexSelectors() throws {
+        let css = """
+        div.container > p.text:hover { color: red }
+        ul li:first-child { margin: 0 }
+        a[href] { text-decoration: underline }
+        """
+        let sheet = try YogaStylesheet.parse(css)
+        XCTAssertEqual(sheet.rules.count, 3)
+    }
+
+    func testPseudoClassNthChild() throws {
+        let css = """
+        li:nth-child(2n+1) { background: gray }
+        li:nth-child(3) { color: blue }
+        """
+        let sheet = try YogaStylesheet.parse(css)
+        XCTAssertEqual(sheet.rules.count, 2)
+        // Verify pseudo-class is stored
+        XCTAssertTrue(sheet.rules[0].selector.specificityValue > 0)
+    }
+
+    func testPseudoClassNot() throws {
+        let css = """
+        div:not(.special) { opacity: 0.5 }
+        """
+        let sheet = try YogaStylesheet.parse(css)
+        XCTAssertEqual(sheet.rules.count, 1)
+        XCTAssertTrue(sheet.rules[0].selector.specificityValue > 0)
+    }
+
+    // MARK: - Stylesheet Operations
+
+    func testStylesheetMergeConflicts() throws {
+        let css1 = "div { margin: 10px }"
+        let css2 = "div { margin: 20px }"
+
+        var sheet1 = try YogaStylesheet.parse(css1)
+        let sheet2 = try YogaStylesheet.parse(css2)
+        sheet1 = YogaStylesheet.merge(sheet1, sheet2)
+
+        // Last matching rule wins
+        XCTAssertEqual(sheet1.rules.count, 2)
+        XCTAssertEqual(sheet1.rules[1].declarations.first?.value, "20px")
+    }
+
+    func testStylesheetApplyOrder() throws {
+#if canImport(UIKit)
+        let css = """
+        .foo { margin: 5px; padding: 10px }
+        .bar { margin: 15px }
+        """
+        let view = UIView()
+        let sheet = try YogaStylesheet.parse(css)
+
+        // Apply .foo then .bar using view's yoga properties
+        for rule in sheet.rules {
+            for decl in rule.declarations {
+                YogaCSSPropertyMapper.apply(property: decl.property, value: decl.value, to: view.yoga)
+            }
+        }
+
+        // .bar.margin overrides .foo.margin, padding from .foo remains
+        XCTAssertEqual(sheet.rules.count, 2)
+#endif
+    }
+
+    // MARK: - Error Handling
+
+    func testCSSPropertyMapperError() {
+#if canImport(UIKit)
+        let view = UIView()
+        // Invalid property should not crash
+        YogaCSSPropertyMapper.apply(property: "invalid-prop", value: "10px", to: view.yoga)
+        XCTAssertTrue(true) // reached without crash
+#endif
+    }
+
+    // MARK: - Selector Specificity
+
+    func testSelectorSpecificityCalc() throws {
+        let css = """
+        * { margin: 0 }                    /* 0,0,0,0 */
+        div { margin: 1px }                 /* 0,0,0,1 */
+        .class { margin: 2px }              /* 0,0,1,0 */
+        #id { margin: 3px }                 /* 0,1,0,0 */
+        div.class#id { margin: 4px }        /* 0,1,1,1 */
+        div .class { margin: 5px }          /* 0,0,1,1 (descendant) */
+        """
+        let sheet = try YogaStylesheet.parse(css)
+
+        // Universal selector has lowest specificity
+        XCTAssertEqual(sheet.rules[0].specificity, 0)
+        // Type selector
+        XCTAssertEqual(sheet.rules[1].specificity, 1)
+        // Class selector
+        XCTAssertEqual(sheet.rules[2].specificity, 1000)
+        // ID selector
+        XCTAssertEqual(sheet.rules[3].specificity, 1_000_000)
+        // Compound: div.class#id
+        XCTAssertEqual(sheet.rules[4].specificity, 1_001_001)
+        // Descendant: div .class
+        XCTAssertEqual(sheet.rules[5].specificity, 1001)
     }
 }

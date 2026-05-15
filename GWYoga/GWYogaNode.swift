@@ -126,6 +126,15 @@ public final class GWYogaNode {
         markDirty()
     }
 
+    /// Append a child at the end. Unlike `insertChild` this does not call `removeFromOwner`,
+    /// so it must only be used when the caller has already ensured the child has no owner
+    /// (e.g., after `removeAllChildren` on the parent, as in `buildNodeTree`).
+    public func appendChild(_ child: GWYogaNode) {
+        child.owner = self
+        children.append(child)
+        markDirty()
+    }
+
     /// Remove all children from this node.
     public func removeAllChildren() {
         for child in children {

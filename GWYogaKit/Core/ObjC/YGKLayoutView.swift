@@ -26,10 +26,8 @@ import UIKit
 @objc(YGKLayoutView)
 open class YGKLayoutView: YogaLayoutView {
 
-    /// ObjC-accessible yoga properties.
-    @objc public private(set) lazy var yogaProperties: YGKLayoutProperties = {
-        YGKLayoutProperties(yoga: self.yoga)
-    }()
+    /// ObjC-accessible yoga properties (inherited from UIView+yogaProperties extension).
+    /// Access via `view.yogaProperties` from ObjC.
 
     // MARK: - Initialization
 

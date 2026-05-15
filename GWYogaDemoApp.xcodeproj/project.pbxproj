@@ -16,8 +16,57 @@ BF82D915B433087E5F2962FD = {isa = PBXBuildFile; fileRef = E6B36A26A865E27868E8E1
 EB3B55FDD6DFE81736B5E21C = {isa = PBXBuildFile; fileRef = 80EF12E09A5625243296EA4A; };
 C3A8FEF78F5A2333A38D3BF6 = {isa = PBXBuildFile; fileRef = 58D9599A1DA2F6731998F520; };
 1069253A61331BF1CF5FDADF = {isa = PBXBuildFile; fileRef = 524C5F95B8EEA03A9006627C; };
+E1D2C3B4A5F6E7D8C9B0A1F2 = {isa = PBXBuildFile; fileRef = F1A2B3C4D5E6F7A8B9C0D1E2; };
+E2D3C4B5A6F7E8D9C0B1A2F3 = {isa = PBXBuildFile; fileRef = F2A3B4C5D6E7F8A9B0C1D2E3; };
+E3D4C5B6A7F8E9D0C1B2A3F4 = {isa = PBXBuildFile; fileRef = F3A4B5C6D7E8F9A0B1C2D3E4; };
+E4D5C6B7A8F9E0A1C2B3A4F5 = {isa = PBXBuildFile; fileRef = F4A5B6C7D8E9F0A1B2C3D4E5; };
+E5D6C7B8A9F0E1B2C3B4A5F6 = {isa = PBXBuildFile; fileRef = F5A6B7C8D9E0F1A2B3C4D5E6; };
+E6D7C8B9A0F1E2C3D4B5A6F7 = {isa = PBXBuildFile; fileRef = F6A7B8C9D0E1F2A3B4C5D6E7; };
 CC17E7504094B54CBE960E57 = {isa = PBXBuildFile; productRef = 5963EC32EB729E7982FDAAD1; };
 AC27DBA1B36F9006923EE7CC = {isa = PBXBuildFile; productRef = 6E20C339D2AE86A3754BDFE1; };
+A1B2C3D4E5F6A7B8C9D0E1F2 = {isa = PBXBuildFile; productRef = A2B3C4D5E6F7A8B9C0D1E2F3; };
+B1C2D3E4F5A6B7C8D9E0F1A2 = {isa = PBXBuildFile; productRef = B2C3D4E5F6A7B8C9D0E1F2A3; };
+C1D2E3F4A5B6C7D8E9F0A1B2 = {isa = PBXBuildFile; productRef = C2D3E4F5A6B7C8D9E0F1A2B3; };
+D1E2F3A4B5C6D7E8F9A0B1C2 = {isa = PBXBuildFile; productRef = D2E3F4A5B6C7D8E9F0A1B2C3; };
+E1F2A3B4C5D6E7F8A9B0C1D2 = {isa = PBXBuildFile; productRef = E2F3A4B5C6D7E8F9A0B1C2D3; };
+
+/* ObjC Demo App - .m files */
+A000000000000000000001 = {isa = PBXBuildFile; fileRef = A10000000000000000000001; };
+A000000000000000000002 = {isa = PBXBuildFile; fileRef = A10000000000000000000003; };
+A000000000000000000003 = {isa = PBXBuildFile; fileRef = A10000000000000000000005; };
+A000000000000000000004 = {isa = PBXBuildFile; fileRef = A10000000000000000000007; };
+A000000000000000000005 = {isa = PBXBuildFile; fileRef = A10000000000000000000009; };
+A000000000000000000006 = {isa = PBXBuildFile; fileRef = A1000000000000000000000B; };
+A000000000000000000007 = {isa = PBXBuildFile; fileRef = A1000000000000000000000D; };
+A000000000000000000008 = {isa = PBXBuildFile; fileRef = A1000000000000000000000F; };
+A000000000000000000009 = {isa = PBXBuildFile; fileRef = A10000000000000000000011; };
+A00000000000000000000A = {isa = PBXBuildFile; fileRef = A10000000000000000000013; };
+A00000000000000000000B = {isa = PBXBuildFile; fileRef = A10000000000000000000015; };
+A00000000000000000000C = {isa = PBXBuildFile; fileRef = A10000000000000000000017; };
+A00000000000000000000D = {isa = PBXBuildFile; fileRef = A10000000000000000000019; };
+A00000000000000000000E = {isa = PBXBuildFile; fileRef = A1000000000000000000001B; };
+A00000000000000000000F = {isa = PBXBuildFile; fileRef = A1000000000000000000001D; };
+A000000000000000000010 = {isa = PBXBuildFile; fileRef = A1000000000000000000001F; };
+A000000000000000000011 = {isa = PBXBuildFile; fileRef = A10000000000000000000021; };
+A000000000000000000012 = {isa = PBXBuildFile; fileRef = A10000000000000000000023; };
+A000000000000000000013 = {isa = PBXBuildFile; fileRef = A10000000000000000000025; };
+/* ObjC Demo App - resources */
+A00000000000000000001B = {isa = PBXBuildFile; fileRef = A10000000000000000000028; };
+/* ObjC Demo App - framework products */
+A000000000000000000014 = {isa = PBXBuildFile; productRef = 5963EC32EB729E7982FDAAD1; };
+A000000000000000000015 = {isa = PBXBuildFile; productRef = 6E20C339D2AE86A3754BDFE1; };
+A000000000000000000016 = {isa = PBXBuildFile; productRef = A2B3C4D5E6F7A8B9C0D1E2F3; };
+A000000000000000000017 = {isa = PBXBuildFile; productRef = B2C3D4E5F6A7B8C9D0E1F2A3; };
+A000000000000000000018 = {isa = PBXBuildFile; productRef = C2D3E4F5A6B7C8D9E0F1A2B3; };
+A000000000000000000019 = {isa = PBXBuildFile; productRef = D2E3F4A5B6C7D8E9F0A1B2C3; };
+A00000000000000000001A = {isa = PBXBuildFile; productRef = E2F3A4B5C6D7E8F9A0B1C2D3; };
+/* ObjC Demo App - ObjC bridge products */
+A00000000000000000001C = {isa = PBXBuildFile; productRef = B000000000000000000001; };
+A00000000000000000001D = {isa = PBXBuildFile; productRef = B000000000000000000002; };
+A00000000000000000001E = {isa = PBXBuildFile; productRef = B000000000000000000003; };
+A00000000000000000001F = {isa = PBXBuildFile; productRef = B000000000000000000004; };
+A000000000000000000020 = {isa = PBXBuildFile; productRef = B000000000000000000005; };
+A000000000000000000021 = {isa = PBXBuildFile; productRef = B000000000000000000006; };
 /* End PBXBuildFile section */
 /* Begin PBXFileReference section */
 207CA4381D0CFEC95263A2DE = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate.swift"; sourceTree = "<group>"; };
@@ -32,15 +81,64 @@ B97CD2A092E1DAEE8D2F9A39 = {isa = PBXFileReference; lastKnownFileType = sourceco
 80EF12E09A5625243296EA4A = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demos/GapDemoViewController.swift"; sourceTree = "<group>"; };
 58D9599A1DA2F6731998F520 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demos/AspectRatioDemoViewController.swift"; sourceTree = "<group>"; };
 524C5F95B8EEA03A9006627C = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demos/CompositeDemoViewController.swift"; sourceTree = "<group>"; };
+F1A2B3C4D5E6F7A8B9C0D1E2 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demos/AnimationDemoViewController.swift"; sourceTree = "<group>"; };
+F2A3B4C5D6E7F8A9B0C1D2E3 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demos/DSLDemoViewController.swift"; sourceTree = "<group>"; };
+F3A4B5C6D7E8F9A0B1C2D3E4 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demos/HTMLDemoViewController.swift"; sourceTree = "<group>"; };
+F4A5B6C7D8E9F0A1B2C3D4E5 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demos/LayoutCacheDemoViewController.swift"; sourceTree = "<group>"; };
+F5A6B7C8D9E0F1A2B3C4D5E6 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demos/StylesheetDemoViewController.swift"; sourceTree = "<group>"; };
+F6A7B8C9D0E1F2A3B4C5D6E7 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demos/YogaKitDemoViewController.swift"; sourceTree = "<group>"; };
 707A1B8AA6F495C9BF6658C2 = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 2B32F328218E449DCE1110D9 = {isa = PBXFileReference; explicitFileType = "wrapper.application"; includeInIndex = 0; path = GWYogaDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+/* Begin PBXFileReference section for ObjC */
+A10000000000000000000001 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "main.m"; sourceTree = "<group>"; };
+A10000000000000000000002 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCAppDelegate.h"; sourceTree = "<group>"; };
+A10000000000000000000003 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCAppDelegate.m"; sourceTree = "<group>"; };
+A10000000000000000000004 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCSceneDelegate.h"; sourceTree = "<group>"; };
+A10000000000000000000005 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCSceneDelegate.m"; sourceTree = "<group>"; };
+A10000000000000000000006 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCBaseDemoViewController.h"; sourceTree = "<group>"; };
+A10000000000000000000007 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCBaseDemoViewController.m"; sourceTree = "<group>"; };
+A10000000000000000000008 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCDemoTabBarController.h"; sourceTree = "<group>"; };
+A10000000000000000000009 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCDemoTabBarController.m"; sourceTree = "<group>"; };
+A1000000000000000000000A = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCYogaRenderer.h"; sourceTree = "<group>"; };
+A1000000000000000000000B = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCYogaRenderer.m"; sourceTree = "<group>"; };
+A1000000000000000000000C = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCFlexboxDemoViewController.h"; sourceTree = "<group>"; };
+A1000000000000000000000D = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCFlexboxDemoViewController.m"; sourceTree = "<group>"; };
+A1000000000000000000000E = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCGridDemoViewController.h"; sourceTree = "<group>"; };
+A1000000000000000000000F = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCGridDemoViewController.m"; sourceTree = "<group>"; };
+A10000000000000000000010 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCMarginPaddingDemoViewController.h"; sourceTree = "<group>"; };
+A10000000000000000000011 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCMarginPaddingDemoViewController.m"; sourceTree = "<group>"; };
+A10000000000000000000012 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCPositionDemoViewController.h"; sourceTree = "<group>"; };
+A10000000000000000000013 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCPositionDemoViewController.m"; sourceTree = "<group>"; };
+A10000000000000000000014 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCGapDemoViewController.h"; sourceTree = "<group>"; };
+A10000000000000000000015 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCGapDemoViewController.m"; sourceTree = "<group>"; };
+A10000000000000000000016 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCAspectRatioDemoViewController.h"; sourceTree = "<group>"; };
+A10000000000000000000017 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCAspectRatioDemoViewController.m"; sourceTree = "<group>"; };
+A10000000000000000000018 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCCompositeDemoViewController.h"; sourceTree = "<group>"; };
+A10000000000000000000019 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCCompositeDemoViewController.m"; sourceTree = "<group>"; };
+A1000000000000000000001A = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCAnimationDemoViewController.h"; sourceTree = "<group>"; };
+A1000000000000000000001B = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCAnimationDemoViewController.m"; sourceTree = "<group>"; };
+A1000000000000000000001C = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCDSLDemoViewController.h"; sourceTree = "<group>"; };
+A1000000000000000000001D = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCDSLDemoViewController.m"; sourceTree = "<group>"; };
+A1000000000000000000001E = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCStylesheetDemoViewController.h"; sourceTree = "<group>"; };
+A1000000000000000000001F = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCStylesheetDemoViewController.m"; sourceTree = "<group>"; };
+A10000000000000000000020 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCHTMLDemoViewController.h"; sourceTree = "<group>"; };
+A10000000000000000000021 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCHTMLDemoViewController.m"; sourceTree = "<group>"; };
+A10000000000000000000022 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCLayoutCacheDemoViewController.h"; sourceTree = "<group>"; };
+A10000000000000000000023 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCLayoutCacheDemoViewController.m"; sourceTree = "<group>"; };
+A10000000000000000000024 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCYogaKitDemoViewController.h"; sourceTree = "<group>"; };
+A10000000000000000000025 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCYogaKitDemoViewController.m"; sourceTree = "<group>"; };
+A10000000000000000000026 = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info.plist"; sourceTree = "<group>"; };
+A10000000000000000000028 = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "LaunchScreen.storyboard"; sourceTree = "<group>"; };
+A10000000000000000000027 = {isa = PBXFileReference; explicitFileType = "wrapper.application"; includeInIndex = 0; path = GWYogaDemoAppObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section for ObjC */
 /* Begin PBXFrameworksBuildPhase section */
-DE1439ACCFCEB73E6F9981A5 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (CC17E7504094B54CBE960E57, AC27DBA1B36F9006923EE7CC); runOnlyForDeploymentPostprocessing = 0; };
+DE1439ACCFCEB73E6F9981A5 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (CC17E7504094B54CBE960E57, AC27DBA1B36F9006923EE7CC, A1B2C3D4E5F6A7B8C9D0E1F2, B1C2D3E4F5A6B7C8D9E0F1A2, C1D2E3F4A5B6C7D8E9F0A1B2, D1E2F3A4B5C6D7E8F9A0B1C2, E1F2A3B4C5D6E7F8A9B0C1D2); runOnlyForDeploymentPostprocessing = 0; };
+C000000000000000000002 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (A000000000000000000014, A000000000000000000015, A000000000000000000016, A000000000000000000017, A000000000000000000018, A000000000000000000019, A00000000000000000001A, A00000000000000000001C, A00000000000000000001D, A00000000000000000001E, A00000000000000000001F, A000000000000000000020, A000000000000000000021); runOnlyForDeploymentPostprocessing = 0; };
 /* End PBXFrameworksBuildPhase section */
 /* Begin PBXGroup section */
-8C4FDD7B635240BD562EBB49 = {isa = PBXGroup; children = (287BE755981C092238309A9A, B23D89B2D2DF3745A003AEB1); sourceTree = "<group>"; };
-B23D89B2D2DF3745A003AEB1 = {isa = PBXGroup; children = (2B32F328218E449DCE1110D9); name = Products; sourceTree = "<group>"; };
+8C4FDD7B635240BD562EBB49 = {isa = PBXGroup; children = (287BE755981C092238309A9A, E00000000000000000000001, B23D89B2D2DF3745A003AEB1); sourceTree = "<group>"; };
+B23D89B2D2DF3745A003AEB1 = {isa = PBXGroup; children = (2B32F328218E449DCE1110D9, A10000000000000000000027); name = Products; sourceTree = "<group>"; };
 287BE755981C092238309A9A = {isa = PBXGroup; children = (
 207CA4381D0CFEC95263A2DE,
 61E63BC8B948A5BBC74EBCAB,
@@ -54,17 +152,68 @@ B97CD2A092E1DAEE8D2F9A39,
 80EF12E09A5625243296EA4A,
 58D9599A1DA2F6731998F520,
 524C5F95B8EEA03A9006627C,
+F1A2B3C4D5E6F7A8B9C0D1E2,
+F2A3B4C5D6E7F8A9B0C1D2E3,
+F3A4B5C6D7E8F9A0B1C2D3E4,
+F4A5B6C7D8E9F0A1B2C3D4E5,
+F5A6B7C8D9E0F1A2B3C4D5E6,
+F6A7B8C9D0E1F2A3B4C5D6E7,
 707A1B8AA6F495C9BF6658C2,
 ); name = Sources; path = GWYogaDemoApp; sourceTree = "<group>"; };
 /* End PBXGroup section */
+/* Begin PBXGroup section for ObjC */
+E00000000000000000000001 = {isa = PBXGroup; children = (
+A10000000000000000000001,
+A10000000000000000000002,
+A10000000000000000000003,
+A10000000000000000000004,
+A10000000000000000000005,
+A10000000000000000000006,
+A10000000000000000000007,
+A10000000000000000000008,
+A10000000000000000000009,
+A1000000000000000000000A,
+A1000000000000000000000B,
+A1000000000000000000000C,
+A1000000000000000000000D,
+A1000000000000000000000E,
+A1000000000000000000000F,
+A10000000000000000000010,
+A10000000000000000000011,
+A10000000000000000000012,
+A10000000000000000000013,
+A10000000000000000000014,
+A10000000000000000000015,
+A10000000000000000000016,
+A10000000000000000000017,
+A10000000000000000000018,
+A10000000000000000000019,
+A1000000000000000000001A,
+A1000000000000000000001B,
+A1000000000000000000001C,
+A1000000000000000000001D,
+A1000000000000000000001E,
+A1000000000000000000001F,
+A10000000000000000000020,
+A10000000000000000000021,
+A10000000000000000000022,
+A10000000000000000000023,
+A10000000000000000000024,
+A10000000000000000000025,
+A10000000000000000000026,
+A10000000000000000000028,
+); name = "ObjC Sources"; path = GWYogaDemoAppObjC; sourceTree = "<group>"; };
+/* End PBXGroup section for ObjC */
 /* Begin PBXNativeTarget section */
-A9A41E6D4940C3747EB8FEB7 = {isa = PBXNativeTarget; buildConfigurationList = 9264D57D637312A9C39D45FC; buildPhases = (3B7DFB0747829707F437ED7F, DE1439ACCFCEB73E6F9981A5, 3519654520012F56AC9A0E86); buildRules = (); dependencies = (); name = GWYogaDemoApp; packageProductDependencies = (5963EC32EB729E7982FDAAD1, 6E20C339D2AE86A3754BDFE1); productName = GWYogaDemoApp; productReference = 2B32F328218E449DCE1110D9; productType = "com.apple.product-type.application"; };
+A9A41E6D4940C3747EB8FEB7 = {isa = PBXNativeTarget; buildConfigurationList = 9264D57D637312A9C39D45FC; buildPhases = (3B7DFB0747829707F437ED7F, DE1439ACCFCEB73E6F9981A5, 3519654520012F56AC9A0E86); buildRules = (); dependencies = (); name = GWYogaDemoApp; packageProductDependencies = (5963EC32EB729E7982FDAAD1, 6E20C339D2AE86A3754BDFE1, A2B3C4D5E6F7A8B9C0D1E2F3, B2C3D4E5F6A7B8C9D0E1F2A3, C2D3E4F5A6B7C8D9E0F1A2B3, D2E3F4A5B6C7D8E9F0A1B2C3, E2F3A4B5C6D7E8F9A0B1C2D3); productName = GWYogaDemoApp; productReference = 2B32F328218E449DCE1110D9; productType = "com.apple.product-type.application"; };
+D00000000000000000000001 = {isa = PBXNativeTarget; buildConfigurationList = 100000000000000000000001; buildPhases = (C000000000000000000001, C000000000000000000002, C000000000000000000003); buildRules = (); dependencies = (); name = GWYogaDemoAppObjC; packageProductDependencies = (5963EC32EB729E7982FDAAD1, 6E20C339D2AE86A3754BDFE1, A2B3C4D5E6F7A8B9C0D1E2F3, B2C3D4E5F6A7B8C9D0E1F2A3, C2D3E4F5A6B7C8D9E0F1A2B3, D2E3F4A5B6C7D8E9F0A1B2C3, E2F3A4B5C6D7E8F9A0B1C2D3, B000000000000000000001, B000000000000000000002, B000000000000000000003, B000000000000000000004, B000000000000000000005, B000000000000000000006); productName = GWYogaDemoAppObjC; productReference = A10000000000000000000027; productType = "com.apple.product-type.application"; };
 /* End PBXNativeTarget section */
 /* Begin PBXProject section */
-63A9F0EA7BB98050796B649E = {isa = PBXProject; attributes = {LastSwiftUpdateCheck = 1500; LastUpgradeCheck = 1500; }; buildConfigurationList = 922D41B3256E9E46EDB76357; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en, Base); mainGroup = 8C4FDD7B635240BD562EBB49; packageReferences = (011B82C029B392CF0E363268); productRefGroup = B23D89B2D2DF3745A003AEB1; projectDirPath = ""; targets = (A9A41E6D4940C3747EB8FEB7); };
+63A9F0EA7BB98050796B649E = {isa = PBXProject; attributes = {LastSwiftUpdateCheck = 1500; LastUpgradeCheck = 1500; }; buildConfigurationList = 922D41B3256E9E46EDB76357; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en, Base); mainGroup = 8C4FDD7B635240BD562EBB49; packageReferences = (011B82C029B392CF0E363268); productRefGroup = B23D89B2D2DF3745A003AEB1; projectDirPath = ""; targets = (A9A41E6D4940C3747EB8FEB7, D00000000000000000000001); };
 /* End PBXProject section */
 /* Begin PBXResourcesBuildPhase section */
 3519654520012F56AC9A0E86 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+C000000000000000000003 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
 /* End PBXResourcesBuildPhase section */
 /* Begin PBXSourcesBuildPhase section */
 3B7DFB0747829707F437ED7F = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
@@ -80,6 +229,33 @@ BF82D915B433087E5F2962FD,
 EB3B55FDD6DFE81736B5E21C,
 C3A8FEF78F5A2333A38D3BF6,
 1069253A61331BF1CF5FDADF,
+E1D2C3B4A5F6E7D8C9B0A1F2,
+E2D3C4B5A6F7E8D9C0B1A2F3,
+E3D4C5B6A7F8E9D0C1B2A3F4,
+E4D5C6B7A8F9E0A1C2B3A4F5,
+E5D6C7B8A9F0E1B2C3B4A5F6,
+E6D7C8B9A0F1E2C3D4B5A6F7,
+); runOnlyForDeploymentPostprocessing = 0; };
+C000000000000000000001 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
+A000000000000000000001,
+A000000000000000000002,
+A000000000000000000003,
+A000000000000000000004,
+A000000000000000000005,
+A000000000000000000006,
+A000000000000000000007,
+A000000000000000000008,
+A000000000000000000009,
+A00000000000000000000A,
+A00000000000000000000B,
+A00000000000000000000C,
+A00000000000000000000D,
+A00000000000000000000E,
+A00000000000000000000F,
+A000000000000000000010,
+A000000000000000000011,
+A000000000000000000012,
+A000000000000000000013,
 ); runOnlyForDeploymentPostprocessing = 0; };
 /* End PBXSourcesBuildPhase section */
 /* Begin XCBuildConfiguration section */
@@ -88,9 +264,14 @@ D20FE4381AF75ABF18294103 = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_
 1A9E10FAAD0A97FB97BCEC18 = {isa = XCBuildConfiguration; buildSettings = {ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; CODE_SIGN_STYLE = Automatic; "EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64; INFOPLIST_FILE = GWYogaDemoApp/Info.plist; IPHONEOS_DEPLOYMENT_TARGET = 15.0; PRODUCT_BUNDLE_IDENTIFIER = com.gwyoga.demo; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Debug; };
 B79C83306C8ABF7373B5E45C = {isa = XCBuildConfiguration; buildSettings = {ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; CODE_SIGN_STYLE = Automatic; "EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64; INFOPLIST_FILE = GWYogaDemoApp/Info.plist; IPHONEOS_DEPLOYMENT_TARGET = 15.0; PRODUCT_BUNDLE_IDENTIFIER = com.gwyoga.demo; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Release; };
 /* End XCBuildConfiguration section */
+/* ObjC Target Build Configurations */
+F00000000000000000000001 = {isa = XCBuildConfiguration; buildSettings = {ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; CODE_SIGN_STYLE = Automatic; CLANG_ENABLE_OBJC_ARC = YES; "EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64; INFOPLIST_FILE = GWYogaDemoAppObjC/Info.plist; IPHONEOS_DEPLOYMENT_TARGET = 15.0; PRODUCT_BUNDLE_IDENTIFIER = com.gwyoga.demoobjc; PRODUCT_NAME = "$(TARGET_NAME)"; TARGETED_DEVICE_FAMILY = "1,2"; CLANG_ENABLE_MODULES = YES; }; name = Debug; };
+F00000000000000000000002 = {isa = XCBuildConfiguration; buildSettings = {ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; CODE_SIGN_STYLE = Automatic; CLANG_ENABLE_OBJC_ARC = YES; "EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64; INFOPLIST_FILE = GWYogaDemoAppObjC/Info.plist; IPHONEOS_DEPLOYMENT_TARGET = 15.0; PRODUCT_BUNDLE_IDENTIFIER = com.gwyoga.demoobjc; PRODUCT_NAME = "$(TARGET_NAME)"; TARGETED_DEVICE_FAMILY = "1,2"; CLANG_ENABLE_MODULES = YES; }; name = Release; };
+/* End XCBuildConfiguration section for ObjC */
 /* Begin XCConfigurationList section */
 922D41B3256E9E46EDB76357 = {isa = XCConfigurationList; buildConfigurations = (D20FE4381AF75ABF18294103, 48147C2DF3D92BA11DB71033); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
 9264D57D637312A9C39D45FC = {isa = XCConfigurationList; buildConfigurations = (1A9E10FAAD0A97FB97BCEC18, B79C83306C8ABF7373B5E45C); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+100000000000000000000001 = {isa = XCConfigurationList; buildConfigurations = (F00000000000000000000001, F00000000000000000000002); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
 /* End XCConfigurationList section */
 /* Begin XCLocalSwiftPackageReference section */
 011B82C029B392CF0E363268 = {isa = XCLocalSwiftPackageReference; relativePath = .; };
@@ -98,7 +279,20 @@ B79C83306C8ABF7373B5E45C = {isa = XCBuildConfiguration; buildSettings = {ASSETCA
 /* Begin XCSwiftPackageProductDependency section */
 5963EC32EB729E7982FDAAD1 = {isa = XCSwiftPackageProductDependency; productName = GWYogaKit; package = 011B82C029B392CF0E363268; };
 6E20C339D2AE86A3754BDFE1 = {isa = XCSwiftPackageProductDependency; productName = GWYoga; package = 011B82C029B392CF0E363268; };
+A2B3C4D5E6F7A8B9C0D1E2F3 = {isa = XCSwiftPackageProductDependency; productName = GWYogaKitDSL; package = 011B82C029B392CF0E363268; };
+B2C3D4E5F6A7B8C9D0E1F2A3 = {isa = XCSwiftPackageProductDependency; productName = GWYogaKitHTML; package = 011B82C029B392CF0E363268; };
+C2D3E4F5A6B7C8D9E0F1A2B3 = {isa = XCSwiftPackageProductDependency; productName = GWYogaKitAnimation; package = 011B82C029B392CF0E363268; };
+D2E3F4A5B6C7D8E9F0A1B2C3 = {isa = XCSwiftPackageProductDependency; productName = GWYogaKitLayoutCache; package = 011B82C029B392CF0E363268; };
+E2F3A4B5C6D7E8F9A0B1C2D3 = {isa = XCSwiftPackageProductDependency; productName = GWYogaKitStylesheet; package = 011B82C029B392CF0E363268; };
 /* End XCSwiftPackageProductDependency section */
+/* ObjC bridge product dependencies */
+B000000000000000000001 = {isa = XCSwiftPackageProductDependency; productName = GWYogaKitObjCCore; package = 011B82C029B392CF0E363268; };
+B000000000000000000002 = {isa = XCSwiftPackageProductDependency; productName = GWYogaKitDSLObjCCore; package = 011B82C029B392CF0E363268; };
+B000000000000000000003 = {isa = XCSwiftPackageProductDependency; productName = GWYogaKitHTMLObjCCore; package = 011B82C029B392CF0E363268; };
+B000000000000000000004 = {isa = XCSwiftPackageProductDependency; productName = GWYogaKitAnimationObjCCore; package = 011B82C029B392CF0E363268; };
+B000000000000000000005 = {isa = XCSwiftPackageProductDependency; productName = GWYogaKitLayoutCacheObjCCore; package = 011B82C029B392CF0E363268; };
+B000000000000000000006 = {isa = XCSwiftPackageProductDependency; productName = GWYogaKitStylesheetObjCCore; package = 011B82C029B392CF0E363268; };
+/* End XCSwiftPackageProductDependency section for ObjC bridge */
 };
 rootObject = 63A9F0EA7BB98050796B649E;
 }

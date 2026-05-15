@@ -3,6 +3,7 @@ import CoreGraphics
 import GWYoga
 import GWYogaKit
 import GWYogaKitLayoutCache
+import GWYogaKitObjCCore
 #if os(iOS)
 import UIKit
 #endif
@@ -41,5 +42,14 @@ extension YogaProperties {
     /// ObjC-accessible pre-layout measurement.
     @objc public var preLayout: YGKPreLayout {
         YGKPreLayout(swift: measurement)
+    }
+}
+
+// MARK: - YGKLayoutProperties extension
+
+extension YGKLayoutProperties {
+    /// Pre-layout measurement.
+    @objc public var preLayout: YGKPreLayout {
+        yoga.preLayout
     }
 }

@@ -1,6 +1,7 @@
 import Foundation
 import GWYoga
 import GWYogaKit
+import GWYogaKitObjCCore
 #if os(iOS)
 import UIKit
 
@@ -11,29 +12,29 @@ import UIKit
 public class YGKHTMLFactory: NSObject {
 
     /// Create a div container.
-    @objc public static func makeDiv() -> YogaLayoutView {
-        YogaLayoutView(frame: .zero)
+    @objc public static func makeDiv() -> YGKLayoutView {
+        YGKLayoutView(frame: .zero)
     }
 
     /// Create a section container.
-    @objc public static func makeSection() -> YogaLayoutView {
-        let v = YogaLayoutView(frame: .zero)
-        v.yoga.flexDirection = .column
+    @objc public static func makeSection() -> YGKLayoutView {
+        let v = YGKLayoutView(frame: .zero)
+        v.yogaProperties.flexDirection = YGKFlexDirection.column
         return v
     }
 
     /// Create a row container (flexDirection: row).
-    @objc public static func makeRow() -> YogaLayoutView {
-        let v = YogaLayoutView(frame: .zero)
-        v.yoga.flexDirection = .row
+    @objc public static func makeRow() -> YGKLayoutView {
+        let v = YGKLayoutView(frame: .zero)
+        v.yogaProperties.flexDirection = YGKFlexDirection.row
         return v
     }
 
     /// Create a header container.
-    @objc public static func makeHeader() -> YogaLayoutView {
-        let v = YogaLayoutView(frame: .zero)
-        v.yoga.flexDirection = .row
-        v.yoga.alignItems = .center
+    @objc public static func makeHeader() -> YGKLayoutView {
+        let v = YGKLayoutView(frame: .zero)
+        v.yogaProperties.flexDirection = YGKFlexDirection.row
+        v.yogaProperties.alignItems = .center
         return v
     }
 

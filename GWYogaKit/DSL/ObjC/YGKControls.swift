@@ -1,6 +1,7 @@
 import Foundation
 import GWYoga
 import GWYogaKit
+import GWYogaKitObjCCore
 #if os(iOS)
 import UIKit
 
@@ -33,7 +34,7 @@ open class YGKText: UILabel {
 /// Yoga layout image view.
 @objc(YGKImage)
 open class YGKImage: UIImageView {
-    @objc public init(image: UIImage?) {
+    override public init(image: UIImage?) {
         super.init(frame: .zero)
         self.image = image
         self.contentMode = .scaleAspectFit

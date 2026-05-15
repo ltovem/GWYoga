@@ -11,6 +11,12 @@ class DemoTabBarController: UITabBarController {
             ("Gap", "05.circle", GapDemoViewController()),
             ("Aspect", "06.circle", AspectRatioDemoViewController()),
             ("综合", "star", CompositeDemoViewController()),
+            ("YogaKit", "square.stack.3d.up", YogaKitDemoViewController()),
+            ("DSL", "rectangle.3.group", DSLDemoViewController()),
+            ("HTML", "textformat.alt", HTMLDemoViewController()),
+            ("Animation", "play.circle", AnimationDemoViewController()),
+            ("Stylesheet", "doc.text", StylesheetDemoViewController()),
+            ("Cache", "bolt.circle", LayoutCacheDemoViewController()),
         ]
         viewControllers = demos.map { t, i, vc in
             vc.tabBarItem = UITabBarItem(title: t, image: UIImage(systemName: i), tag: 0)

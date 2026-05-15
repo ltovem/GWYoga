@@ -76,7 +76,7 @@ open class YogaLayoutView: YKLView {
     // MARK: - Yoga 布局
 
     /// 手动触发布局计算。通常不需要直接调用，除非 yogaLayoutMode 为 .manual。
-    open func performYogaLayout() {
+    @objc open func performYogaLayout() {
         if yogaLayoutMode == .auto && !yoga.yogaNode.isDirty {
             return
         }
@@ -106,20 +106,21 @@ open class YogaLayoutView: YKLView {
             let subview = subviewList[index]
 
             let result = childNode.layoutResult
+            var frame = CGRect(
+                x: CGFloat(result.left),
+                y: CGFloat(result.top),
+                width: CGFloat(result.width),
+                height: CGFloat(result.height)
+            )
+            // NaN 保护
+            if frame.origin.x.isNaN || frame.origin.y.isNaN ||
+               frame.size.width.isNaN || frame.size.height.isNaN {
+                frame = .zero
+            }
             #if os(iOS)
-            subview.frame = CGRect(
-                x: CGFloat(result.left),
-                y: CGFloat(result.top),
-                width: CGFloat(result.width),
-                height: CGFloat(result.height)
-            )
+            subview.frame = frame
             #elseif os(macOS)
-            subview.frame = CGRect(
-                x: CGFloat(result.left),
-                y: CGFloat(result.top),
-                width: CGFloat(result.width),
-                height: CGFloat(result.height)
-            )
+            subview.frame = frame
             #endif
 
             // 递归应用子视图的子视图

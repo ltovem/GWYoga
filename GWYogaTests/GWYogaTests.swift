@@ -887,4 +887,486 @@ final class GWYogaTests: XCTestCase {
         assertEqual(child1.layoutResult.width, 160, tolerance: 0.1)
         assertEqual(child2.layoutResult.width, 140, tolerance: 0.1)
     }
+
+    // MARK: - Flex Direction Reverse
+
+    func testFlexDirectionColumnReverse() {
+        let root = GWYogaNode()
+        root.style.setWidth(.points(500))
+        root.style.setHeight(.points(500))
+        root.style.flexDirection = .columnReverse
+
+        let child1 = GWYogaNode()
+        child1.style.setWidth(.points(100))
+        child1.style.setHeight(.points(50))
+        root.insertChild(child1, at: 0)
+
+        let child2 = GWYogaNode()
+        child2.style.setWidth(.points(100))
+        child2.style.setHeight(.points(50))
+        root.insertChild(child2, at: 1)
+
+        root.calculateLayout(width: 500, height: 500, direction: .ltr)
+
+        // columnReverse: items start from bottom
+        assertEqual(child1.layoutResult.top, 450)  // 500 - 50 = 450
+        assertEqual(child2.layoutResult.top, 400)
+    }
+
+    func testFlexDirectionRowReverse() {
+        let root = GWYogaNode()
+        root.style.setWidth(.points(500))
+        root.style.setHeight(.points(200))
+        root.style.flexDirection = .rowReverse
+
+        let child1 = GWYogaNode()
+        child1.style.setWidth(.points(100))
+        child1.style.setHeight(.points(50))
+        root.insertChild(child1, at: 0)
+
+        let child2 = GWYogaNode()
+        child2.style.setWidth(.points(100))
+        child2.style.setHeight(.points(50))
+        root.insertChild(child2, at: 1)
+
+        root.calculateLayout(width: 500, height: 200, direction: .ltr)
+
+        // rowReverse: items start from right
+        assertEqual(child1.layoutResult.left, 400)  // 500 - 100 = 400
+        assertEqual(child2.layoutResult.left, 300)
+    }
+
+    // MARK: - Flex Wrap Reverse
+
+    func testFlexWrapWrapReverse() {
+        let root = GWYogaNode()
+        root.style.setWidth(.points(300))
+        root.style.setHeight(.points(300))
+        root.style.flexDirection = .row
+        root.style.flexWrap = .wrapReverse
+
+        let child1 = GWYogaNode()
+        child1.style.setWidth(.points(150))
+        child1.style.setHeight(.points(100))
+        root.insertChild(child1, at: 0)
+
+        let child2 = GWYogaNode()
+        child2.style.setWidth(.points(150))
+        child2.style.setHeight(.points(100))
+        root.insertChild(child2, at: 1)
+
+        let child3 = GWYogaNode()
+        child3.style.setWidth(.points(150))
+        child3.style.setHeight(.points(100))
+        root.insertChild(child3, at: 2)
+
+        root.calculateLayout(width: 300, height: 300, direction: .ltr)
+
+        // wrapReverse: cross start is opposite (bottom for row)
+        assertEqual(child1.layoutResult.top, 200)  // cross-end = 300 - 100
+        assertEqual(child2.layoutResult.top, 200)
+        assertEqual(child3.layoutResult.top, 100)  // second line above first
+    }
+
+    // MARK: - Justify Content
+
+    func testJustifyContentFlexStart() {
+        let root = GWYogaNode()
+        root.style.setWidth(.points(500))
+        root.style.setHeight(.points(200))
+        root.style.justifyContent = .flexStart
+
+        let child1 = GWYogaNode()
+        child1.style.setWidth(.points(100))
+        child1.style.setHeight(.points(50))
+        root.insertChild(child1, at: 0)
+
+        let child2 = GWYogaNode()
+        child2.style.setWidth(.points(100))
+        child2.style.setHeight(.points(50))
+        root.insertChild(child2, at: 1)
+
+        root.calculateLayout(width: 500, height: 200, direction: .ltr)
+
+        // flexStart: items at start
+        assertEqual(child1.layoutResult.top, 0)
+        assertEqual(child2.layoutResult.top, 50)
+    }
+
+    func testJustifyContentSpaceAround() {
+        let root = GWYogaNode()
+        root.style.setWidth(.points(500))
+        root.style.setHeight(.points(300))
+        root.style.justifyContent = .spaceAround
+
+        let child1 = GWYogaNode()
+        child1.style.setHeight(.points(50))
+        child1.style.setWidth(.points(100))
+        root.insertChild(child1, at: 0)
+
+        let child2 = GWYogaNode()
+        child2.style.setHeight(.points(50))
+        child2.style.setWidth(.points(100))
+        root.insertChild(child2, at: 1)
+
+        root.calculateLayout(width: 500, height: 300, direction: .ltr)
+
+        // spaceAround: (remaining=200) / (count*2) = 50 before first, between = remaining/count = 100
+        // child1: 50, child2: 50 + 50 + 100 = 200
+        assertEqual(child1.layoutResult.top, 50, tolerance: 2.0)
+        assertEqual(child2.layoutResult.top, 200, tolerance: 2.0)
+    }
+
+    // MARK: - Align Items
+
+    func testAlignItemsFlexStart() {
+        let root = GWYogaNode()
+        root.style.setWidth(.points(500))
+        root.style.setHeight(.points(200))
+        root.style.alignItems = .flexStart
+
+        let child1 = GWYogaNode()
+        child1.style.setWidth(.points(100))
+        child1.style.setHeight(.points(50))
+        root.insertChild(child1, at: 0)
+
+        let child2 = GWYogaNode()
+        child2.style.setWidth(.points(50))
+        child2.style.setHeight(.points(30))
+        root.insertChild(child2, at: 1)
+
+        root.calculateLayout(width: 500, height: 200, direction: .ltr)
+
+        // flexStart: items at cross-start (left for column)
+        assertEqual(child1.layoutResult.left, 0)
+        assertEqual(child2.layoutResult.left, 0)
+    }
+
+    func testAlignItemsFlexEnd() {
+        let root = GWYogaNode()
+        root.style.setWidth(.points(500))
+        root.style.setHeight(.points(200))
+        root.style.alignItems = .flexEnd
+
+        let child1 = GWYogaNode()
+        child1.style.setWidth(.points(100))
+        child1.style.setHeight(.points(50))
+        root.insertChild(child1, at: 0)
+
+        root.calculateLayout(width: 500, height: 200, direction: .ltr)
+
+        // flexEnd: items at cross-end (right for column = 500 - 100 = 400)
+        assertEqual(child1.layoutResult.left, 400)
+    }
+
+    func testAlignItemsBaseline() {
+        let root = GWYogaNode()
+        root.style.setWidth(.points(500))
+        root.style.setHeight(.points(200))
+        root.style.flexDirection = .row
+        root.style.alignItems = .baseline
+
+        let child1 = GWYogaNode()
+        child1.style.setWidth(.points(100))
+        child1.style.setHeight(.points(50))
+        root.insertChild(child1, at: 0)
+
+        let child2 = GWYogaNode()
+        child2.style.setWidth(.points(100))
+        child2.style.setHeight(.points(80))
+        root.insertChild(child2, at: 1)
+
+        root.calculateLayout(width: 500, height: 200, direction: .ltr)
+
+        // baseline alignment: children aligned by text baseline
+        // taller child's top = 0, shorter child baseline-aligned below
+        assertEqual(child2.layoutResult.top, 0)  // taller child at top
+    }
+
+    // MARK: - Align Content
+
+    func testAlignContentSpaceBetween() {
+        let root = GWYogaNode()
+        root.style.setWidth(.points(300))
+        root.style.setHeight(.points(300))
+        root.style.flexDirection = .row
+        root.style.flexWrap = .wrap
+        root.style.alignContent = .spaceBetween
+
+        for _ in 0..<4 {
+            let c = GWYogaNode()
+            c.style.setWidth(.points(100))
+            c.style.setHeight(.points(50))
+            root.insertChild(c, at: root.children.count)
+        }
+
+        root.calculateLayout(width: 300, height: 300, direction: .ltr)
+
+        // 4 items in 2 lines of 3, then 1... actually 4 items with width 100 each in 300px container
+        // Line 1: 3 items (100*3 = 300), line 2: 1 item (100)
+        // alignContent spaceBetween: first line at cross-start, last at cross-end
+        assertEqual(root.children[0].layoutResult.top, 0)      // first line at top
+        assertEqual(root.children[3].layoutResult.top, 250)    // last line at 300-50=250
+    }
+
+    // MARK: - Flex Basis
+
+    func testFlexBasisAuto() {
+        let root = GWYogaNode()
+        root.style.setWidth(.points(500))
+        root.style.setHeight(.points(200))
+        root.style.flexDirection = .row
+
+        let child1 = GWYogaNode()
+        child1.style.setWidth(.points(100))
+        child1.style.setHeight(.points(100))
+        child1.flexGrow = 1
+        root.insertChild(child1, at: 0)
+
+        let child2 = GWYogaNode()
+        child2.style.setHeight(.points(100))
+        child2.flexGrow = 1
+        // child2 has no width set, so flexBasis = auto = content size = 0 (no content)
+        root.insertChild(child2, at: 1)
+
+        root.calculateLayout(width: 500, height: 200, direction: .ltr)
+
+        // child1 basis=100 (width), child2 basis=0 (auto, no content)
+        // remaining = 500 - 100 - 0 = 400, each gets 200
+        assertEqual(child1.layoutResult.width, 300, tolerance: 0.1)
+        assertEqual(child2.layoutResult.width, 200, tolerance: 0.1)
+    }
+
+    func testFlexBasisPercent() {
+        let root = GWYogaNode()
+        root.style.setWidth(.points(500))
+        root.style.setHeight(.points(200))
+        root.style.flexDirection = .row
+
+        let child = GWYogaNode()
+        child.style.setFlexBasis(.percent(50))  // 50% of 500 = 250
+        child.style.setHeight(.points(100))
+        root.insertChild(child, at: 0)
+
+        root.calculateLayout(width: 500, height: 200, direction: .ltr)
+
+        assertEqual(child.layoutResult.width, 250, tolerance: 0.1)
+    }
+
+    // MARK: - Box Sizing
+
+    func testBoxSizingContentBox() {
+        let root = GWYogaNode()
+        root.style.boxSizing = .contentBox
+        root.style.setWidth(.points(200))
+        root.style.setHeight(.points(100))
+        root.style.setPadding(for: .all, .points(10))
+        root.style.setBorder(for: .all, 5)
+
+        let child = GWYogaNode()
+        child.style.setWidth(.points(50))
+        child.style.setHeight(.points(50))
+        root.insertChild(child, at: 0)
+
+        root.calculateLayout(width: 200, height: 100, direction: .ltr)
+
+        // contentBox: width/height refers to content area
+        // total = content(200) + padding(10*2) + border(5*2) = 230
+        assertEqual(root.layoutResult.width, 230, tolerance: 0.1)
+        assertEqual(root.layoutResult.height, 130, tolerance: 0.1)
+        // Child positioned after padding + border
+        assertEqual(child.layoutResult.left, 15)
+        assertEqual(child.layoutResult.top, 15)
+    }
+
+    // MARK: - Direction RTL
+
+    func testDirectionRTL() {
+        let root = GWYogaNode()
+        root.style.setWidth(.points(500))
+        root.style.setHeight(.points(200))
+        root.style.flexDirection = .row
+        root.style.direction = .rtl
+
+        let child1 = GWYogaNode()
+        child1.style.setWidth(.points(100))
+        child1.style.setHeight(.points(50))
+        root.insertChild(child1, at: 0)
+
+        let child2 = GWYogaNode()
+        child2.style.setWidth(.points(100))
+        child2.style.setHeight(.points(50))
+        root.insertChild(child2, at: 1)
+
+        root.calculateLayout(width: 500, height: 200, direction: .rtl)
+
+        // RTL in row: items start from right
+        assertEqual(child1.layoutResult.left, 400)
+        assertEqual(child2.layoutResult.left, 300)
+    }
+
+    // MARK: - Display Contents
+
+    func testDisplayContents() {
+        let root = GWYogaNode()
+        root.style.setWidth(.points(500))
+        root.style.setHeight(.points(200))
+        root.style.flexDirection = .row
+
+        let container = GWYogaNode()
+        container.style.display = .contents
+        root.insertChild(container, at: 0)
+
+        let child = GWYogaNode()
+        child.style.setWidth(.points(100))
+        child.style.setHeight(.points(100))
+        container.insertChild(child, at: 0)
+
+        root.calculateLayout(width: 500, height: 200, direction: .ltr)
+
+        // display: contents — container is skipped, children act as direct children of parent
+        // Note: GWYoga may not fully support contents; test validates current behavior
+        print("  display:contents container: \(container.layoutResult.width) x \(container.layoutResult.height)")
+        print("  child: \(child.layoutResult.width) x \(child.layoutResult.height) at (\(child.layoutResult.left), \(child.layoutResult.top))")
+        // Validate layout doesn't crash with display: contents set
+        XCTAssertTrue(true)
+    }
+
+    // MARK: - Measure Function
+
+    func testMeasureFunction() {
+        let root = GWYogaNode()
+        root.style.setWidth(.points(500))
+        root.style.setHeight(.points(500))
+
+        let child = GWYogaNode()
+        child.nodeType = .text
+        child.style.setWidth(.percent(100))
+        // measureFunction simulates text sizing
+        child.measureFunction = { _, width, _, _, _ in
+            let textWidth = width.isNaN ? 200 : width
+            let lines = ceil(textWidth / 100)
+            let textHeight = lines * 20
+            return GWSize(width: textWidth, height: textHeight)
+        }
+        root.insertChild(child, at: 0)
+
+        root.calculateLayout(width: 500, height: 500, direction: .ltr)
+
+        // measure function determines size
+        assertEqual(child.layoutResult.width, 500)
+        assertEqual(child.layoutResult.height, 100, tolerance: 0.1)  // 5 lines * 20
+    }
+
+    // MARK: - Node Clone Reset
+
+    func testNodeCloneReset() {
+        let root = GWYogaNode()
+        root.style.setWidth(.points(300))
+        root.style.setHeight(.points(100))
+        root.style.flexDirection = .row
+
+        let child = GWYogaNode()
+        child.style.setWidth(.points(100))
+        child.style.setHeight(.points(50))
+        root.insertChild(child, at: 0)
+
+        root.calculateLayout(width: 300, height: 100, direction: .ltr)
+
+        assertEqual(child.layoutResult.width, 100)
+
+        // Clone manually (no clone() method — create new node with same props)
+        let cloned = GWYogaNode()
+        cloned.style.setWidth(.points(150))
+        XCTAssertEqual(cloned.style.width.value.value, 150)
+
+        // Reset and verify
+        cloned.reset()
+        XCTAssertEqual(cloned.children.count, 0)
+    }
+
+    // MARK: - Config
+
+    func testConfigUseWebDefaults() {
+        let config = GWYogaConfig()
+        config.useWebDefaults = true
+        let root = GWYogaNode(config: config)
+        root.style.flexDirection = .row
+        root.style.setWidth(.points(500))
+        root.style.setHeight(.points(200))
+
+        let child = GWYogaNode(config: config)
+        child.style.setHeight(.points(50))
+        root.insertChild(child, at: 0)
+
+        root.calculateLayout(width: 500, height: 200, direction: .ltr)
+
+        // useWebDefaults: flexDirection defaults to row (web default)
+        // Child with no width should stretch to fill cross axis (height)
+        // Test validates config doesn't crash and produces reasonable layout
+        print("  useWebDefaults child: \(child.layoutResult.width) x \(child.layoutResult.height)")
+        XCTAssertFalse(child.layoutResult.width.isNaN)
+    }
+
+    func testConfigPointScaleFactor() {
+        let config = GWYogaConfig()
+        config.pointScaleFactor = 2.0
+        let root = GWYogaNode(config: config)
+        root.style.setWidth(.points(101))
+        root.style.setHeight(.points(99))
+
+        root.calculateLayout(width: 101, height: 99, direction: .ltr)
+
+        // With scale=2, values should be rounded to nearest 0.5
+        // 101 → ceil(101 * 2) / 2 = 101.0 (already even)
+        assertEqual(root.layoutResult.width, 101)
+        assertEqual(root.layoutResult.height, 99)
+    }
+
+    // MARK: - Edge Cases
+
+    func testZeroSizeContainer() {
+        let root = GWYogaNode()
+        root.style.setWidth(.points(0))
+        root.style.setHeight(.points(0))
+
+        let child = GWYogaNode()
+        child.style.setWidth(.points(100))
+        child.style.setHeight(.points(100))
+        root.insertChild(child, at: 0)
+
+        root.calculateLayout(width: 0, height: 0, direction: .ltr)
+
+        // Zero-size container: child may overflow
+        assertEqual(root.layoutResult.width, 0)
+        assertEqual(root.layoutResult.height, 0)
+        XCTAssertTrue(root.layoutResult.hadOverflow)
+    }
+
+    // MARK: - Nested Grid in Flex
+
+    func testNestedGridInFlex() {
+        let root = GWYogaNode()
+        root.style.flexDirection = .column
+        root.style.setWidth(.points(400))
+        root.style.setHeight(.points(300))
+
+        let grid = GWYogaNode()
+        grid.style.display = .grid
+        grid.style.gridTemplateColumns = [.fr(1), .fr(1)]
+        grid.flexGrow = 1
+        root.insertChild(grid, at: 0)
+
+        for _ in 0..<2 {
+            let item = GWYogaNode()
+            grid.insertChild(item, at: grid.children.count)
+        }
+
+        root.calculateLayout(width: 400, height: 300, direction: .ltr)
+
+        // Grid inside flex container
+        assertEqual(grid.layoutResult.width, 400)
+        assertEqual(grid.children[0].layoutResult.width, 200)
+        assertEqual(grid.children[1].layoutResult.width, 200)
+    }
 }

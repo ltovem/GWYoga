@@ -5,6 +5,7 @@ import GWYoga
 // ContentView — 主导航
 // ============================================================
 
+@available(macOS 11.0, *)
 struct ContentView: View {
     @State private var selectedDemo: DemoKind = .flexbox
 
@@ -43,6 +44,7 @@ struct ContentView: View {
 // DemoKind — 演示分类
 // ============================================================
 
+@available(macOS 11.0, *)
 enum DemoKind: String, CaseIterable {
     case flexbox
     case grid

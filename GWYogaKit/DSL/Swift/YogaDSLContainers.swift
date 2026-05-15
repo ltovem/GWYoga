@@ -1,4 +1,5 @@
 import Foundation
+import GWYoga
 import GWYogaKit
 
 #if os(iOS)

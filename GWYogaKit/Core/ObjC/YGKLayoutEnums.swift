@@ -11,11 +11,11 @@ import GWYogaKit
     case row = 2
     case rowReverse = 3
 
-    internal var swiftValue: GWFlexDirection {
+    public var swiftValue: GWFlexDirection {
         GWFlexDirection(rawValue: rawValue) ?? .column
     }
 
-    internal static func from(_ value: GWFlexDirection) -> YGKFlexDirection {
+    public static func from(_ value: GWFlexDirection) -> YGKFlexDirection {
         YGKFlexDirection(rawValue: value.rawValue) ?? .column
     }
 }
@@ -34,11 +34,11 @@ import GWYogaKit
     case start = 8
     case end = 9
 
-    internal var swiftValue: GWJustify {
+    public var swiftValue: GWJustify {
         GWJustify(rawValue: rawValue) ?? .flexStart
     }
 
-    internal static func from(_ value: GWJustify) -> YGKJustify {
+    public static func from(_ value: GWJustify) -> YGKJustify {
         YGKJustify(rawValue: value.rawValue) ?? .flexStart
     }
 }
@@ -56,11 +56,11 @@ import GWYogaKit
     case spaceAround = 7
     case spaceEvenly = 8
 
-    internal var swiftValue: GWAlign {
+    public var swiftValue: GWAlign {
         GWAlign(rawValue: rawValue) ?? .stretch
     }
 
-    internal static func from(_ value: GWAlign) -> YGKAlign {
+    public static func from(_ value: GWAlign) -> YGKAlign {
         YGKAlign(rawValue: value.rawValue) ?? .stretch
     }
 }
@@ -72,11 +72,11 @@ import GWYogaKit
     case relative = 1
     case absolute = 2
 
-    internal var swiftValue: GWPositionType {
+    public var swiftValue: GWPositionType {
         GWPositionType(rawValue: rawValue) ?? .relative
     }
 
-    internal static func from(_ value: GWPositionType) -> YGKPositionType {
+    public static func from(_ value: GWPositionType) -> YGKPositionType {
         YGKPositionType(rawValue: value.rawValue) ?? .relative
     }
 }
@@ -89,11 +89,11 @@ import GWYogaKit
     case contents = 2
     case grid = 3
 
-    internal var swiftValue: GWDisplay {
+    public var swiftValue: GWDisplay {
         GWDisplay(rawValue: rawValue) ?? .flex
     }
 
-    internal static func from(_ value: GWDisplay) -> YGKDisplay {
+    public static func from(_ value: GWDisplay) -> YGKDisplay {
         YGKDisplay(rawValue: value.rawValue) ?? .flex
     }
 }
@@ -105,11 +105,11 @@ import GWYogaKit
     case hidden = 1
     case scroll = 2
 
-    internal var swiftValue: GWOverflow {
+    public var swiftValue: GWOverflow {
         GWOverflow(rawValue: rawValue) ?? .visible
     }
 
-    internal static func from(_ value: GWOverflow) -> YGKOverflow {
+    public static func from(_ value: GWOverflow) -> YGKOverflow {
         YGKOverflow(rawValue: value.rawValue) ?? .visible
     }
 }
@@ -121,11 +121,11 @@ import GWYogaKit
     case wrap = 1
     case wrapReverse = 2
 
-    internal var swiftValue: GWWrap {
+    public var swiftValue: GWWrap {
         GWWrap(rawValue: rawValue) ?? .noWrap
     }
 
-    internal static func from(_ value: GWWrap) -> YGKWrap {
+    public static func from(_ value: GWWrap) -> YGKWrap {
         YGKWrap(rawValue: value.rawValue) ?? .noWrap
     }
 }
@@ -143,7 +143,7 @@ import GWYogaKit
     case vertical = 7
     case all = 8
 
-    internal var swiftValue: GWEdge {
+    public var swiftValue: GWEdge {
         GWEdge(rawValue: rawValue) ?? .all
     }
 }
@@ -154,11 +154,11 @@ import GWYogaKit
     case borderBox = 0
     case contentBox = 1
 
-    internal var swiftValue: GWBoxSizing {
+    public var swiftValue: GWBoxSizing {
         GWBoxSizing(rawValue: rawValue) ?? .borderBox
     }
 
-    internal static func from(_ value: GWBoxSizing) -> YGKBoxSizing {
+    public static func from(_ value: GWBoxSizing) -> YGKBoxSizing {
         YGKBoxSizing(rawValue: value.rawValue) ?? .borderBox
     }
 }
@@ -174,11 +174,11 @@ import GWYogaKit
     case fitContent = 5
     case stretch = 6
 
-    internal var swiftValue: GWUnit {
+    public var swiftValue: GWUnit {
         GWUnit(rawValue: rawValue) ?? .undefined
     }
 
-    internal static func from(_ value: GWUnit) -> YGKUnit {
+    public static func from(_ value: GWUnit) -> YGKUnit {
         YGKUnit(rawValue: value.rawValue) ?? .undefined
     }
 }
@@ -190,11 +190,11 @@ import GWYogaKit
     case ltr = 1
     case rtl = 2
 
-    internal var swiftValue: GWDirection {
+    public var swiftValue: GWDirection {
         GWDirection(rawValue: rawValue) ?? .inherit
     }
 
-    internal static func from(_ value: GWDirection) -> YGKDirection {
+    public static func from(_ value: GWDirection) -> YGKDirection {
         YGKDirection(rawValue: value.rawValue) ?? .inherit
     }
 }
@@ -206,7 +206,7 @@ import GWYogaKit
     case row = 1
     case all = 2
 
-    internal var swiftValue: GWGutter {
+    public var swiftValue: GWGutter {
         GWGutter(rawValue: rawValue) ?? .row
     }
 }
@@ -217,11 +217,11 @@ import GWYogaKit
     case `default` = 0
     case text = 1
 
-    internal var swiftValue: GWNodeType {
+    public var swiftValue: GWNodeType {
         GWNodeType(rawValue: rawValue) ?? .default
     }
 
-    internal static func from(_ value: GWNodeType) -> YGKNodeType {
+    public static func from(_ value: GWNodeType) -> YGKNodeType {
         YGKNodeType(rawValue: value.rawValue) ?? .default
     }
 }
@@ -242,11 +242,11 @@ import GWYogaKit
     case integer = 1
     case span = 2
 
-    internal var swiftValue: GWGridLineType {
+    public var swiftValue: GWGridLineType {
         GWGridLineType(rawValue: rawValue) ?? .auto
     }
 
-    internal static func from(_ value: GWGridLineType) -> YGKGridLineType {
+    public static func from(_ value: GWGridLineType) -> YGKGridLineType {
         YGKGridLineType(rawValue: value.rawValue) ?? .auto
     }
 }
