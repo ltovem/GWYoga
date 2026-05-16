@@ -16,3 +16,20 @@ DerivedData/
 *.dSYM
 Pods/
 *.xcworkspace/xcshareddata/
+
+# Local planning documents — not for GitHub
+API_OPTIMIZATION_PLAN.md
+API_REFERENCE.md
+DEMO_TASK_PLAN.md
+REORG_TASK_PLAN.md
+TASK_PLAN.md
+HOW_TO_USE_CLAUDE.md
+FEATURES.md
+TestPlan.md
+GWYogaKit_GUIDE.md
+gen_demos.py
+gen_demos2.py
+gen_demos_objc.py
+generate_demo_project.py
+build_and_run_demo.sh
+GWYoga/API_REFERENCE.md

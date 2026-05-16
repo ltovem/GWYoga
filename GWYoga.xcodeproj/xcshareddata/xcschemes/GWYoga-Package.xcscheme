@@ -28,20 +28,6 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "gwyoga::GWYogaDemo"
-               BuildableName = "GWYogaDemo"
-               BlueprintName = "GWYogaDemo"
-               ReferencedContainer = "container:GWYoga.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "gwyoga::GWYogaKit"
                BuildableName = "GWYogaKit.framework"
                BlueprintName = "GWYogaKit"
@@ -101,34 +87,6 @@
                BlueprintIdentifier = "gwyoga::GWYogaKitDSLObjCCore"
                BuildableName = "GWYogaKitDSLObjCCore.framework"
                BlueprintName = "GWYogaKitDSLObjCCore"
-               ReferencedContainer = "container:GWYoga.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "gwyoga::GWYogaKitHTML"
-               BuildableName = "GWYogaKitHTML.framework"
-               BlueprintName = "GWYogaKitHTML"
-               ReferencedContainer = "container:GWYoga.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "gwyoga::GWYogaKitHTMLObjCCore"
-               BuildableName = "GWYogaKitHTMLObjCCore.framework"
-               BlueprintName = "GWYogaKitHTMLObjCCore"
                ReferencedContainer = "container:GWYoga.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -214,16 +172,6 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "gwyoga::GWYogaAPIDemo"
-               BuildableName = "GWYogaAPIDemo.xctest"
-               BlueprintName = "GWYogaAPIDemo"
-               ReferencedContainer = "container:GWYoga.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "gwyoga::GWYogaKitAnimationTests"
                BuildableName = "GWYogaKitAnimationTests.xctest"
                BlueprintName = "GWYogaKitAnimationTests"
@@ -237,16 +185,6 @@
                BlueprintIdentifier = "gwyoga::GWYogaKitDSLTests"
                BuildableName = "GWYogaKitDSLTests.xctest"
                BlueprintName = "GWYogaKitDSLTests"
-               ReferencedContainer = "container:GWYoga.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "gwyoga::GWYogaKitHTMLTests"
-               BuildableName = "GWYogaKitHTMLTests.xctest"
-               BlueprintName = "GWYogaKitHTMLTests"
                ReferencedContainer = "container:GWYoga.xcodeproj">
             </BuildableReference>
          </TestableReference>
