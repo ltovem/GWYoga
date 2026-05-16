@@ -96,6 +96,21 @@ public final class YogaProperties {
     /// 上次布局结果详情
     public var layoutResult: GWLayoutResult { node.layoutResult }
 
+    // MARK: - Safe Area
+
+    /// Safe area 处理策略，默认 .manual（不自动处理）
+    #if os(iOS) || os(tvOS)
+    public var safeAreaMode: YogaSafeAreaMode {
+        get {
+            _safeAreaMode ?? .manual
+        }
+        set {
+            _safeAreaMode = newValue
+        }
+    }
+    private var _safeAreaMode: YogaSafeAreaMode?
+    #endif
+
     // MARK: - 自动测量设置
 
     private func setupIntrinsicMeasurement() {

@@ -112,23 +112,61 @@ open class YogaLayoutView: YKLView {
 
 /// 对任意视图执行 Yoga 布局计算并应用 frame 到子视图。
 internal func _applyYogaLayout(to view: YKLView) {
-    // 确保节点树与视图树一致
     YogaNodeManager.rebuildNodeTree(for: view)
-
-    // 计算布局
     let rootNode = view.yoga.node
+
+    var offsetX: CGFloat = 0
+    var offsetY: CGFloat = 0
+    var layoutWidth = view.bounds.width
+    var layoutHeight = view.bounds.height
+
+    #if os(iOS) || os(tvOS)
+    let mode = view.yoga.safeAreaMode
+    let insets = view.safeAreaInsets
+
+    switch mode {
+    case .auto:
+        offsetX = insets.left
+        offsetY = insets.top
+        layoutWidth = max(0, view.bounds.width - insets.left - insets.right)
+        layoutHeight = max(0, view.bounds.height - insets.top - insets.bottom)
+    case .padding:
+        let style = view.yoga.node.style
+        let savedLeft = GWValue(from: style.padding[GWEdge.left.rawValue])
+        let savedRight = GWValue(from: style.padding[GWEdge.right.rawValue])
+        let savedTop = GWValue(from: style.padding[GWEdge.top.rawValue])
+        let savedBottom = GWValue(from: style.padding[GWEdge.bottom.rawValue])
+        let leftVal = savedLeft.unit == .undefined ? 0 : savedLeft.value
+        let rightVal = savedRight.unit == .undefined ? 0 : savedRight.value
+        let topVal = savedTop.unit == .undefined ? 0 : savedTop.value
+        let bottomVal = savedBottom.unit == .undefined ? 0 : savedBottom.value
+        view.yoga.setPadding(.left, .points(Float(insets.left) + leftVal))
+        view.yoga.setPadding(.right, .points(Float(insets.right) + rightVal))
+        view.yoga.setPadding(.top, .points(Float(insets.top) + topVal))
+        view.yoga.setPadding(.bottom, .points(Float(insets.bottom) + bottomVal))
+        defer {
+            view.yoga.setPadding(.left, savedLeft)
+            view.yoga.setPadding(.right, savedRight)
+            view.yoga.setPadding(.top, savedTop)
+            view.yoga.setPadding(.bottom, savedBottom)
+        }
+    case .manual:
+        break
+    }
+    #endif
+
     rootNode.calculateLayout(
-        width: Float(view.bounds.width),
-        height: Float(view.bounds.height),
+        width: Float(layoutWidth),
+        height: Float(layoutHeight),
         direction: .ltr
     )
 
-    // 应用结果到子视图
-    applyYogaFrames(parentView: view, parentNode: rootNode)
+    applyYogaFrames(parentView: view, parentNode: rootNode, offsetX: offsetX, offsetY: offsetY)
 }
 
 /// 递归应用布局结果到子视图 frame
-internal func applyYogaFrames(parentView: YKLView, parentNode: GWYogaNode) {
+internal func applyYogaFrames(parentView: YKLView, parentNode: GWYogaNode,
+                              offsetX: CGFloat = 0, offsetY: CGFloat = 0) {
     let children = parentNode.children
     let subviewList = parentView.subviews
 
@@ -138,8 +176,8 @@ internal func applyYogaFrames(parentView: YKLView, parentNode: GWYogaNode) {
 
         let result = childNode.layoutResult
         var frame = CGRect(
-            x: CGFloat(result.left),
-            y: CGFloat(result.top),
+            x: offsetX + CGFloat(result.left),
+            y: offsetY + CGFloat(result.top),
             width: CGFloat(result.width),
             height: CGFloat(result.height)
         )
@@ -150,8 +188,8 @@ internal func applyYogaFrames(parentView: YKLView, parentNode: GWYogaNode) {
         }
         subview.frame = frame
 
-        // 递归应用子视图的子视图
-        applyYogaFrames(parentView: subview, parentNode: childNode)
+        // 递归应用子视图的子视图（子视图 offset 归零，因为已经在 safe area 内部）
+        applyYogaFrames(parentView: subview, parentNode: childNode, offsetX: 0, offsetY: 0)
     }
 }
 

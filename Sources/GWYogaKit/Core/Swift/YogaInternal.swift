@@ -55,6 +55,18 @@ public enum YogaMeasurementMode: Sendable {
     }
 }
 
+// MARK: - YogaSafeAreaMode
+
+/// Safe area 处理策略
+public enum YogaSafeAreaMode: Sendable {
+    /// 自动避开 safe area。布局时自动将内容限制在 safe area 内
+    case auto
+    /// 将 safe area insets 映射到 padding，叠加到已有 padding 上
+    case padding
+    /// 不处理，手动控制（默认）
+    case manual
+}
+
 // MARK: - GWValue 便捷构造（internal → public 桥接）
 
 extension GWValue {
