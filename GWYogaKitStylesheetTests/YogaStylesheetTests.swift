@@ -495,3 +495,135 @@ final class YogaStylesheetTests: XCTestCase {
         XCTAssertEqual(sheet.rules[5].specificity, 1001)
     }
 }
+
+// MARK: - YogaProperties Stylesheet Extension Tests
+
+final class YogaPropertiesStylesheetTests: XCTestCase {
+
+    func testApplyStylesheetByID() throws {
+#if canImport(UIKit)
+        let view = UIView()
+        view.yoga.cssID = "main"
+        let css = "#main { width: 200px; height: 100px }"
+        let sheet = try YogaStylesheet.parse(css)
+        view.yoga.apply(stylesheet: sheet)
+
+        XCTAssertEqual(view.yoga.width, .points(200))
+        XCTAssertEqual(view.yoga.height, .points(100))
+#endif
+    }
+
+    func testApplyStylesheetByClass() throws {
+#if canImport(UIKit)
+        let view = UIView()
+        view.yoga.cssClass = "container"
+        let css = ".container { margin: 16px }"
+        let sheet = try YogaStylesheet.parse(css)
+        view.yoga.apply(stylesheet: sheet)
+
+        XCTAssertEqual(view.yoga[.all], GWValue(value: 16, unit: .point))
+#endif
+    }
+
+    func testApplyStylesheetNoMatch() throws {
+#if canImport(UIKit)
+        let view = UIView()
+        view.yoga.cssID = "header"
+        let css = "#footer { width: 300px }"
+        let sheet = try YogaStylesheet.parse(css)
+        view.yoga.apply(stylesheet: sheet)
+
+        // No matching rule, width should remain auto (default)
+        XCTAssertEqual(view.yoga.width, .auto)
+#endif
+    }
+
+    func testApplyStylesheetTypeSelector() throws {
+#if canImport(UIKit)
+        let view = UIView()
+        // cssTagName is on UIView via YogaStyleApplied protocol
+        view.cssTagName = "custom-view"
+        let css = "custom-view { flex-direction: row; justify-content: center }"
+        let sheet = try YogaStylesheet.parse(css)
+        view.yoga.apply(stylesheet: sheet)
+
+        XCTAssertEqual(view.yoga.flexDirection, .row)
+        XCTAssertEqual(view.yoga.justifyContent, .center)
+#endif
+    }
+
+    func testApplyStylesheetMultipleRules() throws {
+#if canImport(UIKit)
+        let view = UIView()
+        view.yoga.cssClass = "card"
+        view.yoga.cssID = "main-card"
+        let css = """
+        .card { padding: 10px }
+        #main-card { margin: 20px }
+        """
+        let sheet = try YogaStylesheet.parse(css)
+        view.yoga.apply(stylesheet: sheet)
+
+        // Both rules match — margin from #main-card applied
+        XCTAssertEqual(view.yoga[.all], GWValue(value: 20, unit: .point))
+#endif
+    }
+
+    func testLoadStylesheetFileNotFound() {
+        // Should not crash when file is not found
+#if canImport(UIKit)
+        let view = UIView()
+        let result = view.yoga.loadStylesheet("nonexistent_file_xyz")
+        // Returns self (no-op)
+        XCTAssertTrue(true)
+#endif
+    }
+
+    // MARK: - YogaCSSConfig
+
+    func testCSSConfigRegisterDefault() throws {
+        let css = ".test { width: 150px }"
+        let sheet = try YogaStylesheet.parse(css)
+        YogaCSSConfig.registerDefault(sheet)
+
+        XCTAssertNotNil(YogaCSSConfig.registeredDefault)
+        XCTAssertEqual(YogaCSSConfig.registeredDefault?.rules.count, 1)
+        XCTAssertEqual(YogaCSSConfig.registeredDefault?.rules[0].selector, .class_("test"))
+
+        YogaCSSConfig.unregisterDefault()
+        XCTAssertNil(YogaCSSConfig.registeredDefault)
+    }
+
+    func testCSSConfigUnregister() {
+        XCTAssertNil(YogaCSSConfig.registeredDefault)
+        // Should not crash when unregistering without registration
+        YogaCSSConfig.unregisterDefault()
+        XCTAssertNil(YogaCSSConfig.registeredDefault)
+    }
+
+    func testApplyDefaultStylesheet() throws {
+#if canImport(UIKit)
+        let css = ".default-style { width: 250px }"
+        let sheet = try YogaStylesheet.parse(css)
+        YogaCSSConfig.registerDefault(sheet)
+
+        let view = UIView()
+        view.yoga.cssClass = "default-style"
+        view.yoga.applyDefaultStylesheet()
+
+        XCTAssertEqual(view.yoga.width, .points(250))
+
+        YogaCSSConfig.unregisterDefault()
+#endif
+    }
+
+    func testApplyDefaultStylesheetNoRegistration() {
+#if canImport(UIKit)
+        YogaCSSConfig.unregisterDefault()
+        let view = UIView()
+        // Should not crash when no default is registered
+        view.yoga.applyDefaultStylesheet()
+        XCTAssertTrue(true)
+#endif
+    }
+}

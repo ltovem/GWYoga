@@ -36,7 +36,7 @@ let package = Package(
         .target(
             name: "GWYoga",
             path: "GWYoga",
-            exclude: ["GWYoga.h", "GWYoga.docc"]
+            exclude: ["GWYoga.h", "GWYoga.docc", "API_REFERENCE.md"]
         ),
         .testTarget(
             name: "GWYogaTests",

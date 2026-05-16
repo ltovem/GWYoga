@@ -2,7 +2,7 @@ import Foundation
 import GWYoga
 import GWYogaKit
 import GWYogaKitStylesheet
-#if os(iOS)
+#if os(iOS) || os(tvOS)
 import UIKit
 
 // MARK: - YGKStylesheet

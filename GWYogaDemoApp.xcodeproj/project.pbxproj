@@ -1,298 +1,895 @@
 // !$*UTF8*$!
 {
-archiveVersion = 1;
-objectVersion = 56;
-objects = {
-/* Begin PBXBuildFile section */
-F6750BB1FBEE5BC90DD6BDBC = {isa = PBXBuildFile; fileRef = 207CA4381D0CFEC95263A2DE; };
-13890C9E99C64C471FB341FE = {isa = PBXBuildFile; fileRef = 61E63BC8B948A5BBC74EBCAB; };
-3F47A3DEF04676D78A9BC2BF = {isa = PBXBuildFile; fileRef = D0530F6D2E6FCB7D29EC48D0; };
-FF6F4005A1ECB2DAA62D6EAF = {isa = PBXBuildFile; fileRef = BA87CF598EA1A9B7665BD01C; };
-A7FB305DCA9533DDAE94C25F = {isa = PBXBuildFile; fileRef = 53C94D08660F7052D4EDAD9B; };
-79B407264A172E71253B8F52 = {isa = PBXBuildFile; fileRef = 75F10E85030FE185C9134FD1; };
-DB6A6CBFF89DEDE654533815 = {isa = PBXBuildFile; fileRef = 92571C38C9761492CC508BAC; };
-BF82D915B433087E5F2962FD = {isa = PBXBuildFile; fileRef = E6B36A26A865E27868E8E10D; };
-441069B3C1B0C39AC2A60B2E = {isa = PBXBuildFile; fileRef = B97CD2A092E1DAEE8D2F9A39; };
-EB3B55FDD6DFE81736B5E21C = {isa = PBXBuildFile; fileRef = 80EF12E09A5625243296EA4A; };
-C3A8FEF78F5A2333A38D3BF6 = {isa = PBXBuildFile; fileRef = 58D9599A1DA2F6731998F520; };
-1069253A61331BF1CF5FDADF = {isa = PBXBuildFile; fileRef = 524C5F95B8EEA03A9006627C; };
-E1D2C3B4A5F6E7D8C9B0A1F2 = {isa = PBXBuildFile; fileRef = F1A2B3C4D5E6F7A8B9C0D1E2; };
-E2D3C4B5A6F7E8D9C0B1A2F3 = {isa = PBXBuildFile; fileRef = F2A3B4C5D6E7F8A9B0C1D2E3; };
-E3D4C5B6A7F8E9D0C1B2A3F4 = {isa = PBXBuildFile; fileRef = F3A4B5C6D7E8F9A0B1C2D3E4; };
-E4D5C6B7A8F9E0A1C2B3A4F5 = {isa = PBXBuildFile; fileRef = F4A5B6C7D8E9F0A1B2C3D4E5; };
-E5D6C7B8A9F0E1B2C3B4A5F6 = {isa = PBXBuildFile; fileRef = F5A6B7C8D9E0F1A2B3C4D5E6; };
-E6D7C8B9A0F1E2C3D4B5A6F7 = {isa = PBXBuildFile; fileRef = F6A7B8C9D0E1F2A3B4C5D6E7; };
-CC17E7504094B54CBE960E57 = {isa = PBXBuildFile; productRef = 5963EC32EB729E7982FDAAD1; };
-AC27DBA1B36F9006923EE7CC = {isa = PBXBuildFile; productRef = 6E20C339D2AE86A3754BDFE1; };
-A1B2C3D4E5F6A7B8C9D0E1F2 = {isa = PBXBuildFile; productRef = A2B3C4D5E6F7A8B9C0D1E2F3; };
-B1C2D3E4F5A6B7C8D9E0F1A2 = {isa = PBXBuildFile; productRef = B2C3D4E5F6A7B8C9D0E1F2A3; };
-C1D2E3F4A5B6C7D8E9F0A1B2 = {isa = PBXBuildFile; productRef = C2D3E4F5A6B7C8D9E0F1A2B3; };
-D1E2F3A4B5C6D7E8F9A0B1C2 = {isa = PBXBuildFile; productRef = D2E3F4A5B6C7D8E9F0A1B2C3; };
-E1F2A3B4C5D6E7F8A9B0C1D2 = {isa = PBXBuildFile; productRef = E2F3A4B5C6D7E8F9A0B1C2D3; };
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
 
-/* ObjC Demo App - .m files */
-A000000000000000000001 = {isa = PBXBuildFile; fileRef = A10000000000000000000001; };
-A000000000000000000002 = {isa = PBXBuildFile; fileRef = A10000000000000000000003; };
-A000000000000000000003 = {isa = PBXBuildFile; fileRef = A10000000000000000000005; };
-A000000000000000000004 = {isa = PBXBuildFile; fileRef = A10000000000000000000007; };
-A000000000000000000005 = {isa = PBXBuildFile; fileRef = A10000000000000000000009; };
-A000000000000000000006 = {isa = PBXBuildFile; fileRef = A1000000000000000000000B; };
-A000000000000000000007 = {isa = PBXBuildFile; fileRef = A1000000000000000000000D; };
-A000000000000000000008 = {isa = PBXBuildFile; fileRef = A1000000000000000000000F; };
-A000000000000000000009 = {isa = PBXBuildFile; fileRef = A10000000000000000000011; };
-A00000000000000000000A = {isa = PBXBuildFile; fileRef = A10000000000000000000013; };
-A00000000000000000000B = {isa = PBXBuildFile; fileRef = A10000000000000000000015; };
-A00000000000000000000C = {isa = PBXBuildFile; fileRef = A10000000000000000000017; };
-A00000000000000000000D = {isa = PBXBuildFile; fileRef = A10000000000000000000019; };
-A00000000000000000000E = {isa = PBXBuildFile; fileRef = A1000000000000000000001B; };
-A00000000000000000000F = {isa = PBXBuildFile; fileRef = A1000000000000000000001D; };
-A000000000000000000010 = {isa = PBXBuildFile; fileRef = A1000000000000000000001F; };
-A000000000000000000011 = {isa = PBXBuildFile; fileRef = A10000000000000000000021; };
-A000000000000000000012 = {isa = PBXBuildFile; fileRef = A10000000000000000000023; };
-A000000000000000000013 = {isa = PBXBuildFile; fileRef = A10000000000000000000025; };
-/* ObjC Demo App - resources */
-A00000000000000000001B = {isa = PBXBuildFile; fileRef = A10000000000000000000028; };
-/* ObjC Demo App - framework products */
-A000000000000000000014 = {isa = PBXBuildFile; productRef = 5963EC32EB729E7982FDAAD1; };
-A000000000000000000015 = {isa = PBXBuildFile; productRef = 6E20C339D2AE86A3754BDFE1; };
-A000000000000000000016 = {isa = PBXBuildFile; productRef = A2B3C4D5E6F7A8B9C0D1E2F3; };
-A000000000000000000017 = {isa = PBXBuildFile; productRef = B2C3D4E5F6A7B8C9D0E1F2A3; };
-A000000000000000000018 = {isa = PBXBuildFile; productRef = C2D3E4F5A6B7C8D9E0F1A2B3; };
-A000000000000000000019 = {isa = PBXBuildFile; productRef = D2E3F4A5B6C7D8E9F0A1B2C3; };
-A00000000000000000001A = {isa = PBXBuildFile; productRef = E2F3A4B5C6D7E8F9A0B1C2D3; };
-/* ObjC Demo App - ObjC bridge products */
-A00000000000000000001C = {isa = PBXBuildFile; productRef = B000000000000000000001; };
-A00000000000000000001D = {isa = PBXBuildFile; productRef = B000000000000000000002; };
-A00000000000000000001E = {isa = PBXBuildFile; productRef = B000000000000000000003; };
-A00000000000000000001F = {isa = PBXBuildFile; productRef = B000000000000000000004; };
-A000000000000000000020 = {isa = PBXBuildFile; productRef = B000000000000000000005; };
-A000000000000000000021 = {isa = PBXBuildFile; productRef = B000000000000000000006; };
+/* Begin PBXBuildFile section */
+		02CBD2F8AD21D1792A4DAAF7 /* DisplayDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA9362004C2ED3E9437CA5 /* DisplayDemoViewController.swift */; };
+		02EB6ECF500DDA2370C1B701 /* CssFileDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9752408F28ED7CE910939F /* CssFileDemoViewController.swift */; };
+		04568B0E54A3EF886766863F /* CssParseDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0344EE3429C37FAF48773 /* CssParseDemoViewController.swift */; };
+		07DF9817A0C595BBED53D7E4 /* ShadowDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54425DBCE960428C74A0BC86 /* ShadowDemoViewController.swift */; };
+		0E87179DC8B467D696846C78 /* LayoutResultDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B797FE6710A73DB271954F /* LayoutResultDemoViewController.swift */; };
+		0EE424516939105CC88C0E31 /* KeyframeDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCD67FDAADC5D108DB455C9 /* KeyframeDemoViewController.swift */; };
+		1069253A61331BF1CF5FDADF /* CompositeDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524C5F95B8EEA03A9006627C /* CompositeDemoViewController.swift */; };
+		131F3635D3226300049C8222 /* AlignItemsDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E57688E4F90C78B87EFD2B /* AlignItemsDemoViewController.swift */; };
+		13890C9E99C64C471FB341FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E63BC8B948A5BBC74EBCAB /* SceneDelegate.swift */; };
+		1F296444231F1D662B645797 /* OpacityDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D337D11B7A7DE6F38E94AE32 /* OpacityDemoViewController.swift */; };
+		26D5476A41DE9E408E91B3DF /* IntrinsicDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9794D90B0E818AD31F9CB4E /* IntrinsicDemoViewController.swift */; };
+		2B86963F4BF3AB6910966D87 /* ProtocolDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61B9D451579A9D2B9C8C95 /* ProtocolDemoViewController.swift */; };
+		2C1705803A69A8277469D732 /* DebugBorderDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD34E922903F50302FBFE31C /* DebugBorderDemoViewController.swift */; };
+		2F2C66432EAE5F7A777BE0BA /* ChainableDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D567F2A1836E9FA61836E9 /* ChainableDemoViewController.swift */; };
+		3051A5D9A6C6EB44FCA2E0E3 /* ScrollDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F30FC566408BC820FC55D0 /* ScrollDemoViewController.swift */; };
+		33A52CE10C6FB0C3F069BF26 /* JustifyContentDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367AA6435715AA2B20343AF3 /* JustifyContentDemoViewController.swift */; };
+		34EFAE019C1801DBCDB68835 /* DemoRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874E82952E4E7DDF6EBA331D /* DemoRegistration.swift */; };
+		393A4067A94A13EE640B8F65 /* AlignContentDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C04EA2B239E2272EB3FE35C /* AlignContentDemoViewController.swift */; };
+		3A3F93748A74BD49434FD48B /* MarginDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60B445F0176195611ED3D9C /* MarginDemoViewController.swift */; };
+		3A409C7F795DD84D6E063679 /* AlignSelfDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E494B918F77BB18ED3975E8 /* AlignSelfDemoViewController.swift */; };
+		41EF63750AE46683132DD192 /* CombineDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1F9819451A7D193AC6769 /* CombineDemoViewController.swift */; };
+		4391EB36C9A8590C4CE14037 /* AnimateDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE966791B07226CE4FF4B06 /* AnimateDemoViewController.swift */; };
+		441069B3C1B0C39AC2A60B2E /* PositionDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97CD2A092E1DAEE8D2F9A39 /* PositionDemoViewController.swift */; };
+		4570E12D31C24EB758943A1A /* CategoryListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3918188319EC700E41514975 /* CategoryListModel.swift */; };
+		46DA654E7AD7611940494B1F /* CacheDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE52AD91D66701A8C68D80C4 /* CacheDemoViewController.swift */; };
+		4B7AAE13AD03D97F42564439 /* AnimConfigDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB0349F21F3E7EC5259F217 /* AnimConfigDemoViewController.swift */; };
+		50BA0F936DEC55935635B918 /* AddChildDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1249062A51FA1DAD1C727C /* AddChildDemoViewController.swift */; };
+		60510E9EA16BAFC6C371C594 /* FlexBasisDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31752569557F2687756DD103 /* FlexBasisDemoViewController.swift */; };
+		620AC17EAE3D0D650C3E1F17 /* SpringDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B6C0BA7BEC9FF9F3C83EEF /* SpringDemoViewController.swift */; };
+		6358127C05F05291EBAB6204 /* BindingDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9834CC86BEBE12EBA0FC7CCB /* BindingDemoViewController.swift */; };
+		6391BCC91D19CF4651D85EE7 /* AttributedDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4E49C81C166AC4B3982745 /* AttributedDemoViewController.swift */; };
+		68206467A62AFC3F2526B548 /* TransitionDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551217CA9DF50B7ADCD28477 /* TransitionDemoViewController.swift */; };
+		71EF76D3AB1CEBE9FA766295 /* BorderDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0974B41FEFF2138F6CB4DC7B /* BorderDemoViewController.swift */; };
+		72BB9C95F7FD17545C5F841F /* DemoPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3612B6F65A397689010769 /* DemoPageViewController.swift */; };
+		776FDA4DC08B543A0C5E01CA /* TraitDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F0B4E1924234C781E57660 /* TraitDemoViewController.swift */; };
+		77C45EFAA7949703E8A11B4D /* ValueDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5E1F087A9387010B47C722 /* ValueDemoViewController.swift */; };
+		79E26DA8CE29F4E3DCDE5E89 /* CallasDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACFA866406968879732ED80 /* CallasDemoViewController.swift */; };
+		7EB14AF340559ED88E7CEEFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000028 /* LaunchScreen.storyboard */; };
+		7F5780D4F79BAF98126329D8 /* PaddingDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E184EA3E2F06DBFE9CEC6F35 /* PaddingDemoViewController.swift */; };
+		7FAF531CD2FC810AED227825 /* FlexWrapGrowDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E0A3DFB61D6258E8AFB37F /* FlexWrapGrowDemoViewController.swift */; };
+		82C66DD92B4AD98EA1FA8638 /* RegistryDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918289DFB747A5F3E51256DB /* RegistryDemoViewController.swift */; };
+		88D68587CB43E77290AC15B6 /* BgimageDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11A77404C390ADCEF3ED51E /* BgimageDemoViewController.swift */; };
+		8DFF5F52D4BA9D32B7380DB9 /* DebugPrintDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7860DC2661F200F4123188 /* DebugPrintDemoViewController.swift */; };
+		9D5DF35748D5FD8FFFF411B1 /* NumberOfLinesDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1153596A694500BD0095A /* NumberOfLinesDemoViewController.swift */; };
+		9EC0A7E8F19F9B23143AD6B5 /* ControlsDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33C1125498F15CA0DC81A6B /* ControlsDemoViewController.swift */; };
+		9EC6D12926AA820D02694997 /* FlexboxDirectionDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44483CC2EC94A55228898E17 /* FlexboxDirectionDemoViewController.swift */; };
+		A000000000000000000001 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000001 /* main.m */; };
+		A000000000000000000002 /* ObjCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000003 /* ObjCAppDelegate.m */; };
+		A000000000000000000003 /* ObjCSceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000005 /* ObjCSceneDelegate.m */; };
+		A000000000000000000004 /* ObjCBaseDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000007 /* ObjCBaseDemoViewController.m */; };
+		A000000000000000000006 /* ObjCYogaRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000000B /* ObjCYogaRenderer.m */; };
+		A000000000000000000008 /* ObjCGridDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000000F /* ObjCGridDemoViewController.m */; };
+		A00000000000000000000A /* ObjCPositionDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000013 /* ObjCPositionDemoViewController.m */; };
+		A00000000000000000000B /* ObjCGapDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000015 /* ObjCGapDemoViewController.m */; };
+		A00000000000000000000C /* ObjCAspectRatioDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000017 /* ObjCAspectRatioDemoViewController.m */; };
+		A00000000000000000000D /* ObjCCompositeDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000019 /* ObjCCompositeDemoViewController.m */; };
+		A000000000000000000014 /* GWYogaKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5963EC32EB729E7982FDAAD1 /* GWYogaKit */; };
+		A000000000000000000015 /* GWYoga in Frameworks */ = {isa = PBXBuildFile; productRef = 6E20C339D2AE86A3754BDFE1 /* GWYoga */; };
+		A000000000000000000016 /* GWYogaKitDSL in Frameworks */ = {isa = PBXBuildFile; productRef = A2B3C4D5E6F7A8B9C0D1E2F3 /* GWYogaKitDSL */; };
+		A000000000000000000017 /* GWYogaKitHTML in Frameworks */ = {isa = PBXBuildFile; productRef = B2C3D4E5F6A7B8C9D0E1F2A3 /* GWYogaKitHTML */; };
+		A000000000000000000018 /* GWYogaKitAnimation in Frameworks */ = {isa = PBXBuildFile; productRef = C2D3E4F5A6B7C8D9E0F1A2B3 /* GWYogaKitAnimation */; };
+		A000000000000000000019 /* GWYogaKitLayoutCache in Frameworks */ = {isa = PBXBuildFile; productRef = D2E3F4A5B6C7D8E9F0A1B2C3 /* GWYogaKitLayoutCache */; };
+		A00000000000000000001A /* GWYogaKitStylesheet in Frameworks */ = {isa = PBXBuildFile; productRef = E2F3A4B5C6D7E8F9A0B1C2D3 /* GWYogaKitStylesheet */; };
+		A00000000000000000001C /* GWYogaKitObjCCore in Frameworks */ = {isa = PBXBuildFile; productRef = B000000000000000000001 /* GWYogaKitObjCCore */; };
+		A00000000000000000001D /* GWYogaKitDSLObjCCore in Frameworks */ = {isa = PBXBuildFile; productRef = B000000000000000000002 /* GWYogaKitDSLObjCCore */; };
+		A00000000000000000001E /* GWYogaKitHTMLObjCCore in Frameworks */ = {isa = PBXBuildFile; productRef = B000000000000000000003 /* GWYogaKitHTMLObjCCore */; };
+		A00000000000000000001F /* GWYogaKitAnimationObjCCore in Frameworks */ = {isa = PBXBuildFile; productRef = B000000000000000000004 /* GWYogaKitAnimationObjCCore */; };
+		A000000000000000000020 /* GWYogaKitLayoutCacheObjCCore in Frameworks */ = {isa = PBXBuildFile; productRef = B000000000000000000005 /* GWYogaKitLayoutCacheObjCCore */; };
+		A000000000000000000021 /* GWYogaKitStylesheetObjCCore in Frameworks */ = {isa = PBXBuildFile; productRef = B000000000000000000006 /* GWYogaKitStylesheetObjCCore */; };
+		A1B2C3D4E5F6A7B8C9D0E1F2 /* GWYogaKitDSL in Frameworks */ = {isa = PBXBuildFile; productRef = A2B3C4D5E6F7A8B9C0D1E2F3 /* GWYogaKitDSL */; };
+		A1D90B96CE3D47F00304F23F /* CssMergeDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C4084054CD8F84A48446E5 /* CssMergeDemoViewController.swift */; };
+		A77C398FBFC2E55069E059ED /* CssInlineDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF3474320635B299BD53E5C /* CssInlineDemoViewController.swift */; };
+		AC27DBA1B36F9006923EE7CC /* GWYoga in Frameworks */ = {isa = PBXBuildFile; productRef = 6E20C339D2AE86A3754BDFE1 /* GWYoga */; };
+		ACC2E1B2F057E32569D31417 /* WidthHeightDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1D22147373CA99EADE6CC9 /* WidthHeightDemoViewController.swift */; };
+		ACD888636E9BE71651D9532D /* GradientDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86E4D965C0D74F8B63106B4 /* GradientDemoViewController.swift */; };
+		AF11D26C0CE0E0FB65F7BA1D /* SystemLayoutSizeDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3436686676942BD3CB21C1 /* SystemLayoutSizeDemoViewController.swift */; };
+		B1C2D3E4F5A6B7C8D9E0F1A2 /* GWYogaKitHTML in Frameworks */ = {isa = PBXBuildFile; productRef = B2C3D4E5F6A7B8C9D0E1F2A3 /* GWYogaKitHTML */; };
+		B6E6E7FB77B212624B69BB08 /* YogaLayoutViewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF9AAD23F075349DF298A54 /* YogaLayoutViewDemoViewController.swift */; };
+		C1D2E3F4A5B6C7D8E9F0A1B2 /* GWYogaKitAnimation in Frameworks */ = {isa = PBXBuildFile; productRef = C2D3E4F5A6B7C8D9E0F1A2B3 /* GWYogaKitAnimation */; };
+		C1FADE6A8D50621761A8ABE5 /* VstackDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15D52699460BD7420BAB3C /* VstackDemoViewController.swift */; };
+		C3A8FEF78F5A2333A38D3BF6 /* AspectRatioDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D9599A1DA2F6731998F520 /* AspectRatioDemoViewController.swift */; };
+		CC17E7504094B54CBE960E57 /* GWYogaKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5963EC32EB729E7982FDAAD1 /* GWYogaKit */; };
+		CCA30A99375C13140D9F14E6 /* ModifierDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3180F5AE0EA8B2EDB48D87B /* ModifierDemoViewController.swift */; };
+		D1E2F3A4B5C6D7E8F9A0B1C2 /* GWYogaKitLayoutCache in Frameworks */ = {isa = PBXBuildFile; productRef = D2E3F4A5B6C7D8E9F0A1B2C3 /* GWYogaKitLayoutCache */; };
+		D522DFBA350DF5812C621401 /* CoalesceDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7556ED6C62AFC06735B01894 /* CoalesceDemoViewController.swift */; };
+		D82A75E220E5E3A56D2D66A5 /* AttributedBuilderDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E693471A05682B2F209D73A /* AttributedBuilderDemoViewController.swift */; };
+		D89FB1F07DBE2D28718A98AA /* YogDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2AED0693A75A6F6B85D2A3 /* YogDemoViewController.swift */; };
+		DB6A6CBFF89DEDE654533815 /* GridDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92571C38C9761492CC508BAC /* GridDemoViewController.swift */; };
+		DCAF39EE461BDAAD62C0B63E /* CodePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7497FA670036FE05A3C3D365 /* CodePreviewViewController.swift */; };
+		E0B81EEFD3A8B67A2EBE042A /* YogaStateDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93C8EB93144890C13A6AD55 /* YogaStateDemoViewController.swift */; };
+		E1F2A3B4C5D6E7F8A9B0C1D2 /* GWYogaKitStylesheet in Frameworks */ = {isa = PBXBuildFile; productRef = E2F3A4B5C6D7E8F9A0B1C2D3 /* GWYogaKitStylesheet */; };
+		E3D4C5B6A7F8E9D0C1B2A3F4 /* HTMLDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A4B5C6D7E8F9A0B1C2D3E4 /* HTMLDemoViewController.swift */; };
+		EB3B55FDD6DFE81736B5E21C /* GapDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF12E09A5625243296EA4A /* GapDemoViewController.swift */; };
+		ECC3214B7324664B9C0C3F54 /* CategoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C47B4BF3B489ACCD076143 /* CategoryListViewController.swift */; };
+		F2990D6414AD8CFD063D773E /* CornerRadiusDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2740322DAE575E4C12849F9 /* CornerRadiusDemoViewController.swift */; };
+		F6750BB1FBEE5BC90DD6BDBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207CA4381D0CFEC95263A2DE /* AppDelegate.swift */; };
+		F73D416798BEA93A9EF74DAE /* SelectorDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF77BD1C6C67ECD723679B3A /* SelectorDemoViewController.swift */; };
+		FF6F4005A1ECB2DAA62D6EAF /* YogaLayoutRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA87CF598EA1A9B7665BD01C /* YogaLayoutRenderer.swift */; };
+
+			A0E01C8E247626435486304F /* ObjCFlexboxDirectionDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A14C099B9663114258A552D9 /* ObjCFlexboxDirectionDemoViewController.m */; };
+			A01925970B4B254AD59EF01C /* ObjCJustifyContentDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CE18E507AE91440A980B35 /* ObjCJustifyContentDemoViewController.m */; };
+			A08B8437A83562452D93DAED /* ObjCAlignItemsDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F3EC33A69B1F46D0A30FED /* ObjCAlignItemsDemoViewController.m */; };
+			A0288A6D70ABD842D59A18A3 /* ObjCFlexWrapGrowDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A18B846BFD8BFA465AA9E3E9 /* ObjCFlexWrapGrowDemoViewController.m */; };
+			A09D524DDAB595462AA58822 /* ObjCAlignSelfDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A18FBE9EED09F84EA881666E /* ObjCAlignSelfDemoViewController.m */; };
+			A041FC25A2DFE145F389576E /* ObjCAlignContentDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A100ADC582B24548D09450C4 /* ObjCAlignContentDemoViewController.m */; };
+			A0F96652D52CFC4FB6B57D99 /* ObjCFlexBasisDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A12421D04707B84D1FB02A2C /* ObjCFlexBasisDemoViewController.m */; };
+			A049C37BF22657432F91E206 /* ObjCDisplayDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A17A4E6D2768CC404B856220 /* ObjCDisplayDemoViewController.m */; };
+			A00B133DA2536F4477A1FB11 /* ObjCWidthHeightDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A17742C45D16FB46D7A86E72 /* ObjCWidthHeightDemoViewController.m */; };
+			A0BA412C91F0A94377B9AD25 /* ObjCMarginDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1310448F2093A41BFB1005C /* ObjCMarginDemoViewController.m */; };
+			A00242DE5CD0C042739B97D1 /* ObjCPaddingDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A148CF4C97F48D4DFF96213E /* ObjCPaddingDemoViewController.m */; };
+			A0E59E1AC576FE4933AD97C9 /* ObjCBorderDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E04BA498C67D414FA1DA9F /* ObjCBorderDemoViewController.m */; };
+			A0FB9A3BAA5914486D823167 /* ObjCCornerRadiusDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1201C547106D14188BC0573 /* ObjCCornerRadiusDemoViewController.m */; };
+			A0ECE7627407F444B4BB9252 /* ObjCShadowDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A189746103D3B54E6698E87D /* ObjCShadowDemoViewController.m */; };
+			A097575B7D7995464DBB8D7B /* ObjCOpacityClipsDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A14E040BBF6FEA40A9BC45A9 /* ObjCOpacityClipsDemoViewController.m */; };
+			A0D3DCBA3788DB4A8F95EB6D /* ObjCDebugPrintDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A12906F72508C748C3BDEDE4 /* ObjCDebugPrintDemoViewController.m */; };
+			A0DB389349BEF04312ABBE5F /* ObjCDebugBorderDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E9684167AA68454BBF79A3 /* ObjCDebugBorderDemoViewController.m */; };
+			A05E4C128D1B7A4FF3A2E46E /* ObjCSystemLayoutSizeDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B08C56F4696A467E974DF3 /* ObjCSystemLayoutSizeDemoViewController.m */; };
+			A091DA9578378C4E1E8CC6DF /* ObjCVStackDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1595B5331C7AB449A91AB61 /* ObjCVStackDemoViewController.m */; };
+			A0C4E5791A6DC64187AAFC53 /* ObjCScrollDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A168EC1858765C49E6A3B5BE /* ObjCScrollDemoViewController.m */; };
+			A0DEC5AADBEC2841BF96FFC7 /* ObjCDemoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FAFF74B1713D408186014B /* ObjCDemoListViewController.m */; };
+			A20000000000000000000002 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000001 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
-207CA4381D0CFEC95263A2DE = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate.swift"; sourceTree = "<group>"; };
-61E63BC8B948A5BBC74EBCAB = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SceneDelegate.swift"; sourceTree = "<group>"; };
-D0530F6D2E6FCB7D29EC48D0 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DemoTabBarController.swift"; sourceTree = "<group>"; };
-BA87CF598EA1A9B7665BD01C = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helpers/YogaLayoutRenderer.swift"; sourceTree = "<group>"; };
-53C94D08660F7052D4EDAD9B = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demos/BaseDemoViewController.swift"; sourceTree = "<group>"; };
-75F10E85030FE185C9134FD1 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demos/FlexboxDemoViewController.swift"; sourceTree = "<group>"; };
-92571C38C9761492CC508BAC = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demos/GridDemoViewController.swift"; sourceTree = "<group>"; };
-E6B36A26A865E27868E8E10D = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demos/MarginPaddingDemoViewController.swift"; sourceTree = "<group>"; };
-B97CD2A092E1DAEE8D2F9A39 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demos/PositionDemoViewController.swift"; sourceTree = "<group>"; };
-80EF12E09A5625243296EA4A = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demos/GapDemoViewController.swift"; sourceTree = "<group>"; };
-58D9599A1DA2F6731998F520 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demos/AspectRatioDemoViewController.swift"; sourceTree = "<group>"; };
-524C5F95B8EEA03A9006627C = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demos/CompositeDemoViewController.swift"; sourceTree = "<group>"; };
-F1A2B3C4D5E6F7A8B9C0D1E2 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demos/AnimationDemoViewController.swift"; sourceTree = "<group>"; };
-F2A3B4C5D6E7F8A9B0C1D2E3 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demos/DSLDemoViewController.swift"; sourceTree = "<group>"; };
-F3A4B5C6D7E8F9A0B1C2D3E4 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demos/HTMLDemoViewController.swift"; sourceTree = "<group>"; };
-F4A5B6C7D8E9F0A1B2C3D4E5 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demos/LayoutCacheDemoViewController.swift"; sourceTree = "<group>"; };
-F5A6B7C8D9E0F1A2B3C4D5E6 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demos/StylesheetDemoViewController.swift"; sourceTree = "<group>"; };
-F6A7B8C9D0E1F2A3B4C5D6E7 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demos/YogaKitDemoViewController.swift"; sourceTree = "<group>"; };
-707A1B8AA6F495C9BF6658C2 = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-2B32F328218E449DCE1110D9 = {isa = PBXFileReference; explicitFileType = "wrapper.application"; includeInIndex = 0; path = GWYogaDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04E1F9819451A7D193AC6769 /* CombineDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CombineDemoViewController.swift; path = Demos/CombineDemoViewController.swift; sourceTree = "<group>"; };
+		0974B41FEFF2138F6CB4DC7B /* BorderDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BorderDemoViewController.swift; path = Demos/BorderDemoViewController.swift; sourceTree = "<group>"; };
+		0F3436686676942BD3CB21C1 /* SystemLayoutSizeDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SystemLayoutSizeDemoViewController.swift; path = Demos/SystemLayoutSizeDemoViewController.swift; sourceTree = "<group>"; };
+		18E1153596A694500BD0095A /* NumberOfLinesDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NumberOfLinesDemoViewController.swift; path = Demos/NumberOfLinesDemoViewController.swift; sourceTree = "<group>"; };
+		1CCD67FDAADC5D108DB455C9 /* KeyframeDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyframeDemoViewController.swift; path = Demos/KeyframeDemoViewController.swift; sourceTree = "<group>"; };
+		1D5E1F087A9387010B47C722 /* ValueDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValueDemoViewController.swift; path = Demos/ValueDemoViewController.swift; sourceTree = "<group>"; };
+		1E693471A05682B2F209D73A /* AttributedBuilderDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AttributedBuilderDemoViewController.swift; path = Demos/AttributedBuilderDemoViewController.swift; sourceTree = "<group>"; };
+		207CA4381D0CFEC95263A2DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		22C4084054CD8F84A48446E5 /* CssMergeDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CssMergeDemoViewController.swift; path = Demos/CssMergeDemoViewController.swift; sourceTree = "<group>"; };
+		2B32F328218E449DCE1110D9 /* GWYogaDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GWYogaDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E3612B6F65A397689010769 /* DemoPageViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DemoPageViewController.swift; path = Helpers/DemoPageViewController.swift; sourceTree = "<group>"; };
+		31752569557F2687756DD103 /* FlexBasisDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlexBasisDemoViewController.swift; path = Demos/FlexBasisDemoViewController.swift; sourceTree = "<group>"; };
+		33C47B4BF3B489ACCD076143 /* CategoryListViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryListViewController.swift; sourceTree = "<group>"; };
+		367AA6435715AA2B20343AF3 /* JustifyContentDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JustifyContentDemoViewController.swift; path = Demos/JustifyContentDemoViewController.swift; sourceTree = "<group>"; };
+		37F0B4E1924234C781E57660 /* TraitDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TraitDemoViewController.swift; path = Demos/TraitDemoViewController.swift; sourceTree = "<group>"; };
+		3918188319EC700E41514975 /* CategoryListModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryListModel.swift; sourceTree = "<group>"; };
+		3C04EA2B239E2272EB3FE35C /* AlignContentDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlignContentDemoViewController.swift; path = Demos/AlignContentDemoViewController.swift; sourceTree = "<group>"; };
+		44483CC2EC94A55228898E17 /* FlexboxDirectionDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlexboxDirectionDemoViewController.swift; path = Demos/FlexboxDirectionDemoViewController.swift; sourceTree = "<group>"; };
+		4A2AED0693A75A6F6B85D2A3 /* YogDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YogDemoViewController.swift; path = Demos/YogDemoViewController.swift; sourceTree = "<group>"; };
+		4ACFA866406968879732ED80 /* CallasDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CallasDemoViewController.swift; path = Demos/CallasDemoViewController.swift; sourceTree = "<group>"; };
+		524C5F95B8EEA03A9006627C /* CompositeDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demos/CompositeDemoViewController.swift; sourceTree = "<group>"; };
+		54425DBCE960428C74A0BC86 /* ShadowDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShadowDemoViewController.swift; path = Demos/ShadowDemoViewController.swift; sourceTree = "<group>"; };
+		551217CA9DF50B7ADCD28477 /* TransitionDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransitionDemoViewController.swift; path = Demos/TransitionDemoViewController.swift; sourceTree = "<group>"; };
+		58D9599A1DA2F6731998F520 /* AspectRatioDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demos/AspectRatioDemoViewController.swift; sourceTree = "<group>"; };
+		58E0A3DFB61D6258E8AFB37F /* FlexWrapGrowDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlexWrapGrowDemoViewController.swift; path = Demos/FlexWrapGrowDemoViewController.swift; sourceTree = "<group>"; };
+		5B1249062A51FA1DAD1C727C /* AddChildDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AddChildDemoViewController.swift; path = Demos/AddChildDemoViewController.swift; sourceTree = "<group>"; };
+		5C61B9D451579A9D2B9C8C95 /* ProtocolDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProtocolDemoViewController.swift; path = Demos/ProtocolDemoViewController.swift; sourceTree = "<group>"; };
+		61E63BC8B948A5BBC74EBCAB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		68B797FE6710A73DB271954F /* LayoutResultDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutResultDemoViewController.swift; path = Demos/LayoutResultDemoViewController.swift; sourceTree = "<group>"; };
+		6C7860DC2661F200F4123188 /* DebugPrintDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DebugPrintDemoViewController.swift; path = Demos/DebugPrintDemoViewController.swift; sourceTree = "<group>"; };
+		6CB0349F21F3E7EC5259F217 /* AnimConfigDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimConfigDemoViewController.swift; path = Demos/AnimConfigDemoViewController.swift; sourceTree = "<group>"; };
+		707A1B8AA6F495C9BF6658C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71D567F2A1836E9FA61836E9 /* ChainableDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChainableDemoViewController.swift; path = Demos/ChainableDemoViewController.swift; sourceTree = "<group>"; };
+		72DA9362004C2ED3E9437CA5 /* DisplayDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DisplayDemoViewController.swift; path = Demos/DisplayDemoViewController.swift; sourceTree = "<group>"; };
+		7497FA670036FE05A3C3D365 /* CodePreviewViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CodePreviewViewController.swift; path = Helpers/CodePreviewViewController.swift; sourceTree = "<group>"; };
+		74E57688E4F90C78B87EFD2B /* AlignItemsDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlignItemsDemoViewController.swift; path = Demos/AlignItemsDemoViewController.swift; sourceTree = "<group>"; };
+		7556ED6C62AFC06735B01894 /* CoalesceDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CoalesceDemoViewController.swift; path = Demos/CoalesceDemoViewController.swift; sourceTree = "<group>"; };
+		75F30FC566408BC820FC55D0 /* ScrollDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScrollDemoViewController.swift; path = Demos/ScrollDemoViewController.swift; sourceTree = "<group>"; };
+		7AD0344EE3429C37FAF48773 /* CssParseDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CssParseDemoViewController.swift; path = Demos/CssParseDemoViewController.swift; sourceTree = "<group>"; };
+		7EF9AAD23F075349DF298A54 /* YogaLayoutViewDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YogaLayoutViewDemoViewController.swift; path = Demos/YogaLayoutViewDemoViewController.swift; sourceTree = "<group>"; };
+		80EF12E09A5625243296EA4A /* GapDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demos/GapDemoViewController.swift; sourceTree = "<group>"; };
+		874E82952E4E7DDF6EBA331D /* DemoRegistration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DemoRegistration.swift; path = Helpers/DemoRegistration.swift; sourceTree = "<group>"; };
+		8D1D22147373CA99EADE6CC9 /* WidthHeightDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WidthHeightDemoViewController.swift; path = Demos/WidthHeightDemoViewController.swift; sourceTree = "<group>"; };
+		918289DFB747A5F3E51256DB /* RegistryDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RegistryDemoViewController.swift; path = Demos/RegistryDemoViewController.swift; sourceTree = "<group>"; };
+		92571C38C9761492CC508BAC /* GridDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demos/GridDemoViewController.swift; sourceTree = "<group>"; };
+		9834CC86BEBE12EBA0FC7CCB /* BindingDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BindingDemoViewController.swift; path = Demos/BindingDemoViewController.swift; sourceTree = "<group>"; };
+		9E494B918F77BB18ED3975E8 /* AlignSelfDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlignSelfDemoViewController.swift; path = Demos/AlignSelfDemoViewController.swift; sourceTree = "<group>"; };
+		9EF3474320635B299BD53E5C /* CssInlineDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CssInlineDemoViewController.swift; path = Demos/CssInlineDemoViewController.swift; sourceTree = "<group>"; };
+		A10000000000000000000001 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A10000000000000000000002 /* ObjCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCAppDelegate.h; sourceTree = "<group>"; };
+		A10000000000000000000003 /* ObjCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCAppDelegate.m; sourceTree = "<group>"; };
+		A10000000000000000000004 /* ObjCSceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCSceneDelegate.h; sourceTree = "<group>"; };
+		A10000000000000000000005 /* ObjCSceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCSceneDelegate.m; sourceTree = "<group>"; };
+		A10000000000000000000006 /* ObjCBaseDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCBaseDemoViewController.h; sourceTree = "<group>"; };
+		A10000000000000000000007 /* ObjCBaseDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCBaseDemoViewController.m; sourceTree = "<group>"; };
+		A1000000000000000000000A /* ObjCYogaRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCYogaRenderer.h; sourceTree = "<group>"; };
+		A1000000000000000000000B /* ObjCYogaRenderer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCYogaRenderer.m; sourceTree = "<group>"; };
+		A1000000000000000000000E /* ObjCGridDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCGridDemoViewController.h; sourceTree = "<group>"; };
+		A1000000000000000000000F /* ObjCGridDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCGridDemoViewController.m; sourceTree = "<group>"; };
+		A10000000000000000000012 /* ObjCPositionDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCPositionDemoViewController.h; sourceTree = "<group>"; };
+		A10000000000000000000013 /* ObjCPositionDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCPositionDemoViewController.m; sourceTree = "<group>"; };
+		A10000000000000000000014 /* ObjCGapDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCGapDemoViewController.h; sourceTree = "<group>"; };
+		A10000000000000000000015 /* ObjCGapDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCGapDemoViewController.m; sourceTree = "<group>"; };
+		A10000000000000000000016 /* ObjCAspectRatioDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCAspectRatioDemoViewController.h; sourceTree = "<group>"; };
+		A10000000000000000000017 /* ObjCAspectRatioDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCAspectRatioDemoViewController.m; sourceTree = "<group>"; };
+		A10000000000000000000018 /* ObjCCompositeDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCCompositeDemoViewController.h; sourceTree = "<group>"; };
+		A10000000000000000000019 /* ObjCCompositeDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCCompositeDemoViewController.m; sourceTree = "<group>"; };
+		A10000000000000000000026 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A10000000000000000000027 /* GWYogaDemoAppObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GWYogaDemoAppObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10000000000000000000028 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A3180F5AE0EA8B2EDB48D87B /* ModifierDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModifierDemoViewController.swift; path = Demos/ModifierDemoViewController.swift; sourceTree = "<group>"; };
+		A93C8EB93144890C13A6AD55 /* YogaStateDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YogaStateDemoViewController.swift; path = Demos/YogaStateDemoViewController.swift; sourceTree = "<group>"; };
+		B97CD2A092E1DAEE8D2F9A39 /* PositionDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demos/PositionDemoViewController.swift; sourceTree = "<group>"; };
+		BA87CF598EA1A9B7665BD01C /* YogaLayoutRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers/YogaLayoutRenderer.swift; sourceTree = "<group>"; };
+		BC4E49C81C166AC4B3982745 /* AttributedDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AttributedDemoViewController.swift; path = Demos/AttributedDemoViewController.swift; sourceTree = "<group>"; };
+		BDE966791B07226CE4FF4B06 /* AnimateDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimateDemoViewController.swift; path = Demos/AnimateDemoViewController.swift; sourceTree = "<group>"; };
+		BE9752408F28ED7CE910939F /* CssFileDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CssFileDemoViewController.swift; path = Demos/CssFileDemoViewController.swift; sourceTree = "<group>"; };
+		C60B445F0176195611ED3D9C /* MarginDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MarginDemoViewController.swift; path = Demos/MarginDemoViewController.swift; sourceTree = "<group>"; };
+		C7B6C0BA7BEC9FF9F3C83EEF /* SpringDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringDemoViewController.swift; path = Demos/SpringDemoViewController.swift; sourceTree = "<group>"; };
+		C9794D90B0E818AD31F9CB4E /* IntrinsicDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IntrinsicDemoViewController.swift; path = Demos/IntrinsicDemoViewController.swift; sourceTree = "<group>"; };
+		CD34E922903F50302FBFE31C /* DebugBorderDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DebugBorderDemoViewController.swift; path = Demos/DebugBorderDemoViewController.swift; sourceTree = "<group>"; };
+		CE15D52699460BD7420BAB3C /* VstackDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VstackDemoViewController.swift; path = Demos/VstackDemoViewController.swift; sourceTree = "<group>"; };
+		D337D11B7A7DE6F38E94AE32 /* OpacityDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OpacityDemoViewController.swift; path = Demos/OpacityDemoViewController.swift; sourceTree = "<group>"; };
+		D86E4D965C0D74F8B63106B4 /* GradientDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GradientDemoViewController.swift; path = Demos/GradientDemoViewController.swift; sourceTree = "<group>"; };
+		DE52AD91D66701A8C68D80C4 /* CacheDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CacheDemoViewController.swift; path = Demos/CacheDemoViewController.swift; sourceTree = "<group>"; };
+		DF77BD1C6C67ECD723679B3A /* SelectorDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SelectorDemoViewController.swift; path = Demos/SelectorDemoViewController.swift; sourceTree = "<group>"; };
+		E11A77404C390ADCEF3ED51E /* BgimageDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BgimageDemoViewController.swift; path = Demos/BgimageDemoViewController.swift; sourceTree = "<group>"; };
+		E184EA3E2F06DBFE9CEC6F35 /* PaddingDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PaddingDemoViewController.swift; path = Demos/PaddingDemoViewController.swift; sourceTree = "<group>"; };
+		E2740322DAE575E4C12849F9 /* CornerRadiusDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CornerRadiusDemoViewController.swift; path = Demos/CornerRadiusDemoViewController.swift; sourceTree = "<group>"; };
+		E33C1125498F15CA0DC81A6B /* ControlsDemoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ControlsDemoViewController.swift; path = Demos/ControlsDemoViewController.swift; sourceTree = "<group>"; };
+		F3A4B5C6D7E8F9A0B1C2D3E4 /* HTMLDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demos/HTMLDemoViewController.swift; sourceTree = "<group>"; };
+
+			A1EDB0CB5AD20D4FE19540C5 /* ObjCFlexboxDirectionDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCFlexboxDirectionDemoViewController.h; sourceTree = "<group>"; };
+			A14C099B9663114258A552D9 /* ObjCFlexboxDirectionDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCFlexboxDirectionDemoViewController.m; sourceTree = "<group>"; };
+			A1810DB8EBE2494A2EB01F88 /* ObjCJustifyContentDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCJustifyContentDemoViewController.h; sourceTree = "<group>"; };
+			A1CE18E507AE91440A980B35 /* ObjCJustifyContentDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCJustifyContentDemoViewController.m; sourceTree = "<group>"; };
+			A18C0B06B2E7344F9F8BD27E /* ObjCAlignItemsDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCAlignItemsDemoViewController.h; sourceTree = "<group>"; };
+			A1F3EC33A69B1F46D0A30FED /* ObjCAlignItemsDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCAlignItemsDemoViewController.m; sourceTree = "<group>"; };
+			A1AEA06B76DDFD48C3A30E8B /* ObjCFlexWrapGrowDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCFlexWrapGrowDemoViewController.h; sourceTree = "<group>"; };
+			A18B846BFD8BFA465AA9E3E9 /* ObjCFlexWrapGrowDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCFlexWrapGrowDemoViewController.m; sourceTree = "<group>"; };
+			A112F715D41F7C4B41B7EF8E /* ObjCAlignSelfDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCAlignSelfDemoViewController.h; sourceTree = "<group>"; };
+			A18FBE9EED09F84EA881666E /* ObjCAlignSelfDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCAlignSelfDemoViewController.m; sourceTree = "<group>"; };
+			A1EE67EAAB31AF4F43905A97 /* ObjCAlignContentDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCAlignContentDemoViewController.h; sourceTree = "<group>"; };
+			A100ADC582B24548D09450C4 /* ObjCAlignContentDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCAlignContentDemoViewController.m; sourceTree = "<group>"; };
+			A113E44A9098754F0A9688C9 /* ObjCFlexBasisDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCFlexBasisDemoViewController.h; sourceTree = "<group>"; };
+			A12421D04707B84D1FB02A2C /* ObjCFlexBasisDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCFlexBasisDemoViewController.m; sourceTree = "<group>"; };
+			A14EDA4CDC551245988AA007 /* ObjCDisplayDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCDisplayDemoViewController.h; sourceTree = "<group>"; };
+			A17A4E6D2768CC404B856220 /* ObjCDisplayDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCDisplayDemoViewController.m; sourceTree = "<group>"; };
+			A15B9D777DB92F4C89917491 /* ObjCWidthHeightDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCWidthHeightDemoViewController.h; sourceTree = "<group>"; };
+			A17742C45D16FB46D7A86E72 /* ObjCWidthHeightDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCWidthHeightDemoViewController.m; sourceTree = "<group>"; };
+			A1E40E6C254DF24D0EAE4870 /* ObjCMarginDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCMarginDemoViewController.h; sourceTree = "<group>"; };
+			A1310448F2093A41BFB1005C /* ObjCMarginDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCMarginDemoViewController.m; sourceTree = "<group>"; };
+			A1EB93E529FF1B4EE785E1D9 /* ObjCPaddingDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCPaddingDemoViewController.h; sourceTree = "<group>"; };
+			A148CF4C97F48D4DFF96213E /* ObjCPaddingDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCPaddingDemoViewController.m; sourceTree = "<group>"; };
+			A120C9897B8B04458A931452 /* ObjCBorderDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCBorderDemoViewController.h; sourceTree = "<group>"; };
+			A1E04BA498C67D414FA1DA9F /* ObjCBorderDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCBorderDemoViewController.m; sourceTree = "<group>"; };
+			A14CA175D60F6F4979BF2D3A /* ObjCCornerRadiusDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCCornerRadiusDemoViewController.h; sourceTree = "<group>"; };
+			A1201C547106D14188BC0573 /* ObjCCornerRadiusDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCCornerRadiusDemoViewController.m; sourceTree = "<group>"; };
+			A1863417A40BED4EF687C5B2 /* ObjCShadowDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCShadowDemoViewController.h; sourceTree = "<group>"; };
+			A189746103D3B54E6698E87D /* ObjCShadowDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCShadowDemoViewController.m; sourceTree = "<group>"; };
+			A14A850ECD84AC4B0BA69223 /* ObjCOpacityClipsDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCOpacityClipsDemoViewController.h; sourceTree = "<group>"; };
+			A14E040BBF6FEA40A9BC45A9 /* ObjCOpacityClipsDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCOpacityClipsDemoViewController.m; sourceTree = "<group>"; };
+			A1BEB5118C566C4C07813CE8 /* ObjCDebugPrintDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCDebugPrintDemoViewController.h; sourceTree = "<group>"; };
+			A12906F72508C748C3BDEDE4 /* ObjCDebugPrintDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCDebugPrintDemoViewController.m; sourceTree = "<group>"; };
+			A13400AC82B0974F548EF09F /* ObjCDebugBorderDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCDebugBorderDemoViewController.h; sourceTree = "<group>"; };
+			A1E9684167AA68454BBF79A3 /* ObjCDebugBorderDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCDebugBorderDemoViewController.m; sourceTree = "<group>"; };
+			A1EAE21F3190CC46DC918B21 /* ObjCSystemLayoutSizeDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCSystemLayoutSizeDemoViewController.h; sourceTree = "<group>"; };
+			A1B08C56F4696A467E974DF3 /* ObjCSystemLayoutSizeDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCSystemLayoutSizeDemoViewController.m; sourceTree = "<group>"; };
+			A146B104E06BFB4F1C8D8762 /* ObjCVStackDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCVStackDemoViewController.h; sourceTree = "<group>"; };
+			A1595B5331C7AB449A91AB61 /* ObjCVStackDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCVStackDemoViewController.m; sourceTree = "<group>"; };
+			A153132D37052A456F8CA0C4 /* ObjCScrollDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCScrollDemoViewController.h; sourceTree = "<group>"; };
+			A168EC1858765C49E6A3B5BE /* ObjCScrollDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCScrollDemoViewController.m; sourceTree = "<group>"; };
+			A1CB1ED5A0EDCD44D4AA328F /* ObjCDemoListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCDemoListViewController.h; sourceTree = "<group>"; };
+			A1FAFF74B1713D408186014B /* ObjCDemoListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCDemoListViewController.m; sourceTree = "<group>"; };
+			A20000000000000000000001 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-/* Begin PBXFileReference section for ObjC */
-A10000000000000000000001 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "main.m"; sourceTree = "<group>"; };
-A10000000000000000000002 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCAppDelegate.h"; sourceTree = "<group>"; };
-A10000000000000000000003 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCAppDelegate.m"; sourceTree = "<group>"; };
-A10000000000000000000004 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCSceneDelegate.h"; sourceTree = "<group>"; };
-A10000000000000000000005 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCSceneDelegate.m"; sourceTree = "<group>"; };
-A10000000000000000000006 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCBaseDemoViewController.h"; sourceTree = "<group>"; };
-A10000000000000000000007 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCBaseDemoViewController.m"; sourceTree = "<group>"; };
-A10000000000000000000008 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCDemoTabBarController.h"; sourceTree = "<group>"; };
-A10000000000000000000009 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCDemoTabBarController.m"; sourceTree = "<group>"; };
-A1000000000000000000000A = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCYogaRenderer.h"; sourceTree = "<group>"; };
-A1000000000000000000000B = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCYogaRenderer.m"; sourceTree = "<group>"; };
-A1000000000000000000000C = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCFlexboxDemoViewController.h"; sourceTree = "<group>"; };
-A1000000000000000000000D = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCFlexboxDemoViewController.m"; sourceTree = "<group>"; };
-A1000000000000000000000E = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCGridDemoViewController.h"; sourceTree = "<group>"; };
-A1000000000000000000000F = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCGridDemoViewController.m"; sourceTree = "<group>"; };
-A10000000000000000000010 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCMarginPaddingDemoViewController.h"; sourceTree = "<group>"; };
-A10000000000000000000011 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCMarginPaddingDemoViewController.m"; sourceTree = "<group>"; };
-A10000000000000000000012 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCPositionDemoViewController.h"; sourceTree = "<group>"; };
-A10000000000000000000013 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCPositionDemoViewController.m"; sourceTree = "<group>"; };
-A10000000000000000000014 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCGapDemoViewController.h"; sourceTree = "<group>"; };
-A10000000000000000000015 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCGapDemoViewController.m"; sourceTree = "<group>"; };
-A10000000000000000000016 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCAspectRatioDemoViewController.h"; sourceTree = "<group>"; };
-A10000000000000000000017 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCAspectRatioDemoViewController.m"; sourceTree = "<group>"; };
-A10000000000000000000018 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCCompositeDemoViewController.h"; sourceTree = "<group>"; };
-A10000000000000000000019 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCCompositeDemoViewController.m"; sourceTree = "<group>"; };
-A1000000000000000000001A = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCAnimationDemoViewController.h"; sourceTree = "<group>"; };
-A1000000000000000000001B = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCAnimationDemoViewController.m"; sourceTree = "<group>"; };
-A1000000000000000000001C = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCDSLDemoViewController.h"; sourceTree = "<group>"; };
-A1000000000000000000001D = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCDSLDemoViewController.m"; sourceTree = "<group>"; };
-A1000000000000000000001E = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCStylesheetDemoViewController.h"; sourceTree = "<group>"; };
-A1000000000000000000001F = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCStylesheetDemoViewController.m"; sourceTree = "<group>"; };
-A10000000000000000000020 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCHTMLDemoViewController.h"; sourceTree = "<group>"; };
-A10000000000000000000021 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCHTMLDemoViewController.m"; sourceTree = "<group>"; };
-A10000000000000000000022 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCLayoutCacheDemoViewController.h"; sourceTree = "<group>"; };
-A10000000000000000000023 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCLayoutCacheDemoViewController.m"; sourceTree = "<group>"; };
-A10000000000000000000024 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCYogaKitDemoViewController.h"; sourceTree = "<group>"; };
-A10000000000000000000025 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjCYogaKitDemoViewController.m"; sourceTree = "<group>"; };
-A10000000000000000000026 = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info.plist"; sourceTree = "<group>"; };
-A10000000000000000000028 = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "LaunchScreen.storyboard"; sourceTree = "<group>"; };
-A10000000000000000000027 = {isa = PBXFileReference; explicitFileType = "wrapper.application"; includeInIndex = 0; path = GWYogaDemoAppObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
-/* End PBXFileReference section for ObjC */
+
 /* Begin PBXFrameworksBuildPhase section */
-DE1439ACCFCEB73E6F9981A5 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (CC17E7504094B54CBE960E57, AC27DBA1B36F9006923EE7CC, A1B2C3D4E5F6A7B8C9D0E1F2, B1C2D3E4F5A6B7C8D9E0F1A2, C1D2E3F4A5B6C7D8E9F0A1B2, D1E2F3A4B5C6D7E8F9A0B1C2, E1F2A3B4C5D6E7F8A9B0C1D2); runOnlyForDeploymentPostprocessing = 0; };
-C000000000000000000002 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (A000000000000000000014, A000000000000000000015, A000000000000000000016, A000000000000000000017, A000000000000000000018, A000000000000000000019, A00000000000000000001A, A00000000000000000001C, A00000000000000000001D, A00000000000000000001E, A00000000000000000001F, A000000000000000000020, A000000000000000000021); runOnlyForDeploymentPostprocessing = 0; };
+		C000000000000000000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A000000000000000000014 /* GWYogaKit in Frameworks */,
+				A000000000000000000015 /* GWYoga in Frameworks */,
+				A000000000000000000016 /* GWYogaKitDSL in Frameworks */,
+				A000000000000000000017 /* GWYogaKitHTML in Frameworks */,
+				A000000000000000000018 /* GWYogaKitAnimation in Frameworks */,
+				A000000000000000000019 /* GWYogaKitLayoutCache in Frameworks */,
+				A00000000000000000001A /* GWYogaKitStylesheet in Frameworks */,
+				A00000000000000000001C /* GWYogaKitObjCCore in Frameworks */,
+				A00000000000000000001D /* GWYogaKitDSLObjCCore in Frameworks */,
+				A00000000000000000001E /* GWYogaKitHTMLObjCCore in Frameworks */,
+				A00000000000000000001F /* GWYogaKitAnimationObjCCore in Frameworks */,
+				A000000000000000000020 /* GWYogaKitLayoutCacheObjCCore in Frameworks */,
+				A000000000000000000021 /* GWYogaKitStylesheetObjCCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE1439ACCFCEB73E6F9981A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC17E7504094B54CBE960E57 /* GWYogaKit in Frameworks */,
+				AC27DBA1B36F9006923EE7CC /* GWYoga in Frameworks */,
+				A1B2C3D4E5F6A7B8C9D0E1F2 /* GWYogaKitDSL in Frameworks */,
+				B1C2D3E4F5A6B7C8D9E0F1A2 /* GWYogaKitHTML in Frameworks */,
+				C1D2E3F4A5B6C7D8E9F0A1B2 /* GWYogaKitAnimation in Frameworks */,
+				D1E2F3A4B5C6D7E8F9A0B1C2 /* GWYogaKitLayoutCache in Frameworks */,
+				E1F2A3B4C5D6E7F8A9B0C1D2 /* GWYogaKitStylesheet in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
+
 /* Begin PBXGroup section */
-8C4FDD7B635240BD562EBB49 = {isa = PBXGroup; children = (287BE755981C092238309A9A, E00000000000000000000001, B23D89B2D2DF3745A003AEB1); sourceTree = "<group>"; };
-B23D89B2D2DF3745A003AEB1 = {isa = PBXGroup; children = (2B32F328218E449DCE1110D9, A10000000000000000000027); name = Products; sourceTree = "<group>"; };
-287BE755981C092238309A9A = {isa = PBXGroup; children = (
-207CA4381D0CFEC95263A2DE,
-61E63BC8B948A5BBC74EBCAB,
-D0530F6D2E6FCB7D29EC48D0,
-BA87CF598EA1A9B7665BD01C,
-53C94D08660F7052D4EDAD9B,
-75F10E85030FE185C9134FD1,
-92571C38C9761492CC508BAC,
-E6B36A26A865E27868E8E10D,
-B97CD2A092E1DAEE8D2F9A39,
-80EF12E09A5625243296EA4A,
-58D9599A1DA2F6731998F520,
-524C5F95B8EEA03A9006627C,
-F1A2B3C4D5E6F7A8B9C0D1E2,
-F2A3B4C5D6E7F8A9B0C1D2E3,
-F3A4B5C6D7E8F9A0B1C2D3E4,
-F4A5B6C7D8E9F0A1B2C3D4E5,
-F5A6B7C8D9E0F1A2B3C4D5E6,
-F6A7B8C9D0E1F2A3B4C5D6E7,
-707A1B8AA6F495C9BF6658C2,
-); name = Sources; path = GWYogaDemoApp; sourceTree = "<group>"; };
+		287BE755981C092238309A9A /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				207CA4381D0CFEC95263A2DE /* AppDelegate.swift */,
+				61E63BC8B948A5BBC74EBCAB /* SceneDelegate.swift */,
+				BA87CF598EA1A9B7665BD01C /* YogaLayoutRenderer.swift */,
+				92571C38C9761492CC508BAC /* GridDemoViewController.swift */,
+				B97CD2A092E1DAEE8D2F9A39 /* PositionDemoViewController.swift */,
+				80EF12E09A5625243296EA4A /* GapDemoViewController.swift */,
+				58D9599A1DA2F6731998F520 /* AspectRatioDemoViewController.swift */,
+				524C5F95B8EEA03A9006627C /* CompositeDemoViewController.swift */,
+				F3A4B5C6D7E8F9A0B1C2D3E4 /* HTMLDemoViewController.swift */,
+				707A1B8AA6F495C9BF6658C2 /* Info.plist */,
+				3918188319EC700E41514975 /* CategoryListModel.swift */,
+				33C47B4BF3B489ACCD076143 /* CategoryListViewController.swift */,
+				5B1249062A51FA1DAD1C727C /* AddChildDemoViewController.swift */,
+				3C04EA2B239E2272EB3FE35C /* AlignContentDemoViewController.swift */,
+				74E57688E4F90C78B87EFD2B /* AlignItemsDemoViewController.swift */,
+				9E494B918F77BB18ED3975E8 /* AlignSelfDemoViewController.swift */,
+				6CB0349F21F3E7EC5259F217 /* AnimConfigDemoViewController.swift */,
+				BDE966791B07226CE4FF4B06 /* AnimateDemoViewController.swift */,
+				1E693471A05682B2F209D73A /* AttributedBuilderDemoViewController.swift */,
+				BC4E49C81C166AC4B3982745 /* AttributedDemoViewController.swift */,
+				E11A77404C390ADCEF3ED51E /* BgimageDemoViewController.swift */,
+				9834CC86BEBE12EBA0FC7CCB /* BindingDemoViewController.swift */,
+				0974B41FEFF2138F6CB4DC7B /* BorderDemoViewController.swift */,
+				DE52AD91D66701A8C68D80C4 /* CacheDemoViewController.swift */,
+				4ACFA866406968879732ED80 /* CallasDemoViewController.swift */,
+				71D567F2A1836E9FA61836E9 /* ChainableDemoViewController.swift */,
+				7556ED6C62AFC06735B01894 /* CoalesceDemoViewController.swift */,
+				04E1F9819451A7D193AC6769 /* CombineDemoViewController.swift */,
+				E33C1125498F15CA0DC81A6B /* ControlsDemoViewController.swift */,
+				E2740322DAE575E4C12849F9 /* CornerRadiusDemoViewController.swift */,
+				BE9752408F28ED7CE910939F /* CssFileDemoViewController.swift */,
+				9EF3474320635B299BD53E5C /* CssInlineDemoViewController.swift */,
+				22C4084054CD8F84A48446E5 /* CssMergeDemoViewController.swift */,
+				7AD0344EE3429C37FAF48773 /* CssParseDemoViewController.swift */,
+				CD34E922903F50302FBFE31C /* DebugBorderDemoViewController.swift */,
+				6C7860DC2661F200F4123188 /* DebugPrintDemoViewController.swift */,
+				72DA9362004C2ED3E9437CA5 /* DisplayDemoViewController.swift */,
+				31752569557F2687756DD103 /* FlexBasisDemoViewController.swift */,
+				58E0A3DFB61D6258E8AFB37F /* FlexWrapGrowDemoViewController.swift */,
+				44483CC2EC94A55228898E17 /* FlexboxDirectionDemoViewController.swift */,
+				D86E4D965C0D74F8B63106B4 /* GradientDemoViewController.swift */,
+				C9794D90B0E818AD31F9CB4E /* IntrinsicDemoViewController.swift */,
+				367AA6435715AA2B20343AF3 /* JustifyContentDemoViewController.swift */,
+				1CCD67FDAADC5D108DB455C9 /* KeyframeDemoViewController.swift */,
+				68B797FE6710A73DB271954F /* LayoutResultDemoViewController.swift */,
+				C60B445F0176195611ED3D9C /* MarginDemoViewController.swift */,
+				A3180F5AE0EA8B2EDB48D87B /* ModifierDemoViewController.swift */,
+				18E1153596A694500BD0095A /* NumberOfLinesDemoViewController.swift */,
+				D337D11B7A7DE6F38E94AE32 /* OpacityDemoViewController.swift */,
+				E184EA3E2F06DBFE9CEC6F35 /* PaddingDemoViewController.swift */,
+				5C61B9D451579A9D2B9C8C95 /* ProtocolDemoViewController.swift */,
+				918289DFB747A5F3E51256DB /* RegistryDemoViewController.swift */,
+				75F30FC566408BC820FC55D0 /* ScrollDemoViewController.swift */,
+				DF77BD1C6C67ECD723679B3A /* SelectorDemoViewController.swift */,
+				54425DBCE960428C74A0BC86 /* ShadowDemoViewController.swift */,
+				C7B6C0BA7BEC9FF9F3C83EEF /* SpringDemoViewController.swift */,
+				0F3436686676942BD3CB21C1 /* SystemLayoutSizeDemoViewController.swift */,
+				37F0B4E1924234C781E57660 /* TraitDemoViewController.swift */,
+				551217CA9DF50B7ADCD28477 /* TransitionDemoViewController.swift */,
+				1D5E1F087A9387010B47C722 /* ValueDemoViewController.swift */,
+				CE15D52699460BD7420BAB3C /* VstackDemoViewController.swift */,
+				8D1D22147373CA99EADE6CC9 /* WidthHeightDemoViewController.swift */,
+				4A2AED0693A75A6F6B85D2A3 /* YogDemoViewController.swift */,
+				7EF9AAD23F075349DF298A54 /* YogaLayoutViewDemoViewController.swift */,
+				A93C8EB93144890C13A6AD55 /* YogaStateDemoViewController.swift */,
+				7497FA670036FE05A3C3D365 /* CodePreviewViewController.swift */,
+				2E3612B6F65A397689010769 /* DemoPageViewController.swift */,
+				874E82952E4E7DDF6EBA331D /* DemoRegistration.swift */,
+					A20000000000000000000001 /* LaunchScreen.storyboard */,
+			);
+			name = Sources;
+			path = GWYogaDemoApp;
+			sourceTree = "<group>";
+		};
+		8C4FDD7B635240BD562EBB49 = {
+			isa = PBXGroup;
+			children = (
+				287BE755981C092238309A9A /* Sources */,
+				E00000000000000000000001 /* ObjC Sources */,
+				B23D89B2D2DF3745A003AEB1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B23D89B2D2DF3745A003AEB1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2B32F328218E449DCE1110D9 /* GWYogaDemoApp.app */,
+				A10000000000000000000027 /* GWYogaDemoAppObjC.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E00000000000000000000001 /* ObjC Sources */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000001 /* main.m */,
+				A10000000000000000000002 /* ObjCAppDelegate.h */,
+				A10000000000000000000003 /* ObjCAppDelegate.m */,
+				A10000000000000000000004 /* ObjCSceneDelegate.h */,
+				A10000000000000000000005 /* ObjCSceneDelegate.m */,
+				A10000000000000000000006 /* ObjCBaseDemoViewController.h */,
+				A10000000000000000000007 /* ObjCBaseDemoViewController.m */,
+				A1000000000000000000000A /* ObjCYogaRenderer.h */,
+				A1000000000000000000000B /* ObjCYogaRenderer.m */,
+				A1000000000000000000000E /* ObjCGridDemoViewController.h */,
+				A1000000000000000000000F /* ObjCGridDemoViewController.m */,
+				A10000000000000000000012 /* ObjCPositionDemoViewController.h */,
+				A10000000000000000000013 /* ObjCPositionDemoViewController.m */,
+				A10000000000000000000014 /* ObjCGapDemoViewController.h */,
+				A10000000000000000000015 /* ObjCGapDemoViewController.m */,
+				A10000000000000000000016 /* ObjCAspectRatioDemoViewController.h */,
+				A10000000000000000000017 /* ObjCAspectRatioDemoViewController.m */,
+				A10000000000000000000018 /* ObjCCompositeDemoViewController.h */,
+				A10000000000000000000019 /* ObjCCompositeDemoViewController.m */,
+				
+				A1EDB0CB5AD20D4FE19540C5 /* ObjCFlexboxDirectionDemoViewController.h */,
+				A1810DB8EBE2494A2EB01F88 /* ObjCJustifyContentDemoViewController.h */,
+				A18C0B06B2E7344F9F8BD27E /* ObjCAlignItemsDemoViewController.h */,
+				A1AEA06B76DDFD48C3A30E8B /* ObjCFlexWrapGrowDemoViewController.h */,
+				A112F715D41F7C4B41B7EF8E /* ObjCAlignSelfDemoViewController.h */,
+				A1EE67EAAB31AF4F43905A97 /* ObjCAlignContentDemoViewController.h */,
+				A113E44A9098754F0A9688C9 /* ObjCFlexBasisDemoViewController.h */,
+				A14EDA4CDC551245988AA007 /* ObjCDisplayDemoViewController.h */,
+				A15B9D777DB92F4C89917491 /* ObjCWidthHeightDemoViewController.h */,
+				A1E40E6C254DF24D0EAE4870 /* ObjCMarginDemoViewController.h */,
+				A1EB93E529FF1B4EE785E1D9 /* ObjCPaddingDemoViewController.h */,
+				A120C9897B8B04458A931452 /* ObjCBorderDemoViewController.h */,
+				A14CA175D60F6F4979BF2D3A /* ObjCCornerRadiusDemoViewController.h */,
+				A1863417A40BED4EF687C5B2 /* ObjCShadowDemoViewController.h */,
+				A14A850ECD84AC4B0BA69223 /* ObjCOpacityClipsDemoViewController.h */,
+				A1BEB5118C566C4C07813CE8 /* ObjCDebugPrintDemoViewController.h */,
+				A13400AC82B0974F548EF09F /* ObjCDebugBorderDemoViewController.h */,
+				A1EAE21F3190CC46DC918B21 /* ObjCSystemLayoutSizeDemoViewController.h */,
+				A146B104E06BFB4F1C8D8762 /* ObjCVStackDemoViewController.h */,
+				A153132D37052A456F8CA0C4 /* ObjCScrollDemoViewController.h */,
+				A1CB1ED5A0EDCD44D4AA328F /* ObjCDemoListViewController.h */,
+				A14C099B9663114258A552D9 /* ObjCFlexboxDirectionDemoViewController.m */,
+				A1CE18E507AE91440A980B35 /* ObjCJustifyContentDemoViewController.m */,
+				A1F3EC33A69B1F46D0A30FED /* ObjCAlignItemsDemoViewController.m */,
+				A18B846BFD8BFA465AA9E3E9 /* ObjCFlexWrapGrowDemoViewController.m */,
+				A18FBE9EED09F84EA881666E /* ObjCAlignSelfDemoViewController.m */,
+				A100ADC582B24548D09450C4 /* ObjCAlignContentDemoViewController.m */,
+				A12421D04707B84D1FB02A2C /* ObjCFlexBasisDemoViewController.m */,
+				A17A4E6D2768CC404B856220 /* ObjCDisplayDemoViewController.m */,
+				A17742C45D16FB46D7A86E72 /* ObjCWidthHeightDemoViewController.m */,
+				A1310448F2093A41BFB1005C /* ObjCMarginDemoViewController.m */,
+				A148CF4C97F48D4DFF96213E /* ObjCPaddingDemoViewController.m */,
+				A1E04BA498C67D414FA1DA9F /* ObjCBorderDemoViewController.m */,
+				A1201C547106D14188BC0573 /* ObjCCornerRadiusDemoViewController.m */,
+				A189746103D3B54E6698E87D /* ObjCShadowDemoViewController.m */,
+				A14E040BBF6FEA40A9BC45A9 /* ObjCOpacityClipsDemoViewController.m */,
+				A12906F72508C748C3BDEDE4 /* ObjCDebugPrintDemoViewController.m */,
+				A1E9684167AA68454BBF79A3 /* ObjCDebugBorderDemoViewController.m */,
+				A1B08C56F4696A467E974DF3 /* ObjCSystemLayoutSizeDemoViewController.m */,
+				A1595B5331C7AB449A91AB61 /* ObjCVStackDemoViewController.m */,
+				A168EC1858765C49E6A3B5BE /* ObjCScrollDemoViewController.m */,
+				A1FAFF74B1713D408186014B /* ObjCDemoListViewController.m */,
+A10000000000000000000026 /* Info.plist */,
+				A10000000000000000000028 /* LaunchScreen.storyboard */,
+			);
+			name = "ObjC Sources";
+			path = GWYogaDemoAppObjC;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
-/* Begin PBXGroup section for ObjC */
-E00000000000000000000001 = {isa = PBXGroup; children = (
-A10000000000000000000001,
-A10000000000000000000002,
-A10000000000000000000003,
-A10000000000000000000004,
-A10000000000000000000005,
-A10000000000000000000006,
-A10000000000000000000007,
-A10000000000000000000008,
-A10000000000000000000009,
-A1000000000000000000000A,
-A1000000000000000000000B,
-A1000000000000000000000C,
-A1000000000000000000000D,
-A1000000000000000000000E,
-A1000000000000000000000F,
-A10000000000000000000010,
-A10000000000000000000011,
-A10000000000000000000012,
-A10000000000000000000013,
-A10000000000000000000014,
-A10000000000000000000015,
-A10000000000000000000016,
-A10000000000000000000017,
-A10000000000000000000018,
-A10000000000000000000019,
-A1000000000000000000001A,
-A1000000000000000000001B,
-A1000000000000000000001C,
-A1000000000000000000001D,
-A1000000000000000000001E,
-A1000000000000000000001F,
-A10000000000000000000020,
-A10000000000000000000021,
-A10000000000000000000022,
-A10000000000000000000023,
-A10000000000000000000024,
-A10000000000000000000025,
-A10000000000000000000026,
-A10000000000000000000028,
-); name = "ObjC Sources"; path = GWYogaDemoAppObjC; sourceTree = "<group>"; };
-/* End PBXGroup section for ObjC */
+
 /* Begin PBXNativeTarget section */
-A9A41E6D4940C3747EB8FEB7 = {isa = PBXNativeTarget; buildConfigurationList = 9264D57D637312A9C39D45FC; buildPhases = (3B7DFB0747829707F437ED7F, DE1439ACCFCEB73E6F9981A5, 3519654520012F56AC9A0E86); buildRules = (); dependencies = (); name = GWYogaDemoApp; packageProductDependencies = (5963EC32EB729E7982FDAAD1, 6E20C339D2AE86A3754BDFE1, A2B3C4D5E6F7A8B9C0D1E2F3, B2C3D4E5F6A7B8C9D0E1F2A3, C2D3E4F5A6B7C8D9E0F1A2B3, D2E3F4A5B6C7D8E9F0A1B2C3, E2F3A4B5C6D7E8F9A0B1C2D3); productName = GWYogaDemoApp; productReference = 2B32F328218E449DCE1110D9; productType = "com.apple.product-type.application"; };
-D00000000000000000000001 = {isa = PBXNativeTarget; buildConfigurationList = 100000000000000000000001; buildPhases = (C000000000000000000001, C000000000000000000002, C000000000000000000003); buildRules = (); dependencies = (); name = GWYogaDemoAppObjC; packageProductDependencies = (5963EC32EB729E7982FDAAD1, 6E20C339D2AE86A3754BDFE1, A2B3C4D5E6F7A8B9C0D1E2F3, B2C3D4E5F6A7B8C9D0E1F2A3, C2D3E4F5A6B7C8D9E0F1A2B3, D2E3F4A5B6C7D8E9F0A1B2C3, E2F3A4B5C6D7E8F9A0B1C2D3, B000000000000000000001, B000000000000000000002, B000000000000000000003, B000000000000000000004, B000000000000000000005, B000000000000000000006); productName = GWYogaDemoAppObjC; productReference = A10000000000000000000027; productType = "com.apple.product-type.application"; };
+		A9A41E6D4940C3747EB8FEB7 /* GWYogaDemoApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9264D57D637312A9C39D45FC /* Build configuration list for PBXNativeTarget "GWYogaDemoApp" */;
+			buildPhases = (
+				3B7DFB0747829707F437ED7F /* Sources */,
+				DE1439ACCFCEB73E6F9981A5 /* Frameworks */,
+				3519654520012F56AC9A0E86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GWYogaDemoApp;
+			packageProductDependencies = (
+				5963EC32EB729E7982FDAAD1 /* GWYogaKit */,
+				6E20C339D2AE86A3754BDFE1 /* GWYoga */,
+				A2B3C4D5E6F7A8B9C0D1E2F3 /* GWYogaKitDSL */,
+				B2C3D4E5F6A7B8C9D0E1F2A3 /* GWYogaKitHTML */,
+				C2D3E4F5A6B7C8D9E0F1A2B3 /* GWYogaKitAnimation */,
+				D2E3F4A5B6C7D8E9F0A1B2C3 /* GWYogaKitLayoutCache */,
+				E2F3A4B5C6D7E8F9A0B1C2D3 /* GWYogaKitStylesheet */,
+			);
+			productName = GWYogaDemoApp;
+			productReference = 2B32F328218E449DCE1110D9 /* GWYogaDemoApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D00000000000000000000001 /* GWYogaDemoAppObjC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 100000000000000000000001 /* Build configuration list for PBXNativeTarget "GWYogaDemoAppObjC" */;
+			buildPhases = (
+				C000000000000000000001 /* Sources */,
+				C000000000000000000002 /* Frameworks */,
+				C000000000000000000003 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GWYogaDemoAppObjC;
+			packageProductDependencies = (
+				5963EC32EB729E7982FDAAD1 /* GWYogaKit */,
+				6E20C339D2AE86A3754BDFE1 /* GWYoga */,
+				A2B3C4D5E6F7A8B9C0D1E2F3 /* GWYogaKitDSL */,
+				B2C3D4E5F6A7B8C9D0E1F2A3 /* GWYogaKitHTML */,
+				C2D3E4F5A6B7C8D9E0F1A2B3 /* GWYogaKitAnimation */,
+				D2E3F4A5B6C7D8E9F0A1B2C3 /* GWYogaKitLayoutCache */,
+				E2F3A4B5C6D7E8F9A0B1C2D3 /* GWYogaKitStylesheet */,
+				B000000000000000000001 /* GWYogaKitObjCCore */,
+				B000000000000000000002 /* GWYogaKitDSLObjCCore */,
+				B000000000000000000003 /* GWYogaKitHTMLObjCCore */,
+				B000000000000000000004 /* GWYogaKitAnimationObjCCore */,
+				B000000000000000000005 /* GWYogaKitLayoutCacheObjCCore */,
+				B000000000000000000006 /* GWYogaKitStylesheetObjCCore */,
+			);
+			productName = GWYogaDemoAppObjC;
+			productReference = A10000000000000000000027 /* GWYogaDemoAppObjC.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
+
 /* Begin PBXProject section */
-63A9F0EA7BB98050796B649E = {isa = PBXProject; attributes = {LastSwiftUpdateCheck = 1500; LastUpgradeCheck = 1500; }; buildConfigurationList = 922D41B3256E9E46EDB76357; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en, Base); mainGroup = 8C4FDD7B635240BD562EBB49; packageReferences = (011B82C029B392CF0E363268); productRefGroup = B23D89B2D2DF3745A003AEB1; projectDirPath = ""; targets = (A9A41E6D4940C3747EB8FEB7, D00000000000000000000001); };
+		63A9F0EA7BB98050796B649E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+			};
+			buildConfigurationList = 922D41B3256E9E46EDB76357 /* Build configuration list for PBXProject "GWYogaDemoApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8C4FDD7B635240BD562EBB49;
+			packageReferences = (
+				011B82C029B392CF0E363268 /* XCLocalSwiftPackageReference "." */,
+			);
+			productRefGroup = B23D89B2D2DF3745A003AEB1 /* Products */;
+			projectDirPath = "";
+			targets = (
+				A9A41E6D4940C3747EB8FEB7 /* GWYogaDemoApp */,
+				D00000000000000000000001 /* GWYogaDemoAppObjC */,
+			);
+		};
 /* End PBXProject section */
+
 /* Begin PBXResourcesBuildPhase section */
-3519654520012F56AC9A0E86 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
-C000000000000000000003 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		3519654520012F56AC9A0E86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A20000000000000000000002 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C000000000000000000003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-3B7DFB0747829707F437ED7F = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
-F6750BB1FBEE5BC90DD6BDBC,
-13890C9E99C64C471FB341FE,
-3F47A3DEF04676D78A9BC2BF,
-FF6F4005A1ECB2DAA62D6EAF,
-A7FB305DCA9533DDAE94C25F,
-79B407264A172E71253B8F52,
-DB6A6CBFF89DEDE654533815,
-BF82D915B433087E5F2962FD,
-441069B3C1B0C39AC2A60B2E,
-EB3B55FDD6DFE81736B5E21C,
-C3A8FEF78F5A2333A38D3BF6,
-1069253A61331BF1CF5FDADF,
-E1D2C3B4A5F6E7D8C9B0A1F2,
-E2D3C4B5A6F7E8D9C0B1A2F3,
-E3D4C5B6A7F8E9D0C1B2A3F4,
-E4D5C6B7A8F9E0A1C2B3A4F5,
-E5D6C7B8A9F0E1B2C3B4A5F6,
-E6D7C8B9A0F1E2C3D4B5A6F7,
-); runOnlyForDeploymentPostprocessing = 0; };
-C000000000000000000001 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
-A000000000000000000001,
-A000000000000000000002,
-A000000000000000000003,
-A000000000000000000004,
-A000000000000000000005,
-A000000000000000000006,
-A000000000000000000007,
-A000000000000000000008,
-A000000000000000000009,
-A00000000000000000000A,
-A00000000000000000000B,
-A00000000000000000000C,
-A00000000000000000000D,
-A00000000000000000000E,
-A00000000000000000000F,
-A000000000000000000010,
-A000000000000000000011,
-A000000000000000000012,
-A000000000000000000013,
-); runOnlyForDeploymentPostprocessing = 0; };
+		3B7DFB0747829707F437ED7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6750BB1FBEE5BC90DD6BDBC /* AppDelegate.swift in Sources */,
+				13890C9E99C64C471FB341FE /* SceneDelegate.swift in Sources */,
+				FF6F4005A1ECB2DAA62D6EAF /* YogaLayoutRenderer.swift in Sources */,
+				DB6A6CBFF89DEDE654533815 /* GridDemoViewController.swift in Sources */,
+				441069B3C1B0C39AC2A60B2E /* PositionDemoViewController.swift in Sources */,
+				EB3B55FDD6DFE81736B5E21C /* GapDemoViewController.swift in Sources */,
+				C3A8FEF78F5A2333A38D3BF6 /* AspectRatioDemoViewController.swift in Sources */,
+				1069253A61331BF1CF5FDADF /* CompositeDemoViewController.swift in Sources */,
+				E3D4C5B6A7F8E9D0C1B2A3F4 /* HTMLDemoViewController.swift in Sources */,
+				4570E12D31C24EB758943A1A /* CategoryListModel.swift in Sources */,
+				ECC3214B7324664B9C0C3F54 /* CategoryListViewController.swift in Sources */,
+				50BA0F936DEC55935635B918 /* AddChildDemoViewController.swift in Sources */,
+				393A4067A94A13EE640B8F65 /* AlignContentDemoViewController.swift in Sources */,
+				131F3635D3226300049C8222 /* AlignItemsDemoViewController.swift in Sources */,
+				3A409C7F795DD84D6E063679 /* AlignSelfDemoViewController.swift in Sources */,
+				4B7AAE13AD03D97F42564439 /* AnimConfigDemoViewController.swift in Sources */,
+				4391EB36C9A8590C4CE14037 /* AnimateDemoViewController.swift in Sources */,
+				D82A75E220E5E3A56D2D66A5 /* AttributedBuilderDemoViewController.swift in Sources */,
+				6391BCC91D19CF4651D85EE7 /* AttributedDemoViewController.swift in Sources */,
+				88D68587CB43E77290AC15B6 /* BgimageDemoViewController.swift in Sources */,
+				6358127C05F05291EBAB6204 /* BindingDemoViewController.swift in Sources */,
+				71EF76D3AB1CEBE9FA766295 /* BorderDemoViewController.swift in Sources */,
+				46DA654E7AD7611940494B1F /* CacheDemoViewController.swift in Sources */,
+				79E26DA8CE29F4E3DCDE5E89 /* CallasDemoViewController.swift in Sources */,
+				2F2C66432EAE5F7A777BE0BA /* ChainableDemoViewController.swift in Sources */,
+				D522DFBA350DF5812C621401 /* CoalesceDemoViewController.swift in Sources */,
+				41EF63750AE46683132DD192 /* CombineDemoViewController.swift in Sources */,
+				9EC0A7E8F19F9B23143AD6B5 /* ControlsDemoViewController.swift in Sources */,
+				F2990D6414AD8CFD063D773E /* CornerRadiusDemoViewController.swift in Sources */,
+				02EB6ECF500DDA2370C1B701 /* CssFileDemoViewController.swift in Sources */,
+				A77C398FBFC2E55069E059ED /* CssInlineDemoViewController.swift in Sources */,
+				A1D90B96CE3D47F00304F23F /* CssMergeDemoViewController.swift in Sources */,
+				04568B0E54A3EF886766863F /* CssParseDemoViewController.swift in Sources */,
+				2C1705803A69A8277469D732 /* DebugBorderDemoViewController.swift in Sources */,
+				8DFF5F52D4BA9D32B7380DB9 /* DebugPrintDemoViewController.swift in Sources */,
+				02CBD2F8AD21D1792A4DAAF7 /* DisplayDemoViewController.swift in Sources */,
+				60510E9EA16BAFC6C371C594 /* FlexBasisDemoViewController.swift in Sources */,
+				7FAF531CD2FC810AED227825 /* FlexWrapGrowDemoViewController.swift in Sources */,
+				9EC6D12926AA820D02694997 /* FlexboxDirectionDemoViewController.swift in Sources */,
+				ACD888636E9BE71651D9532D /* GradientDemoViewController.swift in Sources */,
+				26D5476A41DE9E408E91B3DF /* IntrinsicDemoViewController.swift in Sources */,
+				33A52CE10C6FB0C3F069BF26 /* JustifyContentDemoViewController.swift in Sources */,
+				0EE424516939105CC88C0E31 /* KeyframeDemoViewController.swift in Sources */,
+				0E87179DC8B467D696846C78 /* LayoutResultDemoViewController.swift in Sources */,
+				3A3F93748A74BD49434FD48B /* MarginDemoViewController.swift in Sources */,
+				CCA30A99375C13140D9F14E6 /* ModifierDemoViewController.swift in Sources */,
+				9D5DF35748D5FD8FFFF411B1 /* NumberOfLinesDemoViewController.swift in Sources */,
+				1F296444231F1D662B645797 /* OpacityDemoViewController.swift in Sources */,
+				7F5780D4F79BAF98126329D8 /* PaddingDemoViewController.swift in Sources */,
+				2B86963F4BF3AB6910966D87 /* ProtocolDemoViewController.swift in Sources */,
+				82C66DD92B4AD98EA1FA8638 /* RegistryDemoViewController.swift in Sources */,
+				3051A5D9A6C6EB44FCA2E0E3 /* ScrollDemoViewController.swift in Sources */,
+				F73D416798BEA93A9EF74DAE /* SelectorDemoViewController.swift in Sources */,
+				07DF9817A0C595BBED53D7E4 /* ShadowDemoViewController.swift in Sources */,
+				620AC17EAE3D0D650C3E1F17 /* SpringDemoViewController.swift in Sources */,
+				AF11D26C0CE0E0FB65F7BA1D /* SystemLayoutSizeDemoViewController.swift in Sources */,
+				776FDA4DC08B543A0C5E01CA /* TraitDemoViewController.swift in Sources */,
+				68206467A62AFC3F2526B548 /* TransitionDemoViewController.swift in Sources */,
+				77C45EFAA7949703E8A11B4D /* ValueDemoViewController.swift in Sources */,
+				C1FADE6A8D50621761A8ABE5 /* VstackDemoViewController.swift in Sources */,
+				ACC2E1B2F057E32569D31417 /* WidthHeightDemoViewController.swift in Sources */,
+				D89FB1F07DBE2D28718A98AA /* YogDemoViewController.swift in Sources */,
+				B6E6E7FB77B212624B69BB08 /* YogaLayoutViewDemoViewController.swift in Sources */,
+				E0B81EEFD3A8B67A2EBE042A /* YogaStateDemoViewController.swift in Sources */,
+				DCAF39EE461BDAAD62C0B63E /* CodePreviewViewController.swift in Sources */,
+				72BB9C95F7FD17545C5F841F /* DemoPageViewController.swift in Sources */,
+				34EFAE019C1801DBCDB68835 /* DemoRegistration.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C000000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A000000000000000000001 /* main.m in Sources */,
+				A000000000000000000002 /* ObjCAppDelegate.m in Sources */,
+				A000000000000000000003 /* ObjCSceneDelegate.m in Sources */,
+				A000000000000000000004 /* ObjCBaseDemoViewController.m in Sources */,
+				A000000000000000000006 /* ObjCYogaRenderer.m in Sources */,
+				A000000000000000000008 /* ObjCGridDemoViewController.m in Sources */,
+				A00000000000000000000A /* ObjCPositionDemoViewController.m in Sources */,
+				A00000000000000000000B /* ObjCGapDemoViewController.m in Sources */,
+				A00000000000000000000C /* ObjCAspectRatioDemoViewController.m in Sources */,
+				A00000000000000000000D /* ObjCCompositeDemoViewController.m in Sources */,
+				A0E01C8E247626435486304F /* ObjCFlexboxDirectionDemoViewController.m in Sources */,
+				A01925970B4B254AD59EF01C /* ObjCJustifyContentDemoViewController.m in Sources */,
+				A08B8437A83562452D93DAED /* ObjCAlignItemsDemoViewController.m in Sources */,
+				A0288A6D70ABD842D59A18A3 /* ObjCFlexWrapGrowDemoViewController.m in Sources */,
+				A09D524DDAB595462AA58822 /* ObjCAlignSelfDemoViewController.m in Sources */,
+				A041FC25A2DFE145F389576E /* ObjCAlignContentDemoViewController.m in Sources */,
+				A0F96652D52CFC4FB6B57D99 /* ObjCFlexBasisDemoViewController.m in Sources */,
+				A049C37BF22657432F91E206 /* ObjCDisplayDemoViewController.m in Sources */,
+				A00B133DA2536F4477A1FB11 /* ObjCWidthHeightDemoViewController.m in Sources */,
+				A0BA412C91F0A94377B9AD25 /* ObjCMarginDemoViewController.m in Sources */,
+				A00242DE5CD0C042739B97D1 /* ObjCPaddingDemoViewController.m in Sources */,
+				A0E59E1AC576FE4933AD97C9 /* ObjCBorderDemoViewController.m in Sources */,
+				A0FB9A3BAA5914486D823167 /* ObjCCornerRadiusDemoViewController.m in Sources */,
+				A0ECE7627407F444B4BB9252 /* ObjCShadowDemoViewController.m in Sources */,
+				A097575B7D7995464DBB8D7B /* ObjCOpacityClipsDemoViewController.m in Sources */,
+				A0D3DCBA3788DB4A8F95EB6D /* ObjCDebugPrintDemoViewController.m in Sources */,
+				A0DB389349BEF04312ABBE5F /* ObjCDebugBorderDemoViewController.m in Sources */,
+				A05E4C128D1B7A4FF3A2E46E /* ObjCSystemLayoutSizeDemoViewController.m in Sources */,
+				A091DA9578378C4E1E8CC6DF /* ObjCVStackDemoViewController.m in Sources */,
+				A0C4E5791A6DC64187AAFC53 /* ObjCScrollDemoViewController.m in Sources */,
+				A0DEC5AADBEC2841BF96FFC7 /* ObjCDemoListViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
 /* Begin XCBuildConfiguration section */
-D20FE4381AF75ABF18294103 = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; IPHONEOS_DEPLOYMENT_TARGET = 15.0; ONLY_ACTIVE_ARCH = NO; SDKROOT = iphoneos; SWIFT_VERSION = 5.0; }; name = Debug; };
-48147C2DF3D92BA11DB71033 = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; IPHONEOS_DEPLOYMENT_TARGET = 15.0; ONLY_ACTIVE_ARCH = NO; SDKROOT = iphoneos; SWIFT_VERSION = 5.0; }; name = Release; };
-1A9E10FAAD0A97FB97BCEC18 = {isa = XCBuildConfiguration; buildSettings = {ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; CODE_SIGN_STYLE = Automatic; "EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64; INFOPLIST_FILE = GWYogaDemoApp/Info.plist; IPHONEOS_DEPLOYMENT_TARGET = 15.0; PRODUCT_BUNDLE_IDENTIFIER = com.gwyoga.demo; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Debug; };
-B79C83306C8ABF7373B5E45C = {isa = XCBuildConfiguration; buildSettings = {ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; CODE_SIGN_STYLE = Automatic; "EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64; INFOPLIST_FILE = GWYogaDemoApp/Info.plist; IPHONEOS_DEPLOYMENT_TARGET = 15.0; PRODUCT_BUNDLE_IDENTIFIER = com.gwyoga.demo; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Release; };
+		1A9E10FAAD0A97FB97BCEC18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				INFOPLIST_FILE = GWYogaDemoApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gwyoga.demo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		48147C2DF3D92BA11DB71033 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		B79C83306C8ABF7373B5E45C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				INFOPLIST_FILE = GWYogaDemoApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gwyoga.demo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D20FE4381AF75ABF18294103 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F00000000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				INFOPLIST_FILE = GWYogaDemoAppObjC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gwyoga.demoobjc;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F00000000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				INFOPLIST_FILE = GWYogaDemoAppObjC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gwyoga.demoobjc;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
-/* ObjC Target Build Configurations */
-F00000000000000000000001 = {isa = XCBuildConfiguration; buildSettings = {ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; CODE_SIGN_STYLE = Automatic; CLANG_ENABLE_OBJC_ARC = YES; "EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64; INFOPLIST_FILE = GWYogaDemoAppObjC/Info.plist; IPHONEOS_DEPLOYMENT_TARGET = 15.0; PRODUCT_BUNDLE_IDENTIFIER = com.gwyoga.demoobjc; PRODUCT_NAME = "$(TARGET_NAME)"; TARGETED_DEVICE_FAMILY = "1,2"; CLANG_ENABLE_MODULES = YES; }; name = Debug; };
-F00000000000000000000002 = {isa = XCBuildConfiguration; buildSettings = {ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; CODE_SIGN_STYLE = Automatic; CLANG_ENABLE_OBJC_ARC = YES; "EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64; INFOPLIST_FILE = GWYogaDemoAppObjC/Info.plist; IPHONEOS_DEPLOYMENT_TARGET = 15.0; PRODUCT_BUNDLE_IDENTIFIER = com.gwyoga.demoobjc; PRODUCT_NAME = "$(TARGET_NAME)"; TARGETED_DEVICE_FAMILY = "1,2"; CLANG_ENABLE_MODULES = YES; }; name = Release; };
-/* End XCBuildConfiguration section for ObjC */
+
 /* Begin XCConfigurationList section */
-922D41B3256E9E46EDB76357 = {isa = XCConfigurationList; buildConfigurations = (D20FE4381AF75ABF18294103, 48147C2DF3D92BA11DB71033); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
-9264D57D637312A9C39D45FC = {isa = XCConfigurationList; buildConfigurations = (1A9E10FAAD0A97FB97BCEC18, B79C83306C8ABF7373B5E45C); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
-100000000000000000000001 = {isa = XCConfigurationList; buildConfigurations = (F00000000000000000000001, F00000000000000000000002); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		100000000000000000000001 /* Build configuration list for PBXNativeTarget "GWYogaDemoAppObjC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F00000000000000000000001 /* Debug */,
+				F00000000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		922D41B3256E9E46EDB76357 /* Build configuration list for PBXProject "GWYogaDemoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D20FE4381AF75ABF18294103 /* Debug */,
+				48147C2DF3D92BA11DB71033 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9264D57D637312A9C39D45FC /* Build configuration list for PBXNativeTarget "GWYogaDemoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A9E10FAAD0A97FB97BCEC18 /* Debug */,
+				B79C83306C8ABF7373B5E45C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
 /* Begin XCLocalSwiftPackageReference section */
-011B82C029B392CF0E363268 = {isa = XCLocalSwiftPackageReference; relativePath = .; };
+		011B82C029B392CF0E363268 /* XCLocalSwiftPackageReference "." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = .;
+		};
 /* End XCLocalSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
-5963EC32EB729E7982FDAAD1 = {isa = XCSwiftPackageProductDependency; productName = GWYogaKit; package = 011B82C029B392CF0E363268; };
-6E20C339D2AE86A3754BDFE1 = {isa = XCSwiftPackageProductDependency; productName = GWYoga; package = 011B82C029B392CF0E363268; };
-A2B3C4D5E6F7A8B9C0D1E2F3 = {isa = XCSwiftPackageProductDependency; productName = GWYogaKitDSL; package = 011B82C029B392CF0E363268; };
-B2C3D4E5F6A7B8C9D0E1F2A3 = {isa = XCSwiftPackageProductDependency; productName = GWYogaKitHTML; package = 011B82C029B392CF0E363268; };
-C2D3E4F5A6B7C8D9E0F1A2B3 = {isa = XCSwiftPackageProductDependency; productName = GWYogaKitAnimation; package = 011B82C029B392CF0E363268; };
-D2E3F4A5B6C7D8E9F0A1B2C3 = {isa = XCSwiftPackageProductDependency; productName = GWYogaKitLayoutCache; package = 011B82C029B392CF0E363268; };
-E2F3A4B5C6D7E8F9A0B1C2D3 = {isa = XCSwiftPackageProductDependency; productName = GWYogaKitStylesheet; package = 011B82C029B392CF0E363268; };
+		5963EC32EB729E7982FDAAD1 /* GWYogaKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 011B82C029B392CF0E363268 /* XCLocalSwiftPackageReference "." */;
+			productName = GWYogaKit;
+		};
+		6E20C339D2AE86A3754BDFE1 /* GWYoga */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 011B82C029B392CF0E363268 /* XCLocalSwiftPackageReference "." */;
+			productName = GWYoga;
+		};
+		A2B3C4D5E6F7A8B9C0D1E2F3 /* GWYogaKitDSL */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 011B82C029B392CF0E363268 /* XCLocalSwiftPackageReference "." */;
+			productName = GWYogaKitDSL;
+		};
+		B000000000000000000001 /* GWYogaKitObjCCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 011B82C029B392CF0E363268 /* XCLocalSwiftPackageReference "." */;
+			productName = GWYogaKitObjCCore;
+		};
+		B000000000000000000002 /* GWYogaKitDSLObjCCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 011B82C029B392CF0E363268 /* XCLocalSwiftPackageReference "." */;
+			productName = GWYogaKitDSLObjCCore;
+		};
+		B000000000000000000003 /* GWYogaKitHTMLObjCCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 011B82C029B392CF0E363268 /* XCLocalSwiftPackageReference "." */;
+			productName = GWYogaKitHTMLObjCCore;
+		};
+		B000000000000000000004 /* GWYogaKitAnimationObjCCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 011B82C029B392CF0E363268 /* XCLocalSwiftPackageReference "." */;
+			productName = GWYogaKitAnimationObjCCore;
+		};
+		B000000000000000000005 /* GWYogaKitLayoutCacheObjCCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 011B82C029B392CF0E363268 /* XCLocalSwiftPackageReference "." */;
+			productName = GWYogaKitLayoutCacheObjCCore;
+		};
+		B000000000000000000006 /* GWYogaKitStylesheetObjCCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 011B82C029B392CF0E363268 /* XCLocalSwiftPackageReference "." */;
+			productName = GWYogaKitStylesheetObjCCore;
+		};
+		B2C3D4E5F6A7B8C9D0E1F2A3 /* GWYogaKitHTML */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 011B82C029B392CF0E363268 /* XCLocalSwiftPackageReference "." */;
+			productName = GWYogaKitHTML;
+		};
+		C2D3E4F5A6B7C8D9E0F1A2B3 /* GWYogaKitAnimation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 011B82C029B392CF0E363268 /* XCLocalSwiftPackageReference "." */;
+			productName = GWYogaKitAnimation;
+		};
+		D2E3F4A5B6C7D8E9F0A1B2C3 /* GWYogaKitLayoutCache */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 011B82C029B392CF0E363268 /* XCLocalSwiftPackageReference "." */;
+			productName = GWYogaKitLayoutCache;
+		};
+		E2F3A4B5C6D7E8F9A0B1C2D3 /* GWYogaKitStylesheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 011B82C029B392CF0E363268 /* XCLocalSwiftPackageReference "." */;
+			productName = GWYogaKitStylesheet;
+		};
 /* End XCSwiftPackageProductDependency section */
-/* ObjC bridge product dependencies */
-B000000000000000000001 = {isa = XCSwiftPackageProductDependency; productName = GWYogaKitObjCCore; package = 011B82C029B392CF0E363268; };
-B000000000000000000002 = {isa = XCSwiftPackageProductDependency; productName = GWYogaKitDSLObjCCore; package = 011B82C029B392CF0E363268; };
-B000000000000000000003 = {isa = XCSwiftPackageProductDependency; productName = GWYogaKitHTMLObjCCore; package = 011B82C029B392CF0E363268; };
-B000000000000000000004 = {isa = XCSwiftPackageProductDependency; productName = GWYogaKitAnimationObjCCore; package = 011B82C029B392CF0E363268; };
-B000000000000000000005 = {isa = XCSwiftPackageProductDependency; productName = GWYogaKitLayoutCacheObjCCore; package = 011B82C029B392CF0E363268; };
-B000000000000000000006 = {isa = XCSwiftPackageProductDependency; productName = GWYogaKitStylesheetObjCCore; package = 011B82C029B392CF0E363268; };
-/* End XCSwiftPackageProductDependency section for ObjC bridge */
-};
-rootObject = 63A9F0EA7BB98050796B649E;
+	};
+	rootObject = 63A9F0EA7BB98050796B649E /* Project object */;
 }

@@ -1,6 +1,6 @@
 import Foundation
 import GWYoga
-#if os(iOS)
+#if os(iOS) || os(tvOS)
 import UIKit
 #elseif os(macOS)
 import AppKit
@@ -55,6 +55,10 @@ open class YogaLayoutView: YKLView {
         performYogaLayout()
     }
     #elseif os(macOS)
+    /// macOS 默认坐标系原点在左下角，Yoga 布局使用左上角原点，
+    /// 反转后使 Yoga 计算出的 Y 坐标直接匹配 AppKit 视图坐标系。
+    open override var isFlipped: Bool { true }
+
     open override func didAddSubview(_ subview: NSView) {
         super.didAddSubview(subview)
         guard subview !== self else { return }

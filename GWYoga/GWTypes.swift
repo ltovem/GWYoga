@@ -79,6 +79,45 @@ public struct GWValue: Equatable, Hashable, Sendable {
     }
 }
 
+// MARK: - ExpressibleByFloatLiteral / ExpressibleByIntegerLiteral
+
+extension GWValue: ExpressibleByFloatLiteral {
+    public init(floatLiteral value: Float) {
+        self.init(value: value, unit: .point)
+    }
+}
+
+extension GWValue: ExpressibleByIntegerLiteral {
+    public init(integerLiteral value: Int) {
+        self.init(value: Float(value), unit: .point)
+    }
+}
+
+// MARK: - Postfix operator for percentage
+
+postfix operator %
+
+extension Int {
+    /// 50% → GWValue.percent(50)
+    public static postfix func % (value: Int) -> GWValue {
+        .percent(Float(value))
+    }
+}
+
+extension Float {
+    /// 50.0% → GWValue.percent(50)
+    public static postfix func % (value: Float) -> GWValue {
+        .percent(value)
+    }
+}
+
+extension Double {
+    /// 50.0% → GWValue.percent(50)
+    public static postfix func % (value: Double) -> GWValue {
+        .percent(Float(value))
+    }
+}
+
 // MARK: - GWStyleLength (internal)
 
 /// Internal length representation with unit.

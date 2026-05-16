@@ -1,6 +1,6 @@
 import Foundation
 import GWYoga
-#if os(iOS)
+#if os(iOS) || os(tvOS)
 import UIKit
 #elseif os(macOS)
 import AppKit
@@ -8,10 +8,19 @@ import AppKit
 
 // MARK: - Platform 类型别名
 
-#if os(iOS)
+#if os(iOS) || os(tvOS)
 public typealias YKLView = UIView
+public typealias PlatformFont = UIFont
+public typealias PlatformColor = UIColor
+public typealias PlatformImage = UIImage
+public typealias PlatformTextAlignment = NSTextAlignment
+public typealias PlatformContentMode = UIView.ContentMode
 #elseif os(macOS)
 public typealias YKLView = NSView
+public typealias PlatformFont = NSFont
+public typealias PlatformColor = NSColor
+public typealias PlatformImage = NSImage
+public typealias PlatformTextAlignment = NSTextAlignment
 #endif
 
 // MARK: - YogaLayoutMode

@@ -1,7 +1,7 @@
 import Foundation
 import GWYoga
 import GWYogaKit
-#if os(iOS)
+#if os(iOS) || os(tvOS)
 import UIKit
 
 /// Objective-C 友好的 UILabel/UIImageView/UIButton 扩展。

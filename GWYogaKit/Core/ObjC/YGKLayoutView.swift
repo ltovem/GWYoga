@@ -1,7 +1,7 @@
 import Foundation
 import GWYoga
 import GWYogaKit
-#if os(iOS)
+#if os(iOS) || os(tvOS)
 import UIKit
 #endif
 
@@ -15,19 +15,19 @@ import UIKit
 /// Usage:
 /// ```objc
 /// YGKLayoutView *container = [[YGKLayoutView alloc] init];
-/// container.yogaProperties.flexDirection = YGKFlexDirectionColumn;
-/// container.yogaProperties.padding = 16;
+/// container.gwstyle.flexDirection = YGKFlexDirectionColumn;
+/// container.gwstyle.padding = 16;
 ///
 /// UIView *child = [[UIView alloc] init];
-/// child.yogaProperties.width = 100;
-/// child.yogaProperties.height = 100;
+/// child.gwstyle.width = 100;
+/// child.gwstyle.height = 100;
 /// [container addSubview:child];
 /// ```
 @objc(YGKLayoutView)
 open class YGKLayoutView: YogaLayoutView {
 
-    /// ObjC-accessible yoga properties (inherited from UIView+yogaProperties extension).
-    /// Access via `view.yogaProperties` from ObjC.
+    /// ObjC-accessible yoga properties (inherited from UIView+YGK extension).
+    /// Access via `view.gwstyle` from ObjC.
 
     // MARK: - Initialization
 

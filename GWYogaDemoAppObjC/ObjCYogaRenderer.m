@@ -29,8 +29,8 @@
     v.layer.borderWidth = 1;
     v.layer.borderColor = [[UIColor darkGrayColor] colorWithAlphaComponent:0.4].CGColor;
     v.layer.cornerRadius = 2;
-    v.yogaProperties.width = w;
-    v.yogaProperties.height = h;
+    v.gwstyle.width = w;
+    v.gwstyle.height = h;
     return v;
 }
 
@@ -45,90 +45,69 @@
 }
 
 + (UIView *)createDemoSectionWithTitle:(NSString *)title container:(YGKLayoutView *)container {
-    UIView *section = [[UIView alloc] init];
-    section.translatesAutoresizingMaskIntoConstraints = false;
+    YGKLayoutView *section = [[YGKLayoutView alloc] init];
+    section.gwstyle.flexDirection = YGKFlexDirectionColumn;
 
     UILabel *titleLabel = [[UILabel alloc] init];
     titleLabel.text = title;
     titleLabel.font = [UIFont boldSystemFontOfSize:14];
     titleLabel.textColor = UIColor.darkGrayColor;
-    titleLabel.translatesAutoresizingMaskIntoConstraints = false;
+    [titleLabel.gwstyle setMargin:YGKEdgeBottom value:6];
 
     [container performYogaLayout];
-    container.translatesAutoresizingMaskIntoConstraints = false;
 
     UILabel *info = [[UILabel alloc] init];
     info.font = [UIFont monospacedSystemFontOfSize:10 weight:UIFontWeightRegular];
     info.textColor = UIColor.grayColor;
     info.numberOfLines = 0;
-    info.translatesAutoresizingMaskIntoConstraints = false;
+    [info.gwstyle setMargin:YGKEdgeTop value:4];
     info.text = [NSString stringWithFormat:@"%.0f×%.0f @(%.0f,%.0f)",
-                  container.yogaProperties.layoutWidth,
-                  container.yogaProperties.layoutHeight,
-                  container.yogaProperties.layoutLeft,
-                  container.yogaProperties.layoutTop];
+                  container.gwstyle.layoutWidth,
+                  container.gwstyle.layoutHeight,
+                  container.gwstyle.layoutLeft,
+                  container.gwstyle.layoutTop];
 
     [section addSubview:titleLabel];
     [section addSubview:container];
     [section addSubview:info];
-
-    [NSLayoutConstraint activateConstraints:@[
-        [titleLabel.topAnchor constraintEqualToAnchor:section.topAnchor],
-        [titleLabel.leadingAnchor constraintEqualToAnchor:section.leadingAnchor],
-        [titleLabel.trailingAnchor constraintEqualToAnchor:section.trailingAnchor],
-        [container.topAnchor constraintEqualToAnchor:titleLabel.bottomAnchor constant:6],
-        [container.leadingAnchor constraintEqualToAnchor:section.leadingAnchor],
-        [info.topAnchor constraintEqualToAnchor:container.bottomAnchor constant:4],
-        [info.leadingAnchor constraintEqualToAnchor:section.leadingAnchor],
-        [info.trailingAnchor constraintEqualToAnchor:section.trailingAnchor],
-        [info.bottomAnchor constraintEqualToAnchor:section.bottomAnchor],
-    ]];
     return section;
 }
 
 + (UIView *)createInfoSectionWithTitle:(NSString *)title text:(NSString *)text {
-    UIView *section = [[UIView alloc] init];
-    section.translatesAutoresizingMaskIntoConstraints = false;
+    YGKLayoutView *section = [[YGKLayoutView alloc] init];
+    section.gwstyle.flexDirection = YGKFlexDirectionColumn;
 
     UILabel *titleLabel = [[UILabel alloc] init];
     titleLabel.text = title;
     titleLabel.font = [UIFont boldSystemFontOfSize:14];
-    titleLabel.translatesAutoresizingMaskIntoConstraints = false;
+    [titleLabel.gwstyle setMargin:YGKEdgeBottom value:6];
 
     UILabel *info = [[UILabel alloc] init];
     info.text = text;
     info.font = [UIFont monospacedSystemFontOfSize:11 weight:UIFontWeightRegular];
     info.numberOfLines = 0;
-    info.translatesAutoresizingMaskIntoConstraints = false;
 
     [section addSubview:titleLabel];
     [section addSubview:info];
-
-    [NSLayoutConstraint activateConstraints:@[
-        [titleLabel.topAnchor constraintEqualToAnchor:section.topAnchor],
-        [titleLabel.leadingAnchor constraintEqualToAnchor:section.leadingAnchor],
-        [titleLabel.trailingAnchor constraintEqualToAnchor:section.trailingAnchor],
-        [info.topAnchor constraintEqualToAnchor:titleLabel.bottomAnchor constant:6],
-        [info.leadingAnchor constraintEqualToAnchor:section.leadingAnchor],
-        [info.trailingAnchor constraintEqualToAnchor:section.trailingAnchor],
-        [info.bottomAnchor constraintEqualToAnchor:section.bottomAnchor],
-    ]];
     return section;
 }
 
 + (void)setupStackWithSections:(NSArray<UIView *> *)sections inScrollView:(UIScrollView *)scrollView {
-    UIStackView *stack = [[UIStackView alloc] initWithArrangedSubviews:sections];
-    stack.axis = UILayoutConstraintAxisVertical;
-    stack.spacing = 32;
-    stack.translatesAutoresizingMaskIntoConstraints = false;
+    YGKLayoutView *stack = [[YGKLayoutView alloc] init];
+    stack.gwstyle.flexDirection = YGKFlexDirectionColumn;
+    [stack.gwstyle setPadding:YGKEdgeAll value:16];
+    stack.gwstyle.rowGap = 32;
+    stack.gwstyle.columnGap = 32;
+
+    for (UIView *section in sections) {
+        [stack addSubview:section];
+    }
+
     [scrollView addSubview:stack];
-    [NSLayoutConstraint activateConstraints:@[
-        [stack.topAnchor constraintEqualToAnchor:scrollView.topAnchor constant:16],
-        [stack.leadingAnchor constraintEqualToAnchor:scrollView.leadingAnchor constant:16],
-        [stack.trailingAnchor constraintEqualToAnchor:scrollView.trailingAnchor constant:-16],
-        [stack.bottomAnchor constraintEqualToAnchor:scrollView.bottomAnchor constant:-16],
-        [stack.widthAnchor constraintEqualToAnchor:scrollView.widthAnchor constant:-32],
-    ]];
+
+    // Size the stack to match scrollView width
+    scrollView.gwstyle.flexGrow = 1;
+    stack.gwstyle.width = scrollView.bounds.size.width - 32;
 }
 
 @end

@@ -2,7 +2,7 @@ import Foundation
 import GWYoga
 import GWYogaKit
 import GWYogaKitObjCCore
-#if os(iOS)
+#if os(iOS) || os(tvOS)
 import UIKit
 
 // MARK: - YGKVStack
@@ -64,10 +64,10 @@ open class YGKZStack: YogaLayoutView {
 
     /// Add a child view positioned with given alignment.
     @objc public func addChild(_ view: UIView, alignment: YGKAlign) {
-        view.yogaProperties.positionType = .absolute
+        view.gwstyle.positionType = .absolute
         if subviews.isEmpty {
-            view.yogaProperties.positionType = .relative
-            view.yogaProperties.alignSelf = alignment
+            view.gwstyle.positionType = .relative
+            view.gwstyle.alignSelf = alignment
         }
         addSubview(view)
     }

@@ -1,5 +1,8 @@
 import Foundation
 import CoreGraphics
+#if os(iOS) || os(tvOS)
+import UIKit
+#endif
 import GWYoga
 import GWYogaKit
 
@@ -248,6 +251,33 @@ public class YGKLayoutProperties: NSObject {
         set { yoga.columnGap = .points(Float(newValue)) }
     }
 
+    // MARK: - YGKLayoutValue integration
+
+    @objc(setWidthWithValue:)
+    public func setWidth(_ value: YGKLayoutValue) {
+        yoga.width = value.swiftValue
+    }
+
+    @objc(setHeightWithValue:)
+    public func setHeight(_ value: YGKLayoutValue) {
+        yoga.height = value.swiftValue
+    }
+
+    @objc(setMarginWithValue:edge:)
+    public func setMargin(_ edge: YGKEdge, _ value: YGKLayoutValue) {
+        yoga.setMargin(edge.swiftValue, value.swiftValue)
+    }
+
+    @objc(setPaddingWithValue:edge:)
+    public func setPadding(_ edge: YGKEdge, _ value: YGKLayoutValue) {
+        yoga.setPadding(edge.swiftValue, value.swiftValue)
+    }
+
+    @objc(setPositionWithValue:edge:)
+    public func setPosition(_ edge: YGKEdge, _ value: YGKLayoutValue) {
+        yoga.setPosition(edge.swiftValue, value.swiftValue)
+    }
+
     // MARK: - Margin
 
     @objc(setMargin:value:)
@@ -429,4 +459,87 @@ public class YGKLayoutProperties: NSObject {
 
     /// The computed height from the last layout pass.
     @objc public var layoutHeight: CGFloat { CGFloat(yoga.layoutResult.height) }
+
+    // MARK: - Visual Style
+
+    #if os(iOS) || os(tvOS)
+
+    @objc public var backgroundColor: UIColor? {
+        get { yoga.view?.backgroundColor }
+        set { yoga.view?.backgroundColor = newValue }
+    }
+
+    @objc public var cornerRadius: CGFloat {
+        get { yoga.view?.layer.cornerRadius ?? 0 }
+        set {
+            yoga.view?.layer.cornerRadius = newValue
+            yoga.view?.layer.masksToBounds = newValue > 0
+        }
+    }
+
+    @objc public var shadowColor: UIColor? {
+        get { yoga.view?.layer.shadowColor.flatMap { UIColor(cgColor: $0) } }
+        set { yoga.view?.layer.shadowColor = newValue?.cgColor }
+    }
+
+    @objc public var shadowOpacity: Float {
+        get { yoga.view?.layer.shadowOpacity ?? 0 }
+        set { yoga.view?.layer.shadowOpacity = newValue }
+    }
+
+    @objc public var shadowRadius: CGFloat {
+        get { yoga.view?.layer.shadowRadius ?? 0 }
+        set { yoga.view?.layer.shadowRadius = newValue }
+    }
+
+    @objc public var shadowOffset: CGSize {
+        get { yoga.view?.layer.shadowOffset ?? .zero }
+        set { yoga.view?.layer.shadowOffset = newValue }
+    }
+
+    @objc public var borderWidth: CGFloat {
+        get { yoga.view?.layer.borderWidth ?? 0 }
+        set { yoga.view?.layer.borderWidth = newValue }
+    }
+
+    @objc public var borderUIColor: UIColor? {
+        get { yoga.view?.layer.borderColor.flatMap { UIColor(cgColor: $0) } }
+        set { yoga.view?.layer.borderColor = newValue?.cgColor }
+    }
+
+    @objc public var alpha: CGFloat {
+        get { yoga.view?.alpha ?? 1 }
+        set { yoga.view?.alpha = newValue }
+    }
+
+    @objc public var clipsToBounds: Bool {
+        get { yoga.view?.clipsToBounds ?? false }
+        set { yoga.view?.clipsToBounds = newValue }
+    }
+
+    @objc public var isHidden: Bool {
+        get { yoga.view?.isHidden ?? false }
+        set { yoga.view?.isHidden = newValue }
+    }
+
+    #endif
 }
+
+// MARK: - Block-based configuration
+
+#if os(iOS) || os(tvOS)
+@objc public extension UIView {
+    /// Configure Yoga layout properties using a block.
+    /// ```
+    /// [view gwstyle:^(YGKLayoutProperties *p) {
+    ///     p.width = 100;
+    ///     p.height = 200;
+    ///     p.backgroundColor = UIColor.systemBlue;
+    /// }];
+    /// ```
+    @objc(gwstyle:)
+    func gwstyle(_ block: (YGKLayoutProperties) -> Void) {
+        block(self.gwstyle)
+    }
+}
+#endif

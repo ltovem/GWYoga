@@ -1,52 +1,53 @@
+> [English](README.md) | [中文](README.zh-Hans.md)
+
 # GWYoga
 
-Pure Swift reimplementation of Meta's [Yoga](https://yogalayout.com) flexbox layout engine. No C/C++ dependency — uses Swift value types and language features throughout.
+A pure Swift reimplementation of Meta's [Yoga](https://yogalayout.com) flexbox/grid layout engine with a comprehensive UIKit integration layer. No C/C++ dependency — built entirely with Swift value types.
 
-## Project Structure
+![Platform](https://img.shields.io/badge/platform-iOS%2013%2B%20%7C%20macOS%2010.15%2B%20%7C%20tvOS%2013%2B-blue)
+![Swift](https://img.shields.io/badge/swift-5.6%2B-orange)
+![SPM](https://img.shields.io/badge/SPM-compatible-brightgreen)
+![License](https://img.shields.io/badge/license-MIT-lightgrey)
 
-```
-GWYoga/
-├── Package.swift              # Swift Package Manager manifest
-├── GWYoga/                    # Core layout engine
-│   ├── GWEnums.swift          # All enums
-│   ├── GWStyle.swift          # CSS flexbox style property bag
-│   ├── GWTypes.swift          # GWValue, GWStyleLength, GWSize, etc.
-│   ├── GWYoga+Layout.swift    # Flexbox layout algorithm
-│   ├── GWYogaNode.swift       # Node class
-│   └── ...
-├── GWYogaKit/                 # UIKit integration
-│   ├── Core/                  # Core layout view + ObjC bridge
-│   │   ├── Swift/             # YogaLayoutView, UIView+yoga, etc.
-│   │   └── ObjC/              # YGKLayoutView, YGKLayoutProperties, etc.
-│   ├── Animation/             # Animation & transition support
-│   ├── LayoutCache/           # Pre-layout measurement & caching
-│   ├── DSL/                   # Declarative DSL (VStack, HStack, ZStack)
-│   ├── Stylesheet/            # CSS stylesheet parsing & application
-│   └── HTML/                  # HTML-style tag DSL (div, section, h1, etc.)
-├── GWYogaTests/               # Core engine tests
-├── GWYogaKitStylesheetTests/  # Stylesheet tests
-├── GWYogaAPIDemo/             # API usage demos
-├── GWYogaDemo/                # Visual demo app
-└── *.podspec                  # CocoaPods specs (13 pods)
-```
+## Features
+
+- **Pure Swift Yoga engine** — Full flexbox/grid layout algorithm, no C/C++ dependency
+- **UIView integration** — `view.style` property for all Yoga attributes, no Auto Layout needed
+- **Declarative DSL** — VStack, HStack, ZStack with resultBuilder syntax
+- **CSS stylesheets** — Parse and apply CSS to views at runtime
+- **HTML tag DSL** — Write layout with `div`, `h1`, `section` and other HTML tags
+- **Animations** — Layout animation, transitions, spring, and keyframe support
+- **Data binding** — YogaState, YogaBinding, and Combine integration
+- **Visual styles** — Corner radius, shadow, border, opacity, gradients, background images
+- **Rich text** — Attributed text with automatic content sizing
+- **Layout cache** — Pre-layout measurement and caching for performance
+- **Debug tools** — Layout tree printing, debug borders, system layout size calculation
+- **Complete ObjC bridge** — All modules available from Objective-C
+- **59 Swift + 25 ObjC demo pages** — Every API has a dedicated, runnable demo
 
 ## Modules
 
-| Module | Description | SPM | CocoaPods |
-|--------|-------------|-----|-----------|
-| GWYoga | Core flexbox layout engine | ✅ | ✅ |
-| GWYogaKit | UIKit integration (YogaLayoutView, UIView extensions) | ✅ | ✅ |
-| GWYogaKitObjCCore | Objective-C bridge for GWYogaKit | ✅ | ✅ |
-| GWYogaKitAnimation | Animation & transition support | ✅ | ✅ |
-| GWYogaKitAnimationObjCCore | ObjC bridge for Animation | ✅ | ✅ |
-| GWYogaKitLayoutCache | Pre-layout measurement & caching | ✅ | ✅ |
-| GWYogaKitLayoutCacheObjCCore | ObjC bridge for LayoutCache | ✅ | ✅ |
-| GWYogaKitDSL | Declarative DSL (VStack, HStack, ZStack) | ✅ | ✅ |
-| GWYogaKitDSLObjCCore | ObjC bridge for DSL | ✅ | ✅ |
-| GWYogaKitStylesheet | CSS stylesheet support | ✅ | ✅ |
-| GWYogaKitStylesheetObjCCore | ObjC bridge for Stylesheet | ✅ | ✅ |
-| GWYogaKitHTML | HTML-style tag DSL | ✅ | ✅ |
-| GWYogaKitHTMLObjCCore | ObjC bridge for HTML | ✅ | ✅ |
+| Module | Description | Platforms |
+|--------|-------------|-----------|
+| GWYoga | Core flexbox/grid layout engine | iOS, macOS, tvOS, watchOS |
+| GWYogaKit | UIKit integration (YogaLayoutView, UIView extensions) | iOS, macOS, tvOS |
+| GWYogaKitObjCCore | Objective-C bridge for GWYogaKit | iOS, macOS, tvOS |
+| GWYogaKitAnimation | Layout animation & transition support | iOS, tvOS |
+| GWYogaKitAnimationObjCCore | ObjC bridge for Animation | iOS, tvOS |
+| GWYogaKitLayoutCache | Pre-layout measurement & caching | iOS, macOS, tvOS |
+| GWYogaKitLayoutCacheObjCCore | ObjC bridge for LayoutCache | iOS, macOS, tvOS |
+| GWYogaKitDSL | Declarative DSL (VStack, HStack, ZStack) | iOS, macOS, tvOS |
+| GWYogaKitDSLObjCCore | ObjC bridge for DSL | iOS, macOS, tvOS |
+| GWYogaKitStylesheet | CSS stylesheet parsing & application | iOS, macOS, tvOS |
+| GWYogaKitStylesheetObjCCore | ObjC bridge for Stylesheet | iOS, macOS, tvOS |
+| GWYogaKitHTML | HTML-style tag DSL (div, section, h1, etc.) | iOS, tvOS |
+| GWYogaKitHTMLObjCCore | ObjC bridge for HTML | iOS, tvOS |
+
+## Requirements
+
+- iOS 13.0+ / macOS 10.15+ / tvOS 13.0+ / watchOS 6.0+
+- Swift 5.6+
+- Xcode 14.0+
 
 ## Installation
 
@@ -58,16 +59,16 @@ dependencies: [
 ]
 ```
 
-Then add whichever modules you need:
+Add modules as needed:
 
 ```swift
 .target(
     dependencies: [
-        "GWYoga",                    // Core engine
-        "GWYogaKit",                 // UIKit integration
-        "GWYogaKitDSL",             // Declarative DSL (optional)
-        "GWYogaKitStylesheet",      // CSS stylesheets (optional)
-        "GWYogaKitObjCCore",        // ObjC bridge (optional)
+        "GWYoga",                       // Core engine
+        "GWYogaKit",                    // UIKit integration
+        "GWYogaKitDSL",                 // Declarative DSL (optional)
+        "GWYogaKitStylesheet",          // CSS stylesheets (optional)
+        "GWYogaKitObjCCore",            // ObjC bridge (optional)
     ]
 )
 ```
@@ -78,59 +79,51 @@ Then add whichever modules you need:
 pod 'GWYoga', '~> 1.0'
 pod 'GWYogaKit', '~> 1.0'
 pod 'GWYogaKitDSL', '~> 1.0'
+pod 'GWYogaKitAnimation', '~> 1.0'
 pod 'GWYogaKitStylesheet', '~> 1.0'
+pod 'GWYogaKitHTML', '~> 1.0'
+pod 'GWYogaKitLayoutCache', '~> 1.0'
 ```
 
-## Usage Examples
+### Xcode Project
 
-### Basic Flexbox
+Open `Demo.xcworkspace` to explore the demo apps for both Swift and Objective-C.
 
-```swift
-import GWYoga
+## Quick Start
 
-let root = GWYogaNode()
-root.style.setWidth(.points(500))
-root.style.setHeight(.points(500))
-
-let child = GWYogaNode()
-child.style.setWidth(.points(100))
-child.style.setHeight(.points(100))
-root.insertChild(child, at: 0)
-
-root.calculateLayout(width: 500, height: 500, direction: .ltr)
-print(child.layoutResult)
-```
-
-### UIKit Integration
+### Swift — UIKit Integration
 
 ```swift
 import GWYogaKit
 
-let view = YogaLayoutView()
-view.yoga.justifyContent = .center
-view.yoga.alignItems = .center
+let container = YogaLayoutView(frame: CGRect(x: 0, y: 0, width: 300, height: 200))
+container.style.flexDirection = .row
+container.style.justifyContent = .spaceEvenly
+container.style.alignItems = .center
 
 let child = UIView()
-child.yoga.setWidth(.points(100))
-child.yoga.setHeight(.points(100))
-view.addSubview(child)
+child.style.width = 80
+child.style.height = 80
+child.style.backgroundColor = .systemBlue
+child.style.cornerRadius = 8
 
-view.yoga.layout()
+container.addSubview(child)
+container.performYogaLayout()
 ```
 
-### Declarative DSL
+### Swift — Chained API
 
 ```swift
-import GWYogaKitDSL
-
-let stack = YGKVStack(
-    spacing: 8,
-    padding: UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
-) {
-    YGKText("Hello")
-    YGKImage(image)
-    YGKButton(title: "Tap me")
-}
+view.style
+    .width(100).height(100)
+    .flexDirection(.row)
+    .justifyContent(.center)
+    .alignItems(.center)
+    .margin(.all, 16)
+    .padding(.horizontal, 12)
+    .cornerRadius(8)
+    .shadow(color: .black, opacity: 0.3, radius: 4, offset: CGSize(width: 0, height: 2))
+    .backgroundColor(.systemBackground)
 ```
 
 ### Objective-C
@@ -138,19 +131,76 @@ let stack = YGKVStack(
 ```objc
 @import GWYogaKitObjCCore;
 
-YGKLayoutView *view = [[YGKLayoutView alloc] init];
-view.yogaProperties.justifyContent = YGKJustifyCenter;
-view.yogaProperties.alignItems = YGKAlignCenter;
+YGKLayoutView *container = [[YGKLayoutView alloc] initWithFrame:CGRectMake(0, 0, 300, 200)];
+container.gwstyle.flexDirection = YGKFlexDirectionRow;
+container.gwstyle.justifyContent = YGKJustifySpaceEvenly;
+container.gwstyle.alignItems = YGKAlignCenter;
+
+UIView *child = [[UIView alloc] init];
+child.gwstyle.width = 80;
+child.gwstyle.height = 80;
+child.gwstyle.backgroundColor = [UIColor systemBlueColor];
+child.gwstyle.cornerRadius = 8;
+
+[container addSubview:child];
+[container performYogaLayout];
 ```
 
-## Test Report
+### CSS Inline Style
 
-All tests pass:
+```swift
+view.style.css("width: 100px; height: 100px; margin: 8px; padding: 12px; border-radius: 8px;")
+```
 
-```sh
-swift test
+### DSL (Declarative Layout)
+
+```swift
+import GWYogaKitDSL
+
+YGKVStack(spacing: 8, padding: 16) {
+    YGKText("Hello, GWYoga!")
+        .font(.boldSystemFont(ofSize: 18))
+        .margin(.bottom, 4)
+
+    YGKButton(title: "Tap me") {
+        print("tapped!")
+    }
+
+    YGKImage(someUIImage)
+        .width(100).height(100)
+        .cornerRadius(8)
+}
+```
+
+## Documentation
+
+- **[API Reference](API_REFERENCE.md)** — Complete API documentation
+- **[AI Guide](GWYogaKit_GUIDE.md)** — Quick reference for developers and AI coding agents
+- **[Demo Apps](Demo.xcworkspace)** — 59 Swift + 25 ObjC runnable demo pages
+
+## Architecture
+
+```
+GWYoga/
+├── GWYoga/                  # Core layout engine (pure Swift)
+│   ├── GWYogaNode.swift     # Node class
+│   ├── GWStyle.swift        # Flexbox/grid style property bag
+│   ├── GWTypes.swift        # GWValue, units, type system
+│   └── GWYoga+Layout.swift  # Layout algorithm
+├── GWYogaKit/               # UIKit integration
+│   ├── Core/                # YogaLayoutView, UIView extensions
+│   │   ├── Swift/           # Swift API
+│   │   └── ObjC/            # Objective-C bridge
+│   ├── Animation/           # Animation & transitions
+│   ├── LayoutCache/         # Pre-layout measurement
+│   ├── DSL/                 # Declarative DSL
+│   ├── Stylesheet/          # CSS parsing & application
+│   └── HTML/                # HTML tag DSL
+├── GWYogaDemoApp/           # Swift demo app (59 pages)
+├── GWYogaDemoAppObjC/       # ObjC demo app (25 pages)
+└── Package.swift            # SPM manifest
 ```
 
 ## License
 
-MIT
+GWYoga is available under the MIT license. See the [LICENSE](LICENSE) file for more information.

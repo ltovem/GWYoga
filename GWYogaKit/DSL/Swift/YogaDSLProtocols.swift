@@ -1,7 +1,7 @@
 import Foundation
 import GWYogaKit
 
-#if os(iOS)
+#if os(iOS) || os(tvOS)
 import UIKit
 
 // MARK: - YogaDSLModifiable

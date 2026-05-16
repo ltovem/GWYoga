@@ -2,7 +2,7 @@ import Foundation
 import GWYoga
 import GWYogaKit
 import GWYogaKitObjCCore
-#if os(iOS)
+#if os(iOS) || os(tvOS)
 import UIKit
 
 // MARK: - YGKHTMLFactory
@@ -19,22 +19,22 @@ public class YGKHTMLFactory: NSObject {
     /// Create a section container.
     @objc public static func makeSection() -> YGKLayoutView {
         let v = YGKLayoutView(frame: .zero)
-        v.yogaProperties.flexDirection = YGKFlexDirection.column
+        v.gwstyle.flexDirection = YGKFlexDirection.column
         return v
     }
 
     /// Create a row container (flexDirection: row).
     @objc public static func makeRow() -> YGKLayoutView {
         let v = YGKLayoutView(frame: .zero)
-        v.yogaProperties.flexDirection = YGKFlexDirection.row
+        v.gwstyle.flexDirection = YGKFlexDirection.row
         return v
     }
 
     /// Create a header container.
     @objc public static func makeHeader() -> YGKLayoutView {
         let v = YGKLayoutView(frame: .zero)
-        v.yogaProperties.flexDirection = YGKFlexDirection.row
-        v.yogaProperties.alignItems = .center
+        v.gwstyle.flexDirection = YGKFlexDirection.row
+        v.gwstyle.alignItems = .center
         return v
     }
 

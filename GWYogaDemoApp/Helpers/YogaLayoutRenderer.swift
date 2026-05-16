@@ -50,12 +50,9 @@ class YogaLayoutRenderer {
         label.font = .monospacedSystemFont(ofSize: 9, weight: .medium)
         label.textColor = .darkGray
         label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
+        label.frame = v.bounds
+        label.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         v.addSubview(label)
-        NSLayoutConstraint.activate([
-            label.centerXAnchor.constraint(equalTo: v.centerXAnchor),
-            label.centerYAnchor.constraint(equalTo: v.centerYAnchor),
-        ])
 
         parent.addSubview(v)
         for child in node.children {
@@ -78,60 +75,4 @@ class YogaLayoutRenderer {
         }
         return s
     }
-}
-
-/// 创建带标题和布局信息的演示区块
-func makeDemoSection(title: String, build: () -> (GWYogaNode, Float, Float)) -> UIView {
-    let section = UIView()
-    section.translatesAutoresizingMaskIntoConstraints = false
-
-    let label = UILabel()
-    label.text = title
-    label.font = .boldSystemFont(ofSize: 14)
-    label.textColor = .darkGray
-    label.translatesAutoresizingMaskIntoConstraints = false
-
-    let (node, w, h) = build()
-    let preview = YogaLayoutRenderer.render(node: node, width: w, height: h)
-    preview.translatesAutoresizingMaskIntoConstraints = false
-
-    let info = UILabel()
-    info.font = .monospacedSystemFont(ofSize: 10, weight: .regular)
-    info.textColor = .gray
-    info.numberOfLines = 0
-    info.translatesAutoresizingMaskIntoConstraints = false
-    info.text = YogaLayoutRenderer.describe(node: node)
-
-    section.addSubview(label)
-    section.addSubview(preview)
-    section.addSubview(info)
-
-    NSLayoutConstraint.activate([
-        label.topAnchor.constraint(equalTo: section.topAnchor),
-        label.leadingAnchor.constraint(equalTo: section.leadingAnchor),
-        label.trailingAnchor.constraint(equalTo: section.trailingAnchor),
-        preview.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 6),
-        preview.leadingAnchor.constraint(equalTo: section.leadingAnchor),
-        info.topAnchor.constraint(equalTo: preview.bottomAnchor, constant: 4),
-        info.leadingAnchor.constraint(equalTo: section.leadingAnchor),
-        info.trailingAnchor.constraint(equalTo: section.trailingAnchor),
-        info.bottomAnchor.constraint(equalTo: section.bottomAnchor),
-    ])
-    return section
-}
-
-/// 将多个演示区块放入 UIScrollView
-func setupDemoScrollView(_ scrollView: UIScrollView, sections: [UIView]) {
-    let stack = UIStackView(arrangedSubviews: sections)
-    stack.axis = .vertical
-    stack.spacing = 32
-    stack.translatesAutoresizingMaskIntoConstraints = false
-    scrollView.addSubview(stack)
-    NSLayoutConstraint.activate([
-        stack.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 16),
-        stack.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
-        stack.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -16),
-        stack.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -16),
-        stack.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -32),
-    ])
 }

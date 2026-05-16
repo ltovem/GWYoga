@@ -1,7 +1,7 @@
 import Foundation
 import GWYoga
 import GWYogaKit
-#if os(iOS)
+#if os(iOS) || os(tvOS)
 import UIKit
 #endif
 
@@ -138,19 +138,19 @@ public enum YogaCSSPropertyMapper {
         // ── Visual (UIKit/AppKit) ──
         #if os(iOS)
         h["background-color"] = { v, y in
-            guard let view = y.view as? UIView else { return }
+            guard let view = y.view else { return }
             if let color = parseColor(v) { view.backgroundColor = color }
         }
         h["border-radius"] = { v, y in
-            guard let view = y.view as? UIView else { return }
+            guard let view = y.view else { return }
             if let n = parseFloat(v) { view.layer.cornerRadius = CGFloat(n) }
         }
         h["opacity"] = { v, y in
-            guard let view = y.view as? UIView else { return }
+            guard let view = y.view else { return }
             if let n = parseFloat(v) { view.alpha = CGFloat(n) }
         }
         h["border-color"] = { v, y in
-            guard let view = y.view as? UIView else { return }
+            guard let view = y.view else { return }
             if let color = parseColor(v) { view.layer.borderColor = color.cgColor }
         }
         #endif
@@ -270,7 +270,7 @@ public enum YogaCSSPropertyMapper {
             // Check for CSS color (after width and style)
             if parseColor(part) != nil {
                 #if os(iOS)
-                if let view = yoga.view as? UIView, let color = parseColor(part) {
+                if let view = yoga.view, let color = parseColor(part) {
                     view.layer.borderColor = color.cgColor
                 }
                 #endif

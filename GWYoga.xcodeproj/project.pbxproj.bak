@@ -100,6 +100,41 @@
          path = "GWYogaNode.swift";
          sourceTree = "<group>";
       };
+      "OBJ_75" = {
+         isa = "PBXFileReference";
+         path = "GWYoga+CalculateLayout.swift";
+         sourceTree = "<group>";
+      };
+      "OBJ_76" = {
+         isa = "PBXFileReference";
+         path = "GWYoga+FlexLine.swift";
+         sourceTree = "<group>";
+      };
+      "OBJ_77" = {
+         isa = "PBXFileReference";
+         path = "GWYoga+JustifyAlign.swift";
+         sourceTree = "<group>";
+      };
+      "OBJ_78" = {
+         isa = "PBXFileReference";
+         path = "GWYoga+FlexBasis.swift";
+         sourceTree = "<group>";
+      };
+      "OBJ_79" = {
+         isa = "PBXFileReference";
+         path = "GWYoga+LayoutHelpers.swift";
+         sourceTree = "<group>";
+      };
+      "OBJ_80" = {
+         isa = "PBXFileReference";
+         path = "GWYoga+AbsoluteLayout.swift";
+         sourceTree = "<group>";
+      };
+      "OBJ_87" = {
+         isa = "PBXFileReference";
+         path = "GWYoga+GridLayout.swift";
+         sourceTree = "<group>";
+      };
       "OBJ_23" = {
          isa = "PBXGroup";
          children = (
@@ -303,7 +338,14 @@
             "OBJ_48",
             "OBJ_49",
             "OBJ_50",
-            "OBJ_51"
+            "OBJ_51",
+            "OBJ_91",
+            "OBJ_92",
+            "OBJ_93",
+            "OBJ_94",
+            "OBJ_95",
+            "OBJ_96",
+            "OBJ_97"
          );
       };
       "OBJ_38" = {
@@ -407,6 +449,34 @@
       "OBJ_51" = {
          isa = "PBXBuildFile";
          fileRef = "OBJ_22";
+      };
+      "OBJ_91" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_75";
+      };
+      "OBJ_92" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_76";
+      };
+      "OBJ_93" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_77";
+      };
+      "OBJ_94" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_78";
+      };
+      "OBJ_95" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_79";
+      };
+      "OBJ_96" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_80";
+      };
+      "OBJ_97" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_87";
       };
       "OBJ_52" = {
          isa = "PBXFrameworksBuildPhase";
@@ -649,7 +719,14 @@
             "OBJ_19",
             "OBJ_20",
             "OBJ_21",
-            "OBJ_22"
+            "OBJ_22",
+            "OBJ_75",
+            "OBJ_76",
+            "OBJ_77",
+            "OBJ_78",
+            "OBJ_79",
+            "OBJ_80",
+            "OBJ_87"
          );
          name = "GWYoga";
          path = "GWYoga";

@@ -6,51 +6,45 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Position";
+    self.title = @"positionType: .relative / .absolute";
 
-    NSMutableArray *s = [NSMutableArray array];
+    NSMutableArray *sections = [NSMutableArray array];
 
-    // Relative offset
+    // Relative: child2 offset top=15
     {
-        YGKLayoutView *c = [ObjCYogaRenderer makeContainerWithWidth:350 height:90];
-        c.yogaProperties.flexDirection = YGKFlexDirectionRow;
+        YGKLayoutView *c = [ObjCYogaRenderer makeContainerWithWidth:350 height:70];
+        c.gwstyle.flexDirection = YGKFlexDirectionRow;
         for (int i = 0; i < 3; i++) {
             UIView *child = [ObjCYogaRenderer coloredChildWithWidth:80 height:40 index:i];
-            if (i == 1) {
-                [child.yogaProperties setPosition:YGKEdgeTop value:15];
-                [child.yogaProperties setPosition:YGKEdgeLeft value:10];
-            }
+            if (i == 1) { [child.gwstyle setPosition:YGKEdgeTop value:15]; [child.gwstyle setPosition:YGKEdgeLeft value:10]; }
             [c addSubview:child];
         }
-        [s addObject:[ObjCYogaRenderer createDemoSectionWithTitle:@"Relative: child2 offset" container:c]];
+        [sections addObject:[ObjCYogaRenderer createDemoSectionWithTitle:@"Relative: child2 offset top=15" container:c]];
     }
-
-    // Absolute
+    // Absolute: top=20, left=200
     {
-        YGKLayoutView *c = [ObjCYogaRenderer makeContainerWithWidth:350 height:130];
-        [c.yogaProperties setPadding:YGKEdgeAll value:10];
+        YGKLayoutView *c = [ObjCYogaRenderer makeContainerWithWidth:350 height:120];
+        [c.gwstyle setPadding:YGKEdgeAll value:10];
         [c addSubview:[ObjCYogaRenderer coloredChildWithWidth:100 height:40 index:0]];
-
-        UIView *abs = [ObjCYogaRenderer coloredChildWithWidth:80 height:60 index:1];
-        abs.yogaProperties.positionType = YGKPositionTypeAbsolute;
-        [abs.yogaProperties setPosition:YGKEdgeTop value:20];
-        [abs.yogaProperties setPosition:YGKEdgeLeft value:200];
-        [c addSubview:abs];
-        [s addObject:[ObjCYogaRenderer createDemoSectionWithTitle:@"Absolute: top=20, left=200" container:c]];
+        UIView *ab = [ObjCYogaRenderer coloredChildWithWidth:80 height:60 index:1];
+        ab.gwstyle.positionType = YGKPositionTypeAbsolute;
+        [ab.gwstyle setPosition:YGKEdgeTop value:20];
+        [ab.gwstyle setPosition:YGKEdgeLeft value:200];
+        [c addSubview:ab];
+        [sections addObject:[ObjCYogaRenderer createDemoSectionWithTitle:@"Absolute: top=20, left=200" container:c]];
     }
-
-    // Absolute bottom
+    // Absolute: bottom=10
     {
         YGKLayoutView *c = [ObjCYogaRenderer makeContainerWithWidth:300 height:150];
-        UIView *abs = [ObjCYogaRenderer coloredChildWithWidth:80 height:40 index:0];
-        abs.yogaProperties.positionType = YGKPositionTypeAbsolute;
-        [abs.yogaProperties setPosition:YGKEdgeBottom value:10];
-        [abs.yogaProperties setPosition:YGKEdgeEnd value:10];
-        [c addSubview:abs];
-        [s addObject:[ObjCYogaRenderer createDemoSectionWithTitle:@"Absolute: bottom=10, end=10" container:c]];
+        UIView *ab = [ObjCYogaRenderer coloredChildWithWidth:80 height:40 index:0];
+        ab.gwstyle.positionType = YGKPositionTypeAbsolute;
+        [ab.gwstyle setPosition:YGKEdgeBottom value:10];
+        [ab.gwstyle setPosition:YGKEdgeRight value:10];
+        [c addSubview:ab];
+        [sections addObject:[ObjCYogaRenderer createDemoSectionWithTitle:@"Absolute: bottom=10, right=10" container:c]];
     }
 
-    [ObjCYogaRenderer setupStackWithSections:s inScrollView:self.scrollView];
+    [ObjCYogaRenderer setupStackWithSections:sections inScrollView:self.scrollView];
 }
 
 @end

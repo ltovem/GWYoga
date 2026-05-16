@@ -6,46 +6,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Gap";
+    self.title = @"rowGap + columnGap";
 
-    NSMutableArray *s = [NSMutableArray array];
+    NSMutableArray *sections = [NSMutableArray array];
 
-    // columnGap=20 (Flexbox)
+    // columnGap=20
     {
         YGKLayoutView *c = [ObjCYogaRenderer makeContainerWithWidth:350 height:60];
-        c.yogaProperties.flexDirection = YGKFlexDirectionRow;
-        [c.yogaProperties setGap:YGKGutterColumn value:20];
+        c.gwstyle.flexDirection = YGKFlexDirectionRow;
+        c.gwstyle.columnGap = 20;
         for (int i = 0; i < 4; i++)
             [c addSubview:[ObjCYogaRenderer coloredChildWithWidth:60 height:30 index:i]];
-        [s addObject:[ObjCYogaRenderer createDemoSectionWithTitle:@"columnGap=20 (Flexbox)" container:c]];
+        [sections addObject:[ObjCYogaRenderer createDemoSectionWithTitle:@"columnGap=20" container:c]];
     }
-
-    // column=10, row=15 + flexWrap
+    // column=10, row=15 + wrap
     {
         YGKLayoutView *c = [ObjCYogaRenderer makeContainerWithWidth:140 height:200];
-        c.yogaProperties.flexDirection = YGKFlexDirectionRow;
-        c.yogaProperties.flexWrap = YGKWrapWrap;
-        [c.yogaProperties setGap:YGKGutterColumn value:10];
-        [c.yogaProperties setGap:YGKGutterRow value:15];
+        c.gwstyle.flexDirection = YGKFlexDirectionRow;
+        c.gwstyle.flexWrap = YGKWrapWrap;
+        c.gwstyle.columnGap = 10;
+        c.gwstyle.rowGap = 15;
         for (int i = 0; i < 6; i++)
             [c addSubview:[ObjCYogaRenderer coloredChildWithWidth:60 height:40 index:i]];
-        [s addObject:[ObjCYogaRenderer createDemoSectionWithTitle:@"column=10, row=15 + wrap" container:c]];
+        [sections addObject:[ObjCYogaRenderer createDemoSectionWithTitle:@"column=10, row=15 + wrap" container:c]];
     }
 
-    // Grid: columnGap=10, rowGap=20
-    {
-        YGKLayoutView *c = [ObjCYogaRenderer makeContainerWithWidth:170 height:110];
-        c.yogaProperties.display = YGKDisplayGrid;
-        [c.yogaProperties setGridTemplateColumns:@[[YGKGridTrackSize points:80], [YGKGridTrackSize points:80]]];
-        [c.yogaProperties setGridTemplateRows:@[[YGKGridTrackSize points:40], [YGKGridTrackSize points:40]]];
-        [c.yogaProperties setGap:YGKGutterColumn value:10];
-        [c.yogaProperties setGap:YGKGutterRow value:20];
-        for (int i = 0; i < 4; i++)
-            [c addSubview:[ObjCYogaRenderer coloredChildWithWidth:0 height:0 index:i]];
-        [s addObject:[ObjCYogaRenderer createDemoSectionWithTitle:@"Grid: columnGap=10, rowGap=20" container:c]];
-    }
-
-    [ObjCYogaRenderer setupStackWithSections:s inScrollView:self.scrollView];
+    [ObjCYogaRenderer setupStackWithSections:sections inScrollView:self.scrollView];
 }
 
 @end

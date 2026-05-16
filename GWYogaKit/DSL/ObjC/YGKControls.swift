@@ -2,7 +2,7 @@ import Foundation
 import GWYoga
 import GWYogaKit
 import GWYogaKitObjCCore
-#if os(iOS)
+#if os(iOS) || os(tvOS)
 import UIKit
 
 // MARK: - YGKText
@@ -69,10 +69,10 @@ open class YGKButton: UIButton {
 open class YGKSpacer: UIView {
     @objc public init(minLength: CGFloat) {
         super.init(frame: .zero)
-        yogaProperties.flexGrow = 1
+        gwstyle.flexGrow = 1
         if minLength > 0 {
-            yogaProperties.minWidth = minLength
-            yogaProperties.minHeight = minLength
+            gwstyle.minWidth = minLength
+            gwstyle.minHeight = minLength
         }
     }
 
@@ -93,7 +93,7 @@ open class YGKDivider: UIView {
     @objc public init(color: UIColor, thickness: CGFloat) {
         super.init(frame: .zero)
         backgroundColor = color
-        yogaProperties.height = thickness
+        gwstyle.height = thickness
     }
 
     public required init?(coder: NSCoder) {

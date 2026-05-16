@@ -1,6 +1,6 @@
 import Foundation
 import GWYoga
-#if os(iOS)
+#if os(iOS) || os(tvOS)
 import UIKit
 #endif
 
@@ -37,7 +37,7 @@ private var stylesheetKey: UInt8 = 0
 
 // MARK: - Default Implementation (UIView / NSView)
 
-#if os(iOS)
+#if os(iOS) || os(tvOS)
 extension YogaStyleApplied where Self: UIView {
 
     public var cssID: String? {
@@ -176,6 +176,6 @@ extension YogaStyleApplied where Self: UIView {
 
 // MARK: - UIView Conformance
 
-#if os(iOS)
+#if os(iOS) || os(tvOS)
 extension UIView: YogaStyleApplied {}
 #endif

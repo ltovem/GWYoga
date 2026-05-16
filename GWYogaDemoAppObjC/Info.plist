@@ -29,6 +29,10 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIRequiresFullScreen</key>
+	<true/>
+	<key>UILaunchScreen</key>
+	<dict/>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array><string>armv7</string></array>
 	<key>UISupportedInterfaceOrientations</key>

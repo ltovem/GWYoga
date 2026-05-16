@@ -6,41 +6,42 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Aspect";
+    self.title = @"aspectRatio sizes one dimension from the other";
 
-    NSMutableArray *s = [NSMutableArray array];
+    NSMutableArray *sections = [NSMutableArray array];
 
-    // aspectRatio=2, height=80
+    // aspectRatio=2, h=80 -> w=160
     {
         YGKLayoutView *c = [ObjCYogaRenderer makeContainerWithWidth:250 height:150];
-        UIView *child = [ObjCYogaRenderer coloredChildWithWidth:0 height:80 index:0];
-        child.yogaProperties.aspectRatio = 2;
+        UIView *child = [ObjCYogaRenderer coloredChildWithWidth:0 height:0 index:0];
+        child.gwstyle.height = 80;
+        child.gwstyle.aspectRatio = 2;
         [c addSubview:child];
-        [s addObject:[ObjCYogaRenderer createDemoSectionWithTitle:@"aspectRatio=2, height=80" container:c]];
+        [sections addObject:[ObjCYogaRenderer createDemoSectionWithTitle:@"aspectRatio=2, h=80 -> w=160" container:c]];
     }
-
-    // aspectRatio=1.5, width=120
+    // aspectRatio=1.5, w=120 -> h=80
     {
         YGKLayoutView *c = [ObjCYogaRenderer makeContainerWithWidth:250 height:150];
-        UIView *child = [ObjCYogaRenderer coloredChildWithWidth:120 height:0 index:0];
-        child.yogaProperties.aspectRatio = 1.5;
+        UIView *child = [ObjCYogaRenderer coloredChildWithWidth:0 height:0 index:1];
+        child.gwstyle.width = 120;
+        child.gwstyle.aspectRatio = 1.5;
         [c addSubview:child];
-        [s addObject:[ObjCYogaRenderer createDemoSectionWithTitle:@"aspectRatio=1.5, width=120" container:c]];
+        [sections addObject:[ObjCYogaRenderer createDemoSectionWithTitle:@"aspectRatio=1.5, w=120 -> h=80" container:c]];
     }
-
-    // aspectRatio=1 (正方形)
+    // aspectRatio=1 (square)
     {
         YGKLayoutView *c = [ObjCYogaRenderer makeContainerWithWidth:300 height:80];
-        c.yogaProperties.flexDirection = YGKFlexDirectionRow;
+        c.gwstyle.flexDirection = YGKFlexDirectionRow;
         for (int i = 0; i < 4; i++) {
-            UIView *child = [ObjCYogaRenderer coloredChildWithWidth:0 height:60 index:i];
-            child.yogaProperties.aspectRatio = 1;
+            UIView *child = [ObjCYogaRenderer coloredChildWithWidth:0 height:0 index:i];
+            child.gwstyle.height = 60;
+            child.gwstyle.aspectRatio = 1;
             [c addSubview:child];
         }
-        [s addObject:[ObjCYogaRenderer createDemoSectionWithTitle:@"aspectRatio=1 (正方形)" container:c]];
+        [sections addObject:[ObjCYogaRenderer createDemoSectionWithTitle:@"aspectRatio=1 (square)" container:c]];
     }
 
-    [ObjCYogaRenderer setupStackWithSections:s inScrollView:self.scrollView];
+    [ObjCYogaRenderer setupStackWithSections:sections inScrollView:self.scrollView];
 }
 
 @end

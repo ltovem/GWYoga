@@ -6,72 +6,55 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"综合";
+    self.title = @"Complex Header+Grid+Footer layout";
 
-    NSMutableArray *s = [NSMutableArray array];
+    NSMutableArray *sections = [NSMutableArray array];
 
-    // Header + Grid + Footer
+    // Header+Grid+Footer
     {
-        YGKLayoutView *c = [ObjCYogaRenderer makeContainerWithWidth:375 height:450];
-        c.yogaProperties.flexDirection = YGKFlexDirectionColumn;
-        [c.yogaProperties setPadding:YGKEdgeAll value:12];
+        YGKLayoutView *page = [ObjCYogaRenderer makeContainerWithWidth:375 height:450];
+        page.gwstyle.flexDirection = YGKFlexDirectionColumn;
+        [page.gwstyle setPadding:YGKEdgeAll value:12];
 
-        // Header row
-        YGKLayoutView *header = [ObjCYogaRenderer makeContainerWithWidth:0 height:44];
-        header.yogaProperties.flexDirection = YGKFlexDirectionRow;
-        header.yogaProperties.justifyContent = YGKJustifySpaceBetween;
-        header.yogaProperties.alignItems = YGKAlignCenter;
-        [header.yogaProperties setMargin:YGKEdgeBottom value:12];
-        [header addSubview:[ObjCYogaRenderer coloredChildWithWidth:60 height:32 index:0]];
-        [header addSubview:[ObjCYogaRenderer coloredChildWithWidth:120 height:20 index:1]];
-        [header addSubview:[ObjCYogaRenderer coloredChildWithWidth:32 height:32 index:2]];
-        [c addSubview:header];
+        YGKLayoutView *h = [ObjCYogaRenderer makeContainerWithWidth:0 height:44];
+        h.gwstyle.flexDirection = YGKFlexDirectionRow;
+        h.gwstyle.justifyContent = YGKJustifySpaceBetween;
+        h.gwstyle.alignItems = YGKAlignCenter;
+        [h addSubview:[ObjCYogaRenderer coloredChildWithWidth:60 height:32 index:0]];
+        [h addSubview:[ObjCYogaRenderer coloredChildWithWidth:120 height:20 index:1]];
+        [h addSubview:[ObjCYogaRenderer coloredChildWithWidth:32 height:32 index:2]];
+        [page addSubview:h];
 
-        // Grid area
-        YGKLayoutView *grid = [ObjCYogaRenderer makeContainerWithWidth:0 height:0];
-        grid.yogaProperties.flexDirection = YGKFlexDirectionRow;
-        grid.yogaProperties.flexWrap = YGKWrapWrap;
-        [grid.yogaProperties setGap:YGKGutterColumn value:10];
-        [grid.yogaProperties setGap:YGKGutterRow value:10];
-        grid.yogaProperties.flexGrow = 1;
-        for (int i = 0; i < 6; i++) {
-            YGKLayoutView *card = [ObjCYogaRenderer makeContainerWithWidth:(375-24-10)/2 height:80];
-            [card.yogaProperties setPadding:YGKEdgeAll value:8];
-            [card.yogaProperties setBorder:YGKEdgeAll width:1];
-            [card addSubview:[ObjCYogaRenderer coloredChildWithWidth:0 height:20 index:i]];
-            // Make card width relative to parent
-            card.yogaProperties.width = (375-24-10)/2;
-            [grid addSubview:card];
-        }
-        [c addSubview:grid];
+        YGKLayoutView *g = [ObjCYogaRenderer makeContainerWithWidth:0 height:0];
+        g.gwstyle.flexDirection = YGKFlexDirectionRow;
+        g.gwstyle.flexWrap = YGKWrapWrap;
+        g.gwstyle.columnGap = 10;
+        g.gwstyle.rowGap = 10;
+        g.gwstyle.flexGrow = 1;
+        for (int i = 0; i < 6; i++)
+            [g addSubview:[ObjCYogaRenderer coloredChildWithWidth:165 height:80 index:i]];
+        [page addSubview:g];
 
-        // Footer
-        YGKLayoutView *footer = [ObjCYogaRenderer makeContainerWithWidth:0 height:44];
-        footer.yogaProperties.flexDirection = YGKFlexDirectionRow;
-        footer.yogaProperties.justifyContent = YGKJustifySpaceAround;
-        footer.yogaProperties.alignItems = YGKAlignCenter;
-        [footer.yogaProperties setMargin:YGKEdgeTop value:12];
+        YGKLayoutView *f = [ObjCYogaRenderer makeContainerWithWidth:0 height:44];
+        f.gwstyle.flexDirection = YGKFlexDirectionRow;
+        f.gwstyle.justifyContent = YGKJustifySpaceAround;
         for (int i = 0; i < 4; i++)
-            [footer addSubview:[ObjCYogaRenderer coloredChildWithWidth:36 height:36 index:i]];
-        [c addSubview:footer];
+            [f addSubview:[ObjCYogaRenderer coloredChildWithWidth:36 height:36 index:i]];
+        [page addSubview:f];
 
-        [s addObject:[ObjCYogaRenderer createDemoSectionWithTitle:@"Header + Grid(卡片6) + Footer" container:c]];
+        [sections addObject:[ObjCYogaRenderer createDemoSectionWithTitle:@"Header+Grid+Footer" container:page]];
     }
-
-    // 居中布局
+    // Centered: justify+align center
     {
         YGKLayoutView *c = [ObjCYogaRenderer makeContainerWithWidth:300 height:150];
-        c.yogaProperties.justifyContent = YGKJustifyCenter;
-        c.yogaProperties.alignItems = YGKAlignCenter;
-
-        YGKLayoutView *box = [ObjCYogaRenderer makeContainerWithWidth:120 height:80];
-        [box.yogaProperties setPadding:YGKEdgeAll value:8];
-        [box addSubview:[ObjCYogaRenderer coloredChildWithWidth:60 height:30 index:0]];
+        c.gwstyle.justifyContent = YGKJustifyCenter;
+        c.gwstyle.alignItems = YGKAlignCenter;
+        UIView *box = [ObjCYogaRenderer coloredChildWithWidth:120 height:80 index:0];
         [c addSubview:box];
-        [s addObject:[ObjCYogaRenderer createDemoSectionWithTitle:@"居中: center + center" container:c]];
+        [sections addObject:[ObjCYogaRenderer createDemoSectionWithTitle:@"居中: justify+align center" container:c]];
     }
 
-    [ObjCYogaRenderer setupStackWithSections:s inScrollView:self.scrollView];
+    [ObjCYogaRenderer setupStackWithSections:sections inScrollView:self.scrollView];
 }
 
 @end

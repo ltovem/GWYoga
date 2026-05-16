@@ -4,7 +4,7 @@ import GWYogaKit
 import GWYogaKitDSL
 import GWYogaKitStylesheet
 
-#if os(iOS)
+#if os(iOS) || os(tvOS)
 import UIKit
 
 // MARK: - YogaHTMLBuilder
