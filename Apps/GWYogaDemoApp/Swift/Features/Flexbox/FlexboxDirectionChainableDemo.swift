@@ -12,16 +12,10 @@ class FlexboxDirectionChainableDemo: UIViewController {
         view.backgroundColor = .systemBackground
 
         scrollView.yog()
-            .width(100%)
-            .height(200%)
             .backgroundColor(.systemGray6)
         view.addChild(scrollView)
         addStyleBadge("链式")
 
-//        view.performYogaLayout()
-        scrollView.frame = view.bounds;
-        
-//        view.appl
         container.style
             .flexDirection(.column)
             .rowGap(12)
@@ -87,25 +81,25 @@ class FlexboxDirectionChainableDemo: UIViewController {
             )
         }
 
-        let top = view.safeAreaInsets.top
-        let bottom = view.safeAreaInsets.bottom
-        
+        // 1. scrollView 占满 safe area
+        let insets = view.safeAreaInsets
+        scrollView.frame = CGRect(
+            x: insets.left,
+            y: insets.top,
+            width: view.bounds.width - insets.left - insets.right,
+            height: view.bounds.height - insets.top - insets.bottom
+        )
 
-        // container: 宽度撑满 scrollView，高度由 Yoga 自动计算
+        // 2. container 宽度撑满，高度由 Yoga 自动计算（style 没设 height → NaN → content sizing）
         container.frame = CGRect(
             x: 0, y: 0,
-            width: scrollView.bounds.width - 32,
-            height: 0
+            width: scrollView.bounds.width,
+            height: 0  // 初始值无所谓，NaN 会覆盖
         )
         container.performYogaLayout()
 
+        // 3. 用计算出的内容高度设置 contentSize
         let contentHeight = container.yoga.frame.height
-        container.frame = CGRect(
-            x: 16, y: 0,
-            width: scrollView.bounds.width - 32,
-            height: contentHeight
-        )
-        container.performYogaLayout()
         scrollView.contentSize = CGSize(width: scrollView.bounds.width, height: contentHeight + 16)
     }
 }

@@ -155,6 +155,15 @@ internal func _applyYogaLayout(to view: YKLView) {
     }
     #endif
 
+    // 如果 style 没有显式设宽/高，传 NaN 让 Yoga 按内容自由计算（类似 CSS height: auto）
+    let style = view.yoga.node.style
+    if style.width.unit == .undefined || style.width.unit == .auto {
+        layoutWidth = CGFloat.nan
+    }
+    if style.height.unit == .undefined || style.height.unit == .auto {
+        layoutHeight = CGFloat.nan
+    }
+
     rootNode.calculateLayout(
         width: Float(layoutWidth),
         height: Float(layoutHeight),

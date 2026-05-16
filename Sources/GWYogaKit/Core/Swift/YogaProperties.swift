@@ -31,6 +31,21 @@ public final class YogaProperties {
     internal init(view: YKLView) {
         self.view = view
         self.node = GWYogaNode()
+        #if os(iOS) || os(tvOS)
+        setupAutoIntrinsic(for: view)
+        #endif
+    }
+
+    /// 文本/图片控件默认启用自动内容测量
+    private func setupAutoIntrinsic(for view: YKLView) {
+        #if os(iOS) || os(tvOS)
+        switch view {
+        case is UILabel, is UIButton:
+            self.isIntrinsic = true
+        default:
+            break
+        }
+        #endif
     }
 
     // MARK: - 脏标记合并（供 YogaBinding 批量使用）
