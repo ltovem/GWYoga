@@ -1,4 +1,5 @@
 #import "ObjCFlexboxDirectionPropertyDemo.h"
+#import <GWYogaKit/GWYogaKit-Swift.h>
 #import <GWYogaKitObjCCore/GWYogaKitObjCCore-Swift.h>
 #import <GWYogaKitStylesheetObjCCore/GWYogaKitStylesheetObjCCore-Swift.h>
 

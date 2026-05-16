@@ -204,86 +204,159 @@ public final class YogaProperties {
 
     public var width: GWValue {
         get { GWValue(from: node.style.width) }
-        set { node.style.setWidth(newValue); if !Self._suppressDirtyMarking { node.markDirty() } }
+        set {
+            let old = GWValue(from: node.style.width)
+            guard old != newValue else { return }
+            node.style.setWidth(newValue)
+            if !Self._suppressDirtyMarking { node.markDirty() }
+        }
     }
 
     public var height: GWValue {
         get { GWValue(from: node.style.height) }
-        set { node.style.setHeight(newValue); if !Self._suppressDirtyMarking { node.markDirty() } }
+        set {
+            let old = GWValue(from: node.style.height)
+            guard old != newValue else { return }
+            node.style.setHeight(newValue)
+            if !Self._suppressDirtyMarking { node.markDirty() }
+        }
     }
 
     public var minWidth: GWValue {
         get { GWValue(from: node.style.minWidth) }
-        set { node.style.setMinWidth(newValue); if !Self._suppressDirtyMarking { node.markDirty() } }
+        set {
+            let old = GWValue(from: node.style.minWidth)
+            guard old != newValue else { return }
+            node.style.setMinWidth(newValue)
+            if !Self._suppressDirtyMarking { node.markDirty() }
+        }
     }
 
     public var maxWidth: GWValue {
         get { GWValue(from: node.style.maxWidth) }
-        set { node.style.setMaxWidth(newValue); if !Self._suppressDirtyMarking { node.markDirty() } }
+        set {
+            let old = GWValue(from: node.style.maxWidth)
+            guard old != newValue else { return }
+            node.style.setMaxWidth(newValue)
+            if !Self._suppressDirtyMarking { node.markDirty() }
+        }
     }
 
     public var minHeight: GWValue {
         get { GWValue(from: node.style.minHeight) }
-        set { node.style.setMinHeight(newValue); if !Self._suppressDirtyMarking { node.markDirty() } }
+        set {
+            let old = GWValue(from: node.style.minHeight)
+            guard old != newValue else { return }
+            node.style.setMinHeight(newValue)
+            if !Self._suppressDirtyMarking { node.markDirty() }
+        }
     }
 
     public var maxHeight: GWValue {
         get { GWValue(from: node.style.maxHeight) }
-        set { node.style.setMaxHeight(newValue); if !Self._suppressDirtyMarking { node.markDirty() } }
+        set {
+            let old = GWValue(from: node.style.maxHeight)
+            guard old != newValue else { return }
+            node.style.setMaxHeight(newValue)
+            if !Self._suppressDirtyMarking { node.markDirty() }
+        }
     }
 
     // MARK: - 主轴方向
 
     public var flexDirection: GWFlexDirection {
         get { node.style.flexDirection }
-        set { node.style.flexDirection = newValue; if !Self._suppressDirtyMarking { node.markDirty() } }
+        set {
+            guard node.style.flexDirection != newValue else { return }
+            node.style.flexDirection = newValue
+            if !Self._suppressDirtyMarking { node.markDirty() }
+        }
     }
 
     // MARK: - 对齐
 
     public var justifyContent: GWJustify {
         get { node.style.justifyContent }
-        set { node.style.justifyContent = newValue; if !Self._suppressDirtyMarking { node.markDirty() } }
+        set {
+            guard node.style.justifyContent != newValue else { return }
+            node.style.justifyContent = newValue
+            if !Self._suppressDirtyMarking { node.markDirty() }
+        }
     }
 
     public var alignItems: GWAlign {
         get { node.style.alignItems }
-        set { node.style.alignItems = newValue; if !Self._suppressDirtyMarking { node.markDirty() } }
+        set {
+            guard node.style.alignItems != newValue else { return }
+            node.style.alignItems = newValue
+            if !Self._suppressDirtyMarking { node.markDirty() }
+        }
     }
 
     public var alignSelf: GWAlign {
         get { node.style.alignSelf }
-        set { node.style.alignSelf = newValue; if !Self._suppressDirtyMarking { node.markDirty() } }
+        set {
+            guard node.style.alignSelf != newValue else { return }
+            node.style.alignSelf = newValue
+            if !Self._suppressDirtyMarking { node.markDirty() }
+        }
     }
 
     public var alignContent: GWAlign {
         get { node.style.alignContent }
-        set { node.style.alignContent = newValue; if !Self._suppressDirtyMarking { node.markDirty() } }
+        set {
+            guard node.style.alignContent != newValue else { return }
+            node.style.alignContent = newValue
+            if !Self._suppressDirtyMarking { node.markDirty() }
+        }
     }
 
     // MARK: - 弹性
 
     public var flexGrow: Float {
         get { node.style.flexGrow.unwrap(orDefault: 0) }
-        set { node.style.flexGrow = GWFloatOptional(value: newValue); if !Self._suppressDirtyMarking { node.markDirty() } }
+        set {
+            let old = node.style.flexGrow
+            let new = GWFloatOptional(value: newValue)
+            guard old != new else { return }
+            guard !(old.isUndefined && new.isUndefined) else { return }
+            node.style.flexGrow = new
+            if !Self._suppressDirtyMarking { node.markDirty() }
+        }
     }
 
     public var flexShrink: Float {
         get { node.style.flexShrink.unwrap(orDefault: 0) }
-        set { node.style.flexShrink = GWFloatOptional(value: newValue); if !Self._suppressDirtyMarking { node.markDirty() } }
+        set {
+            let old = node.style.flexShrink
+            let new = GWFloatOptional(value: newValue)
+            guard old != new else { return }
+            guard !(old.isUndefined && new.isUndefined) else { return }
+            node.style.flexShrink = new
+            if !Self._suppressDirtyMarking { node.markDirty() }
+        }
     }
 
     public var flexBasis: GWValue {
         get { GWValue(from: node.style.flexBasis) }
-        set { node.style.setFlexBasis(newValue); if !Self._suppressDirtyMarking { node.markDirty() } }
+        set {
+            let old = GWValue(from: node.style.flexBasis)
+            guard old != newValue else { return }
+            node.style.setFlexBasis(newValue)
+            if !Self._suppressDirtyMarking { node.markDirty() }
+        }
     }
 
     /// flex 简写：设置 flexGrow, flexShrink, flexBasis
     public var flex: Float {
         get { node.style.flex.unwrap(orDefault: 0) }
         set {
-            node.style.flex = GWFloatOptional(value: newValue)
-            node.style.flexGrow = GWFloatOptional(value: newValue)
+            let old = node.style.flex
+            let new = GWFloatOptional(value: newValue)
+            guard old != new else { return }
+            guard !(old.isUndefined && new.isUndefined) else { return }
+            node.style.flex = new
+            node.style.flexGrow = new
             node.style.flexShrink = GWFloatOptional(value: 1)
             node.style.flexBasis = .points(0)
             if !Self._suppressDirtyMarking { node.markDirty() }
@@ -294,52 +367,89 @@ public final class YogaProperties {
 
     public var flexWrap: GWWrap {
         get { node.style.flexWrap }
-        set { node.style.flexWrap = newValue; if !Self._suppressDirtyMarking { node.markDirty() } }
+        set {
+            guard node.style.flexWrap != newValue else { return }
+            node.style.flexWrap = newValue
+            if !Self._suppressDirtyMarking { node.markDirty() }
+        }
     }
 
     // MARK: - 定位
 
     public var positionType: GWPositionType {
         get { node.style.positionType }
-        set { node.style.positionType = newValue; if !Self._suppressDirtyMarking { node.markDirty() } }
+        set {
+            guard node.style.positionType != newValue else { return }
+            node.style.positionType = newValue
+            if !Self._suppressDirtyMarking { node.markDirty() }
+        }
     }
 
     // MARK: - 显示
 
     public var display: GWDisplay {
         get { node.style.display }
-        set { node.style.display = newValue; if !Self._suppressDirtyMarking { node.markDirty() } }
+        set {
+            guard node.style.display != newValue else { return }
+            node.style.display = newValue
+            if !Self._suppressDirtyMarking { node.markDirty() }
+        }
     }
 
     public var overflow: GWOverflow {
         get { node.style.overflow }
-        set { node.style.overflow = newValue; if !Self._suppressDirtyMarking { node.markDirty() } }
+        set {
+            guard node.style.overflow != newValue else { return }
+            node.style.overflow = newValue
+            if !Self._suppressDirtyMarking { node.markDirty() }
+        }
     }
 
     // MARK: - 盒模型
 
     public var boxSizing: GWBoxSizing {
         get { node.style.boxSizing }
-        set { node.style.boxSizing = newValue; if !Self._suppressDirtyMarking { node.markDirty() } }
+        set {
+            guard node.style.boxSizing != newValue else { return }
+            node.style.boxSizing = newValue
+            if !Self._suppressDirtyMarking { node.markDirty() }
+        }
     }
 
     // MARK: - 宽高比
 
     public var aspectRatio: Float {
         get { node.style.aspectRatio.unwrap(orDefault: .nan) }
-        set { node.style.aspectRatio = GWFloatOptional(value: newValue); if !Self._suppressDirtyMarking { node.markDirty() } }
+        set {
+            let old = node.style.aspectRatio
+            let new = GWFloatOptional(value: newValue)
+            guard old != new else { return }
+            guard !(old.isUndefined && new.isUndefined) else { return }
+            node.style.aspectRatio = new
+            if !Self._suppressDirtyMarking { node.markDirty() }
+        }
     }
 
     // MARK: - 间距
 
     public var rowGap: GWValue {
         get { GWValue(from: node.style.rowGap) }
-        set { node.style.setGap(for: .row, newValue); if !Self._suppressDirtyMarking { node.markDirty() } }
+        set {
+            let old = GWValue(from: node.style.rowGap)
+            guard old != newValue else { return }
+            node.style.setGap(for: .row, newValue)
+            if !Self._suppressDirtyMarking { node.markDirty() }
+        }
     }
 
     public var columnGap: GWValue {
         get { GWValue(from: node.style.columnGap) }
-        set { node.style.setGap(for: .column, newValue); if !Self._suppressDirtyMarking { node.markDirty() } }
+        set {
+            let old = GWValue(from: node.style.columnGap)
+            guard old != newValue else { return }
+            node.style.setGap(for: .column, newValue)
+            if !Self._suppressDirtyMarking { node.markDirty() }
+        }
     }
 
     // MARK: - 边距
@@ -354,6 +464,8 @@ public final class YogaProperties {
         set {
             switch edge {
             case .left, .top, .right, .bottom, .start, .end, .horizontal, .vertical, .all:
+                let old = GWValue(from: node.style.margin[edge.rawValue])
+                guard old != newValue else { return }
                 node.style.setMargin(for: edge, newValue)
                 if !Self._suppressDirtyMarking { node.markDirty() }
             }
@@ -361,21 +473,30 @@ public final class YogaProperties {
     }
 
     public func setMargin(_ edge: GWEdge, _ value: GWValue) {
+        let old = GWValue(from: node.style.margin[edge.rawValue])
+        guard old != value else { return }
         node.style.setMargin(for: edge, value)
         if !Self._suppressDirtyMarking { node.markDirty() }
     }
 
     public func setPadding(_ edge: GWEdge, _ value: GWValue) {
+        let old = GWValue(from: node.style.padding[edge.rawValue])
+        guard old != value else { return }
         node.style.setPadding(for: edge, value)
         if !Self._suppressDirtyMarking { node.markDirty() }
     }
 
     public func setBorder(_ edge: GWEdge, _ value: Float) {
+        let old = node.style.border[edge.rawValue]
+        guard old != value else { return }
+        guard !(old.isNaN && value.isNaN) else { return }
         node.style.setBorder(for: edge, value)
         if !Self._suppressDirtyMarking { node.markDirty() }
     }
 
     public func setPosition(_ edge: GWEdge, _ value: GWValue) {
+        let old = GWValue(from: node.style.position[edge.rawValue])
+        guard old != value else { return }
         node.style.setPosition(for: edge, value)
         if !Self._suppressDirtyMarking { node.markDirty() }
     }
@@ -422,42 +543,74 @@ public final class YogaProperties {
 
     public var gridTemplateColumns: GWGridTrackList {
         get { node.style.gridTemplateColumns }
-        set { node.style.gridTemplateColumns = newValue; if !Self._suppressDirtyMarking { node.markDirty() } }
+        set {
+            guard node.style.gridTemplateColumns != newValue else { return }
+            node.style.gridTemplateColumns = newValue
+            if !Self._suppressDirtyMarking { node.markDirty() }
+        }
     }
 
     public var gridTemplateRows: GWGridTrackList {
         get { node.style.gridTemplateRows }
-        set { node.style.gridTemplateRows = newValue; if !Self._suppressDirtyMarking { node.markDirty() } }
+        set {
+            guard node.style.gridTemplateRows != newValue else { return }
+            node.style.gridTemplateRows = newValue
+            if !Self._suppressDirtyMarking { node.markDirty() }
+        }
     }
 
     public var gridAutoColumns: GWGridTrackList {
         get { node.style.gridAutoColumns }
-        set { node.style.gridAutoColumns = newValue; if !Self._suppressDirtyMarking { node.markDirty() } }
+        set {
+            guard node.style.gridAutoColumns != newValue else { return }
+            node.style.gridAutoColumns = newValue
+            if !Self._suppressDirtyMarking { node.markDirty() }
+        }
     }
 
     public var gridAutoRows: GWGridTrackList {
         get { node.style.gridAutoRows }
-        set { node.style.gridAutoRows = newValue; if !Self._suppressDirtyMarking { node.markDirty() } }
+        set {
+            guard node.style.gridAutoRows != newValue else { return }
+            node.style.gridAutoRows = newValue
+            if !Self._suppressDirtyMarking { node.markDirty() }
+        }
     }
 
     public var gridColumnStart: GWGridLine {
         get { node.style.gridColumnStart }
-        set { node.style.gridColumnStart = newValue; if !Self._suppressDirtyMarking { node.markDirty() } }
+        set {
+            guard node.style.gridColumnStart != newValue else { return }
+            node.style.gridColumnStart = newValue
+            if !Self._suppressDirtyMarking { node.markDirty() }
+        }
     }
 
     public var gridColumnEnd: GWGridLine {
         get { node.style.gridColumnEnd }
-        set { node.style.gridColumnEnd = newValue; if !Self._suppressDirtyMarking { node.markDirty() } }
+        set {
+            guard node.style.gridColumnEnd != newValue else { return }
+            node.style.gridColumnEnd = newValue
+            if !Self._suppressDirtyMarking { node.markDirty() }
+        }
     }
 
     public var gridRowStart: GWGridLine {
         get { node.style.gridRowStart }
-        set { node.style.gridRowStart = newValue; if !Self._suppressDirtyMarking { node.markDirty() } }
+        set {
+            guard node.style.gridRowStart != newValue else { return }
+            node.style.gridRowStart = newValue
+            if !Self._suppressDirtyMarking { node.markDirty() }
+        }
     }
 
     public var gridRowEnd: GWGridLine {
         get { node.style.gridRowEnd }
-        set { node.style.gridRowEnd = newValue; if !Self._suppressDirtyMarking { node.markDirty() } }
+        set {
+            guard node.style.gridRowEnd != newValue else { return }
+            node.style.gridRowEnd = newValue
+            if !Self._suppressDirtyMarking { node.markDirty() }
+        }
     }
 
     // MARK: - callAsFunction（闭包配置）
@@ -477,36 +630,36 @@ public final class YogaProperties {
 
     // MARK: - 链式方法（全部返回 Self）
 
-    @discardableResult public func width(_ value: GWValue) -> Self { self.width = value; markDirty(); return self }
-    @discardableResult public func height(_ value: GWValue) -> Self { self.height = value; markDirty(); return self }
-    @discardableResult public func minWidth(_ value: GWValue) -> Self { self.minWidth = value; markDirty(); return self }
-    @discardableResult public func maxWidth(_ value: GWValue) -> Self { self.maxWidth = value; markDirty(); return self }
-    @discardableResult public func minHeight(_ value: GWValue) -> Self { self.minHeight = value; markDirty(); return self }
-    @discardableResult public func maxHeight(_ value: GWValue) -> Self { self.maxHeight = value; markDirty(); return self }
+    @discardableResult public func width(_ value: GWValue) -> Self { self.width = value; return self }
+    @discardableResult public func height(_ value: GWValue) -> Self { self.height = value; return self }
+    @discardableResult public func minWidth(_ value: GWValue) -> Self { self.minWidth = value; return self }
+    @discardableResult public func maxWidth(_ value: GWValue) -> Self { self.maxWidth = value; return self }
+    @discardableResult public func minHeight(_ value: GWValue) -> Self { self.minHeight = value; return self }
+    @discardableResult public func maxHeight(_ value: GWValue) -> Self { self.maxHeight = value; return self }
 
-    @discardableResult public func flexDirection(_ value: GWFlexDirection) -> Self { self.flexDirection = value; markDirty(); return self }
-    @discardableResult public func justifyContent(_ value: GWJustify) -> Self { self.justifyContent = value; markDirty(); return self }
-    @discardableResult public func alignItems(_ value: GWAlign) -> Self { self.alignItems = value; markDirty(); return self }
-    @discardableResult public func alignSelf(_ value: GWAlign) -> Self { self.alignSelf = value; markDirty(); return self }
-    @discardableResult public func alignContent(_ value: GWAlign) -> Self { self.alignContent = value; markDirty(); return self }
+    @discardableResult public func flexDirection(_ value: GWFlexDirection) -> Self { self.flexDirection = value; return self }
+    @discardableResult public func justifyContent(_ value: GWJustify) -> Self { self.justifyContent = value; return self }
+    @discardableResult public func alignItems(_ value: GWAlign) -> Self { self.alignItems = value; return self }
+    @discardableResult public func alignSelf(_ value: GWAlign) -> Self { self.alignSelf = value; return self }
+    @discardableResult public func alignContent(_ value: GWAlign) -> Self { self.alignContent = value; return self }
 
-    @discardableResult public func flexGrow(_ value: Float) -> Self { self.flexGrow = value; markDirty(); return self }
-    @discardableResult public func flexShrink(_ value: Float) -> Self { self.flexShrink = value; markDirty(); return self }
-    @discardableResult public func flexBasis(_ value: GWValue) -> Self { self.flexBasis = value; markDirty(); return self }
-    @discardableResult public func flex(_ value: Float) -> Self { self.flex = value; markDirty(); return self }
+    @discardableResult public func flexGrow(_ value: Float) -> Self { self.flexGrow = value; return self }
+    @discardableResult public func flexShrink(_ value: Float) -> Self { self.flexShrink = value; return self }
+    @discardableResult public func flexBasis(_ value: GWValue) -> Self { self.flexBasis = value; return self }
+    @discardableResult public func flex(_ value: Float) -> Self { self.flex = value; return self }
 
-    @discardableResult public func flexWrap(_ value: GWWrap) -> Self { self.flexWrap = value; markDirty(); return self }
+    @discardableResult public func flexWrap(_ value: GWWrap) -> Self { self.flexWrap = value; return self }
 
-    @discardableResult public func position(_ type: GWPositionType) -> Self { self.positionType = type; markDirty(); return self }
-    @discardableResult public func display(_ value: GWDisplay) -> Self { self.display = value; markDirty(); return self }
-    @discardableResult public func overflow(_ value: GWOverflow) -> Self { self.overflow = value; markDirty(); return self }
+    @discardableResult public func position(_ type: GWPositionType) -> Self { self.positionType = type; return self }
+    @discardableResult public func display(_ value: GWDisplay) -> Self { self.display = value; return self }
+    @discardableResult public func overflow(_ value: GWOverflow) -> Self { self.overflow = value; return self }
 
-    @discardableResult public func boxSizing(_ value: GWBoxSizing) -> Self { self.boxSizing = value; markDirty(); return self }
-    @discardableResult public func aspectRatio(_ value: Float) -> Self { self.aspectRatio = value; markDirty(); return self }
+    @discardableResult public func boxSizing(_ value: GWBoxSizing) -> Self { self.boxSizing = value; return self }
+    @discardableResult public func aspectRatio(_ value: Float) -> Self { self.aspectRatio = value; return self }
 
-    @discardableResult public func rowGap(_ value: GWValue) -> Self { self.rowGap = value; markDirty(); return self }
-    @discardableResult public func columnGap(_ value: GWValue) -> Self { self.columnGap = value; markDirty(); return self }
-    @discardableResult public func gap(_ value: GWValue) -> Self { self.rowGap = value; self.columnGap = value; markDirty(); return self }
+    @discardableResult public func rowGap(_ value: GWValue) -> Self { self.rowGap = value; return self }
+    @discardableResult public func columnGap(_ value: GWValue) -> Self { self.columnGap = value; return self }
+    @discardableResult public func gap(_ value: GWValue) -> Self { self.rowGap = value; self.columnGap = value; return self }
 
     // MARK: 边距链式
 

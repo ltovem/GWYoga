@@ -27,7 +27,7 @@ def pbx_save(d: dict):
     tmp = tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False)
     json.dump(d, tmp, indent=2, ensure_ascii=False)
     tmp.close()
-    subprocess.run(["plutil", "-convert", "ostep", "-o", str(PBXPROJ), tmp.name], check=True)
+    subprocess.run(["plutil", "-convert", "xml1", "-o", str(PBXPROJ), tmp.name], check=True)
     os.unlink(tmp.name)
 
 

@@ -112,8 +112,20 @@ open class YogaLayoutView: YKLView {
 
 /// 对任意视图执行 Yoga 布局计算并应用 frame 到子视图。
 internal func _applyYogaLayout(to view: YKLView) {
+    // 清除旧 handler，避免 rebuildNodeTree 过程中 markDirty 触发残留回调
+    view.yoga.node.dirtiedHandler = nil
+
     YogaNodeManager.rebuildNodeTree(for: view)
     let rootNode = view.yoga.node
+
+    // 新根节点上设置 dirtied handler → 自动触发 UIKit 布局
+    rootNode.dirtiedHandler = { [weak view] _ in
+        #if os(iOS) || os(tvOS)
+        view?.setNeedsLayout()
+        #elseif os(macOS)
+        view?.needsLayout = true
+        #endif
+    }
 
     var offsetX: CGFloat = 0
     var offsetY: CGFloat = 0

@@ -7,6 +7,8 @@ class FlexboxDirectionChainableDemo: UIViewController {
     let container = YogaLayoutView()
     let scrollView = UIScrollView()
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -15,12 +17,22 @@ class FlexboxDirectionChainableDemo: UIViewController {
             .backgroundColor(.systemGray6)
         view.addChild(scrollView)
         addStyleBadge("链式")
+        scrollView.performYogaLayout()
+        for _ in 1...3 {
+            let label = UILabel()
+            label.text = "this is label"
+            label.style{
+                $0.width(100%)
+            }
+            scrollView.addChild(label)
+        }
+        
 
         container.style
             .flexDirection(.column)
             .rowGap(12)
             .padding(.all, 16)
-        scrollView.addSubview(container)
+        scrollView.addChild(container)
 
         let directions: [(GWFlexDirection, String)] = [
             (.row, "row"),

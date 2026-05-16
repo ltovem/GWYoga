@@ -33,18 +33,24 @@ extension UIView {
 
     /// 添加子视图并自动同步到 Yoga 节点树。
     /// 等价于 addSubview + appendChild(yoga.node)。
+    /// 如果父视图是 YogaLayoutView，didAddSubview 已同步节点树，无需重复插入。
     @discardableResult
     public func addChild(_ view: UIView) -> UIView {
         addSubview(view)
-        self.yoga.node.insertChild(view.yoga.node, at: self.yoga.node.childCount)
+        if !(self is YogaLayoutView) {
+            self.yoga.node.insertChild(view.yoga.node, at: self.yoga.node.childCount)
+        }
         return view
     }
 
     /// 在指定位置插入子视图并同步 Yoga 节点树。
+    /// 如果父视图是 YogaLayoutView，didAddSubview 已同步节点树，无需重复插入。
     @discardableResult
     public func addChild(_ view: UIView, at index: Int) -> UIView {
         insertSubview(view, at: index)
-        self.yoga.node.insertChild(view.yoga.node, at: index)
+        if !(self is YogaLayoutView) {
+            self.yoga.node.insertChild(view.yoga.node, at: index)
+        }
         return view
     }
 

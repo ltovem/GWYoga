@@ -46,6 +46,7 @@ internal final class YogaNodeManager {
         parentNode.removeAllChildren()
         for subview in parentView.subviews {
             let childNode = subview.yoga.node
+            childNode.dirtiedHandler = nil
             parentNode.appendChild(childNode)
             buildNodeTree(parentView: subview, parentNode: childNode)
         }
