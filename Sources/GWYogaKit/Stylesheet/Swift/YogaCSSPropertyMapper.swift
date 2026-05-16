@@ -135,6 +135,42 @@ public enum YogaCSSPropertyMapper {
             if let n = Float(v.trimmingCharacters(in: .whitespaces)) { y.aspectRatio = n }
         }
 
+        // ── Text Properties ──
+        #if os(iOS)
+        h["color"] = { v, y in
+            guard let label = y.view as? UILabel else { return }
+            if let color = parseColor(v) { label.textColor = color }
+        }
+        h["font-size"] = { v, y in
+            guard let label = y.view as? UILabel else { return }
+            if let n = parseFloat(v) { label.font = label.font.withSize(CGFloat(n)) }
+        }
+        h["font-weight"] = { v, y in
+            guard let label = y.view as? UILabel else { return }
+            let weight: UIFont.Weight
+            switch v.lowercased() {
+            case "bold", "700": weight = .bold
+            case "semibold", "600": weight = .semibold
+            case "medium", "500": weight = .medium
+            case "normal", "400", "regular": weight = .regular
+            case "light", "300": weight = .light
+            case "thin", "100", "200": weight = .thin
+            default: return
+            }
+            label.font = UIFont.systemFont(ofSize: label.font.pointSize, weight: weight)
+        }
+        h["text-align"] = { v, y in
+            guard let label = y.view as? UILabel else { return }
+            switch v.lowercased() {
+            case "left": label.textAlignment = .left
+            case "center": label.textAlignment = .center
+            case "right": label.textAlignment = .right
+            case "justify": label.textAlignment = .justified
+            default: break
+            }
+        }
+        #endif
+
         // ── Visual (UIKit/AppKit) ──
         #if os(iOS)
         h["background-color"] = { v, y in

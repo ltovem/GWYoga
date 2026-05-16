@@ -34,12 +34,20 @@ open class YogaLayoutView: YKLView {
     /// - `.manual`: 不自动触发，需手动调用 performYogaLayout()
     open var yogaLayoutMode: YogaLayoutMode = .auto
 
+    /// 是否需要在此次 layout 循环中执行 Yoga 布局
+    private var shouldPerformLayout: Bool {
+        switch yogaLayoutMode {
+        case .forced: return true
+        case .manual: return false
+        case .auto:   return yoga.isDirty
+        }
+    }
+
     // MARK: - 生命周期
 
     #if os(iOS)
     open override func didAddSubview(_ subview: UIView) {
         super.didAddSubview(subview)
-        // 跳过 YogaLayoutView 自身管理
         guard subview !== self else { return }
         YogaNodeManager.addChild(subview, to: self)
     }
@@ -52,11 +60,11 @@ open class YogaLayoutView: YKLView {
 
     open override func layoutSubviews() {
         super.layoutSubviews()
-        performYogaLayout()
+        if shouldPerformLayout {
+            _applyYogaLayout(to: self)
+        }
     }
     #elseif os(macOS)
-    /// macOS 默认坐标系原点在左下角，Yoga 布局使用左上角原点，
-    /// 反转后使 Yoga 计算出的 Y 坐标直接匹配 AppKit 视图坐标系。
     open override var isFlipped: Bool { true }
 
     open override func didAddSubview(_ subview: NSView) {
@@ -73,89 +81,88 @@ open class YogaLayoutView: YKLView {
 
     open override func layout() {
         super.layout()
-        performYogaLayout()
+        if shouldPerformLayout {
+            _applyYogaLayout(to: self)
+        }
     }
     #endif
-
-    // MARK: - Yoga 布局
-
-    /// 手动触发布局计算。通常不需要直接调用，除非 yogaLayoutMode 为 .manual。
-    @objc open func performYogaLayout() {
-        if yogaLayoutMode == .auto && !yoga.yogaNode.isDirty {
-            return
-        }
-
-        // 确保节点树与视图树一致
-        YogaNodeManager.rebuildNodeTree(for: self)
-
-        // 计算布局
-        let rootNode = yoga.yogaNode
-        rootNode.calculateLayout(
-            width: Float(bounds.width),
-            height: Float(bounds.height),
-            direction: .ltr
-        )
-
-        // 应用结果到子视图
-        applyYogaFrames(parentView: self, parentNode: rootNode)
-    }
-
-    /// 递归应用布局结果到子视图 frame
-    private func applyYogaFrames(parentView: YKLView, parentNode: GWYogaNode) {
-        let children = parentNode.children
-        let subviewList = parentView.subviews
-
-        for (index, childNode) in children.enumerated() {
-            guard index < subviewList.count else { break }
-            let subview = subviewList[index]
-
-            let result = childNode.layoutResult
-            var frame = CGRect(
-                x: CGFloat(result.left),
-                y: CGFloat(result.top),
-                width: CGFloat(result.width),
-                height: CGFloat(result.height)
-            )
-            // NaN 保护
-            if frame.origin.x.isNaN || frame.origin.y.isNaN ||
-               frame.size.width.isNaN || frame.size.height.isNaN {
-                frame = .zero
-            }
-            #if os(iOS)
-            subview.frame = frame
-            #elseif os(macOS)
-            subview.frame = frame
-            #endif
-
-            // 递归应用子视图的子视图
-            applyYogaFrames(parentView: subview, parentNode: childNode)
-        }
-    }
 
     // MARK: - 内容尺寸
 
     #if os(iOS)
     open override var intrinsicContentSize: CGSize {
-        if yoga.yogaNode.isDirty {
-            performYogaLayout()
+        if yoga.isDirty {
+            _applyYogaLayout(to: self)
         }
-        let r = yoga.yogaNode.layoutResult
+        let r = yoga.node.layoutResult
         return CGSize(width: CGFloat(r.width), height: CGFloat(r.height))
     }
     #elseif os(macOS)
     open override var intrinsicContentSize: CGSize {
-        if yoga.yogaNode.isDirty {
-            performYogaLayout()
+        if yoga.isDirty {
+            _applyYogaLayout(to: self)
         }
-        let r = yoga.yogaNode.layoutResult
+        let r = yoga.node.layoutResult
         return CGSize(width: CGFloat(r.width), height: CGFloat(r.height))
     }
     #endif
 }
 
-// MARK: - YogaProperties 补充
+// MARK: - 独立布局函数
 
-internal extension YogaProperties {
-    /// 获取关联视图的 yoga 属性对应的 Yoga 节点（YogaLayoutView 使用）
-    var yogaNode: GWYogaNode { node }
+/// 对任意视图执行 Yoga 布局计算并应用 frame 到子视图。
+internal func _applyYogaLayout(to view: YKLView) {
+    // 确保节点树与视图树一致
+    YogaNodeManager.rebuildNodeTree(for: view)
+
+    // 计算布局
+    let rootNode = view.yoga.node
+    rootNode.calculateLayout(
+        width: Float(view.bounds.width),
+        height: Float(view.bounds.height),
+        direction: .ltr
+    )
+
+    // 应用结果到子视图
+    applyYogaFrames(parentView: view, parentNode: rootNode)
+}
+
+/// 递归应用布局结果到子视图 frame
+internal func applyYogaFrames(parentView: YKLView, parentNode: GWYogaNode) {
+    let children = parentNode.children
+    let subviewList = parentView.subviews
+
+    for (index, childNode) in children.enumerated() {
+        guard index < subviewList.count else { break }
+        let subview = subviewList[index]
+
+        let result = childNode.layoutResult
+        var frame = CGRect(
+            x: CGFloat(result.left),
+            y: CGFloat(result.top),
+            width: CGFloat(result.width),
+            height: CGFloat(result.height)
+        )
+        // NaN 保护
+        if frame.origin.x.isNaN || frame.origin.y.isNaN ||
+           frame.size.width.isNaN || frame.size.height.isNaN {
+            frame = .zero
+        }
+        subview.frame = frame
+
+        // 递归应用子视图的子视图
+        applyYogaFrames(parentView: subview, parentNode: childNode)
+    }
+}
+
+// MARK: - YKLView 布局扩展
+
+extension YKLView {
+    /// 手动触发 Yoga 布局计算并应用 frame 到子视图。
+    /// 任何 UIView 都可以调用此方法，无需继承 YogaLayoutView。
+    /// ObjC 调用：`[view performYogaLayout]`
+    @objc
+    public func performYogaLayout() {
+        _applyYogaLayout(to: self)
+    }
 }

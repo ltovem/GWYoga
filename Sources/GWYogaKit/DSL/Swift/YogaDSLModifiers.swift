@@ -162,6 +162,44 @@ extension YogaDSLModifiable {
         yoga.aspectRatio = ratio; return self
     }
 
+    // MARK: 文本属性
+
+    @discardableResult
+    public func text(_ value: String) -> Self {
+        if let label = self as? UILabel { label.text = value }
+        if let button = self as? UIButton { button.setTitle(value, for: .normal) }
+        if let field = self as? UITextField { field.text = value }
+        return self
+    }
+
+    @discardableResult
+    public func font(_ value: UIFont) -> Self {
+        if let label = self as? UILabel { label.font = value }
+        if let button = self as? UIButton { button.titleLabel?.font = value }
+        if let field = self as? UITextField { field.font = value }
+        return self
+    }
+
+    @discardableResult
+    public func textColor(_ value: UIColor) -> Self {
+        if let label = self as? UILabel { label.textColor = value }
+        if let field = self as? UITextField { field.textColor = value }
+        return self
+    }
+
+    @discardableResult
+    public func textAlignment(_ value: NSTextAlignment) -> Self {
+        if let label = self as? UILabel { label.textAlignment = value }
+        if let field = self as? UITextField { field.textAlignment = value }
+        return self
+    }
+
+    @discardableResult
+    public func numberOfLines(_ value: Int) -> Self {
+        if let label = self as? UILabel { label.numberOfLines = value }
+        return self
+    }
+
     // MARK: 外观
 
     @discardableResult

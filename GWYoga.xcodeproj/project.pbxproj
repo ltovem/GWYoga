@@ -256,11 +256,16 @@
 				<string>OBJ_116</string>
 				<string>OBJ_118</string>
 				<string>OBJ_120</string>
+				<string>OBJ_454</string>
+				<string>OBJ_455</string>
+				<string>OBJ_559</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
 			<key>name</key>
 			<string>GWYogaDemoApp</string>
+			<key>path</key>
+			<string>Apps/GWYogaDemoApp</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -271,7 +276,7 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
 			<key>path</key>
-			<string>Apps/GWYogaDemoApp/AppDelegate.swift</string>
+			<string>AppDelegate.swift</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -289,7 +294,7 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
 			<key>path</key>
-			<string>Apps/GWYogaDemoApp/SceneDelegate.swift</string>
+			<string>SceneDelegate.swift</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -307,7 +312,7 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
 			<key>path</key>
-			<string>Apps/GWYogaDemoApp/ViewController.swift</string>
+			<string>ViewController.swift</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -334,7 +339,7 @@
 			<key>lastKnownFileType</key>
 			<string>text.plist.xml</string>
 			<key>path</key>
-			<string>Apps/GWYogaDemoApp/Info.plist</string>
+			<string>Info.plist</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -360,6 +365,36 @@
 				<string>OBJ_115</string>
 				<string>OBJ_117</string>
 				<string>OBJ_119</string>
+				<string>OBJ_457</string>
+				<string>OBJ_460</string>
+				<string>OBJ_464</string>
+				<string>OBJ_467</string>
+				<string>OBJ_470</string>
+				<string>OBJ_473</string>
+				<string>OBJ_476</string>
+				<string>OBJ_479</string>
+				<string>OBJ_482</string>
+				<string>OBJ_485</string>
+				<string>OBJ_488</string>
+				<string>OBJ_491</string>
+				<string>OBJ_494</string>
+				<string>OBJ_497</string>
+				<string>OBJ_500</string>
+				<string>OBJ_502</string>
+				<string>OBJ_507</string>
+				<string>OBJ_511</string>
+				<string>OBJ_515</string>
+				<string>OBJ_519</string>
+				<string>OBJ_523</string>
+				<string>OBJ_527</string>
+				<string>OBJ_531</string>
+				<string>OBJ_535</string>
+				<string>OBJ_539</string>
+				<string>OBJ_543</string>
+				<string>OBJ_547</string>
+				<string>OBJ_551</string>
+				<string>OBJ_555</string>
+				<string>OBJ_558</string>
 			</array>
 			<key>isa</key>
 			<string>PBXSourcesBuildPhase</string>
@@ -394,10 +429,14 @@
 			<dict>
 				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
 				<string>AppIcon</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
 				<key>CODE_SIGN_STYLE</key>
 				<string>Automatic</string>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string></string>
 				<key>INFOPLIST_FILE</key>
 				<string>Apps/GWYogaDemoApp/Info.plist</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
@@ -413,10 +452,31 @@
 				<string>com.gwyoga.demo</string>
 				<key>PRODUCT_NAME</key>
 				<string>GWYogaDemoApp</string>
+				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
+				<string>Apps/GWYogaDemoApp/GWYogaDemoApp-Bridging-Header.h</string>
+				<key>SWIFT_OBJC_INTERFACE_HEADER_NAME</key>
+				<string>GWYogaDemoApp-Swift.h</string>
 				<key>SWIFT_VERSION</key>
 				<string>5.0</string>
 				<key>TARGETED_DEVICE_FAMILY</key>
 				<string>1,2</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>$(PROJECT_DIR)/build/Release-iphonesimulator</string>
+				</array>
+				<key>OTHER_LDFLAGS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>-framework</string>
+					<string>GWYogaKit</string>
+					<string>-framework</string>
+					<string>GWYogaKitObjCCore</string>
+					<string>-framework</string>
+					<string>GWYogaKitStylesheetObjCCore</string>
+				</array>
 			</dict>
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
@@ -429,10 +489,14 @@
 			<dict>
 				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
 				<string>AppIcon</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
 				<key>CODE_SIGN_STYLE</key>
 				<string>Automatic</string>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string></string>
 				<key>INFOPLIST_FILE</key>
 				<string>Apps/GWYogaDemoApp/Info.plist</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
@@ -448,10 +512,31 @@
 				<string>com.gwyoga.demo</string>
 				<key>PRODUCT_NAME</key>
 				<string>GWYogaDemoApp</string>
+				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
+				<string>Apps/GWYogaDemoApp/GWYogaDemoApp-Bridging-Header.h</string>
+				<key>SWIFT_OBJC_INTERFACE_HEADER_NAME</key>
+				<string>GWYogaDemoApp-Swift.h</string>
 				<key>SWIFT_VERSION</key>
 				<string>5.0</string>
 				<key>TARGETED_DEVICE_FAMILY</key>
 				<string>1,2</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>$(PROJECT_DIR)/build/Release-iphonesimulator</string>
+				</array>
+				<key>OTHER_LDFLAGS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>-framework</string>
+					<string>GWYogaKit</string>
+					<string>-framework</string>
+					<string>GWYogaKitObjCCore</string>
+					<string>-framework</string>
+					<string>GWYogaKitStylesheetObjCCore</string>
+				</array>
 			</dict>
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
@@ -5583,12 +5668,199 @@
 			<key>target</key>
 			<string>gwyoga::GWYoga</string>
 		</dict>
+		<key>OBJ_454</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_456</string>
+				<string>OBJ_461</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_455</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_458</string>
+				<string>OBJ_459</string>
+				<string>OBJ_503</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>ObjC</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_456</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Swift/SwiftDemoListViewController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_457</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_456</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>OBJ_458</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ObjC/ObjCDemoListViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_459</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ObjC/ObjCDemoListViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>OBJ_46</key>
 		<dict>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>path</key>
 			<string>YogaProperties+Selector.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_460</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_459</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>OBJ_461</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_462</string>
+				<string>OBJ_465</string>
+				<string>OBJ_468</string>
+				<string>OBJ_471</string>
+				<string>OBJ_474</string>
+				<string>OBJ_477</string>
+				<string>OBJ_480</string>
+				<string>OBJ_483</string>
+				<string>OBJ_486</string>
+				<string>OBJ_489</string>
+				<string>OBJ_492</string>
+				<string>OBJ_495</string>
+				<string>OBJ_498</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Features</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_462</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_463</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>JustifyContent</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_463</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Swift/Features/JustifyContent/JustifyContentDemo.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_464</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_463</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>OBJ_465</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_466</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>MarginPadding</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_466</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Swift/Features/MarginPadding/MarginPaddingDemo.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_467</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_466</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>OBJ_468</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_469</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Position</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_469</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Swift/Features/Position/PositionDemo.swift</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -5601,6 +5873,106 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>OBJ_470</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_469</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>OBJ_471</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_472</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Gap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_472</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Swift/Features/Gap/GapDemo.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_473</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_472</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>OBJ_474</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_475</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Grid</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_475</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Swift/Features/Grid/GridDemo.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_476</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_475</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>OBJ_477</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_478</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>YogaStack</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_478</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Swift/Features/YogaStack/YogaStackDemo.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_479</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_478</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>OBJ_48</key>
 		<dict>
 			<key>isa</key>
@@ -5610,12 +5982,223 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>OBJ_480</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_481</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>CornerRadius</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_481</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Swift/Features/CornerRadius/CornerRadiusDemo.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_482</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_481</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>OBJ_483</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_484</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Shadow</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_484</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Swift/Features/Shadow/ShadowDemo.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_485</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_484</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>OBJ_486</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_487</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>CSSInline</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_487</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Swift/Features/CSSInline/CSSInlineDemo.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_488</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_487</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>OBJ_489</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_490</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Animation</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>OBJ_49</key>
 		<dict>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>path</key>
 			<string>YogaProperties.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_490</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Swift/Features/Animation/AnimationDemo.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_491</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_490</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>OBJ_492</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_493</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>DebugPrint</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_493</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Swift/Features/DebugPrint/DebugPrintDemo.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_494</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_493</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>OBJ_495</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_496</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Composite</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_496</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Swift/Features/Composite/CompositeDemo.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_497</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_496</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>OBJ_498</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_499</string>
+				<string>OBJ_501</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Flexbox</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_499</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Swift/Features/Flexbox/FlexboxDirectionChainableDemo.swift</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -5665,6 +6248,124 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>OBJ_500</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_499</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>OBJ_501</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Swift/Features/Flexbox/FlexboxDirectionClosureDemo.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_502</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_501</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>OBJ_503</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_504</string>
+				<string>OBJ_508</string>
+				<string>OBJ_512</string>
+				<string>OBJ_516</string>
+				<string>OBJ_520</string>
+				<string>OBJ_524</string>
+				<string>OBJ_528</string>
+				<string>OBJ_532</string>
+				<string>OBJ_536</string>
+				<string>OBJ_540</string>
+				<string>OBJ_544</string>
+				<string>OBJ_548</string>
+				<string>OBJ_552</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Features</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_504</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_505</string>
+				<string>OBJ_506</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>JustifyContent</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_505</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ObjC/Features/JustifyContent/ObjCJustifyContentDemo.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_506</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ObjC/Features/JustifyContent/ObjCJustifyContentDemo.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_507</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_506</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>OBJ_508</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_509</string>
+				<string>OBJ_510</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>MarginPadding</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_509</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ObjC/Features/MarginPadding/ObjCMarginPaddingDemo.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>OBJ_51</key>
 		<dict>
 			<key>children</key>
@@ -5686,12 +6387,227 @@
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
+		<key>OBJ_510</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ObjC/Features/MarginPadding/ObjCMarginPaddingDemo.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_511</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_510</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>OBJ_512</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_513</string>
+				<string>OBJ_514</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Position</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_513</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ObjC/Features/Position/ObjCPositionDemo.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_514</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ObjC/Features/Position/ObjCPositionDemo.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_515</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_514</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>OBJ_516</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_517</string>
+				<string>OBJ_518</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Gap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_517</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ObjC/Features/Gap/ObjCGapDemo.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_518</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ObjC/Features/Gap/ObjCGapDemo.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_519</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_518</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>OBJ_52</key>
 		<dict>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>path</key>
 			<string>YogaAnimation.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_520</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_521</string>
+				<string>OBJ_522</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Grid</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_521</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ObjC/Features/Grid/ObjCGridDemo.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_522</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ObjC/Features/Grid/ObjCGridDemo.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_523</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_522</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>OBJ_524</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_525</string>
+				<string>OBJ_526</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>YogaStack</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_525</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ObjC/Features/YogaStack/ObjCYogaStackDemo.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_526</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ObjC/Features/YogaStack/ObjCYogaStackDemo.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_527</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_526</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>OBJ_528</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_529</string>
+				<string>OBJ_530</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>CornerRadius</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_529</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ObjC/Features/CornerRadius/ObjCCornerRadiusDemo.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -5704,6 +6620,110 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>OBJ_530</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ObjC/Features/CornerRadius/ObjCCornerRadiusDemo.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_531</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_530</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>OBJ_532</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_533</string>
+				<string>OBJ_534</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Shadow</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_533</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ObjC/Features/Shadow/ObjCShadowDemo.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_534</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ObjC/Features/Shadow/ObjCShadowDemo.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_535</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_534</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>OBJ_536</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_537</string>
+				<string>OBJ_538</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>CSSInline</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_537</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ObjC/Features/CSSInline/ObjCCSSInlineDemo.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_538</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ObjC/Features/CSSInline/ObjCCSSInlineDemo.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_539</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_538</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>OBJ_54</key>
 		<dict>
 			<key>isa</key>
@@ -5713,12 +6733,226 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>OBJ_540</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_541</string>
+				<string>OBJ_542</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Animation</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_541</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ObjC/Features/Animation/ObjCAnimationDemo.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_542</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ObjC/Features/Animation/ObjCAnimationDemo.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_543</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_542</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>OBJ_544</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_545</string>
+				<string>OBJ_546</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>DebugPrint</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_545</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ObjC/Features/DebugPrint/ObjCDebugPrintDemo.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_546</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ObjC/Features/DebugPrint/ObjCDebugPrintDemo.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_547</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_546</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>OBJ_548</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_549</string>
+				<string>OBJ_550</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Composite</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_549</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ObjC/Features/Composite/ObjCCompositeDemo.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>OBJ_55</key>
 		<dict>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>path</key>
 			<string>YogaKeyframes.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_550</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ObjC/Features/Composite/ObjCCompositeDemo.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_551</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_550</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>OBJ_552</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_553</string>
+				<string>OBJ_554</string>
+				<string>OBJ_556</string>
+				<string>OBJ_557</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Flexbox</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_553</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ObjC/Features/Flexbox/ObjCFlexboxDirectionPropertyDemo.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_554</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ObjC/Features/Flexbox/ObjCFlexboxDirectionPropertyDemo.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_555</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_554</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>OBJ_556</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ObjC/Features/Flexbox/ObjCFlexboxDirectionBlockDemo.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_557</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ObjC/Features/Flexbox/ObjCFlexboxDirectionBlockDemo.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_558</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_557</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>OBJ_559</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>GWYogaDemoApp-Bridging-Header.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>

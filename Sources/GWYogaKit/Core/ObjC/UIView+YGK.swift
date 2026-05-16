@@ -18,5 +18,15 @@ extension UIView {
         objc_setAssociatedObject(self, &ygkPropertiesKey, props, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return props
     }
+
+    /// 添加子视图并同步到 Yoga 节点树。
+    /// YogaLayoutView 重写了 didAddSubview 自动维护节点树，
+    /// 用此方法语义更准确。
+    @objc(addChild:)
+    @discardableResult
+    public func gw_addChild(_ view: UIView) -> UIView {
+        addSubview(view)
+        return view
+    }
 }
 #endif
