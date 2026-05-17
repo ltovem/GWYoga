@@ -161,6 +161,15 @@ extension YogaProperties {
         return cornerRadius(YogaCornerRadii(dict))
     }
 
+    /// 命名参数方式设置各角圆角
+    /// ```
+    /// view.style.cornerRadius(topLeft: 12, topRight: 12)
+    /// ```
+    @discardableResult
+    public func cornerRadius(topLeft: CGFloat = 0, topRight: CGFloat = 0, bottomLeft: CGFloat = 0, bottomRight: CGFloat = 0) -> Self {
+        return cornerRadius(YogaCornerRadii(topLeft: topLeft, topRight: topRight, bottomLeft: bottomLeft, bottomRight: bottomRight))
+    }
+
     // MARK: 阴影
 
     @discardableResult

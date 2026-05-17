@@ -52,12 +52,15 @@ class FlexboxDirectionChainableDemo: UIViewController {
         subView.backgroundColor = UIColor.yellow
         subView.style
             .width(50%)
-            .margin(.all, 100)
+        
+            .margin(.all, 200)
             .background(.linearGradient(
                 colors: [.red, .blue],
                 startPoint: CGPoint(x: 0, y: 0),
                 endPoint: CGPoint(x: 1, y: 1)
             ))
+//            .cornerRadius(topLeft: 12, topRight: 12,bottomLeft:30,botto)
+            .cornerRadius(topLeft: 3, topRight: 8, bottomLeft: 15, bottomRight: 0)
             
         thisview.addChild(subView)
 
