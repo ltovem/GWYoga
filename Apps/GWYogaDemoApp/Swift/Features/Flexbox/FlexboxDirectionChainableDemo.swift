@@ -26,9 +26,10 @@ class FlexboxDirectionChainableDemo: UIViewController {
         thisview.style.width(100%).height(100%)
         view.addChild(thisview)
 
-        // subView: 50% × 50% 居中
+        // subView: 50% 宽，高度由内容决定（自适应）
+        // 当 label 文本变化时 subView 自动伸缩
         subView.backgroundColor = UIColor.yellow
-        subView.style.width(50%).height(50%)
+        subView.style.width(50%).margin(.all ,100)
         thisview.addChild(subView)
 
         // 信息标签
@@ -49,7 +50,7 @@ class FlexboxDirectionChainableDemo: UIViewController {
         plainLabel.layer.cornerRadius = 8
         plainLabel.clipsToBounds = true
         plainLabel.yoga.isIntrinsic = true
-        plainLabel.style.padding(.all, 8).flexShrink(1)
+        plainLabel.style.padding(.all, 0).flexShrink(1)
         subView.addSubview(plainLabel)
 
         // 富文本
@@ -91,14 +92,15 @@ class FlexboxDirectionChainableDemo: UIViewController {
         isLongText.toggle()
         toggleCount += 1
 
+        // 文本/按钮内容变化 → swizzle 自动触发 markDirty
+        // 脏标记传播到根节点后自动调用 setNeedsLayout，下个 runloop 刷新布局
         plainLabel.text = isLongText ? longText : shortText
         updateAttributedText()
-        infoLabel.text = "已切换 \(toggleCount) 次"
 
-        // 通知 yoga 内容已变化，需重新测量
-        plainLabel.style.markDirty()
-        richLabel.style.markDirty()
-        view.performYogaLayout()
+        // 按钮标题也变化，测试 UIButton 自动脏标记
+        tapButton.setTitle(isLongText ? "切换到短文本" : "切换到长文本", for: .normal)
+
+        infoLabel.text = "已切换 \(toggleCount) 次"
     }
 
     override func viewDidLayoutSubviews() {

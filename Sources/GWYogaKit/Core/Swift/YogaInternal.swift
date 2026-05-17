@@ -6,6 +6,11 @@ import UIKit
 import AppKit
 #endif
 
+// MARK: - YogaProperties Associated Object Key（跨文件共享）
+
+/// YogaProperties 关联对象的 key，供 swizzle 代码检查视图是否已启用 Yoga
+internal var YogaPropertiesAssociatedKey: UInt8 = 0
+
 // MARK: - Platform 类型别名
 
 #if os(iOS) || os(tvOS)

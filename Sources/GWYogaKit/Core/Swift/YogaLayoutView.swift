@@ -275,6 +275,12 @@ func _yogaAutoLayoutSwizzleOnce() {
     }
 
     method_exchangeImplementations(originalMethod, swizzledMethod)
+
+    // 启用 UIKit 控件内容变化的自动脏标记
+    #if os(iOS) || os(tvOS)
+    UILabel._yoga_enableAutoMarkDirty()
+    UIButton._yoga_enableAutoMarkDirty()
+    #endif
 }
 
 #if os(iOS) || os(tvOS)

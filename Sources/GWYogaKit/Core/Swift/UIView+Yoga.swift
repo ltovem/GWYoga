@@ -3,19 +3,17 @@ import GWYoga
 #if os(iOS) || os(tvOS)
 import UIKit
 
-private var yogaPropertiesKey: UInt8 = 0
-
 extension UIView {
     /// 访问此视图的 Yoga 样式属性。
     /// 首次访问时自动创建关联的 GWYogaNode。
     public var yoga: YogaProperties {
         // 首次访问 yoga 时自动注册 layoutSubviews swizzle
         _yogaAutoLayoutSwizzleOnce()
-        if let existing = objc_getAssociatedObject(self, &yogaPropertiesKey) as? YogaProperties {
+        if let existing = objc_getAssociatedObject(self, &YogaPropertiesAssociatedKey) as? YogaProperties {
             return existing
         }
         let props = YogaProperties(view: self)
-        objc_setAssociatedObject(self, &yogaPropertiesKey, props, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        objc_setAssociatedObject(self, &YogaPropertiesAssociatedKey, props, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return props
     }
 
