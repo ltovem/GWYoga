@@ -214,6 +214,14 @@ internal func applyYogaFrames(parentView: YKLView, parentNode: GWYogaNode,
             frame = .zero
         }
         subview.frame = frame
+        #if os(iOS) || os(tvOS)
+        // 更新背景渐变/图片 layer frame
+        for layer in subview.layer.sublayers ?? [] {
+            if layer.name == "gw_yoga_gradient" || layer.name == "gw_yoga_bgimage" {
+                layer.frame = subview.bounds
+            }
+        }
+        #endif
 
         // 递归应用子视图的子视图（子视图 offset 归零，因为已经在 safe area 内部）
         applyYogaFrames(parentView: subview, parentNode: childNode, offsetX: 0, offsetY: 0)

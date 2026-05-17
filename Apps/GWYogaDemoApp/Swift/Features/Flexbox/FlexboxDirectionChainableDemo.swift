@@ -50,7 +50,15 @@ class FlexboxDirectionChainableDemo: UIViewController {
 
         // subView: 50% 宽，高度由内容决定（自适应）
         subView.backgroundColor = UIColor.yellow
-        subView.style.width(50%).margin(.all, 100)
+        subView.style
+            .width(50%)
+            .margin(.all, 100)
+            .background(.linearGradient(
+                colors: [.red, .blue],
+                startPoint: CGPoint(x: 0, y: 0),
+                endPoint: CGPoint(x: 1, y: 1)
+            ))
+            
         thisview.addChild(subView)
 
         // 信息标签
