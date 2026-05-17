@@ -92,7 +92,7 @@ open class YogaLayoutView: YKLView {
     #if os(iOS)
     open override var intrinsicContentSize: CGSize {
         if yoga.isDirty {
-            _applyYogaLayout(to: self)
+            _applyYogaLayout(to: self, useBoundsAsFallback: false)
         }
         let r = yoga.node.layoutResult
         return CGSize(width: CGFloat(r.width), height: CGFloat(r.height))
@@ -100,7 +100,7 @@ open class YogaLayoutView: YKLView {
     #elseif os(macOS)
     open override var intrinsicContentSize: CGSize {
         if yoga.isDirty {
-            _applyYogaLayout(to: self)
+            _applyYogaLayout(to: self, useBoundsAsFallback: false)
         }
         let r = yoga.node.layoutResult
         return CGSize(width: CGFloat(r.width), height: CGFloat(r.height))
@@ -111,7 +111,10 @@ open class YogaLayoutView: YKLView {
 // MARK: - 独立布局函数
 
 /// 对任意视图执行 Yoga 布局计算并应用 frame 到子视图。
-internal func _applyYogaLayout(to view: YKLView) {
+/// - Parameter useBoundsAsFallback: 当 view 没有显式 yoga 宽高时，true 用 view.bounds 作为可用空间
+///   （适用于 frame 由 UIKit/Auto Layout 管理的场景），false 传 NaN 让 Yoga 按内容自由计算
+///   （适用于 intrinsicContentSize 等 auto-sizing 场景）。
+internal func _applyYogaLayout(to view: YKLView, useBoundsAsFallback: Bool = true) {
     // 清除旧 handler，避免 rebuildNodeTree 过程中 markDirty 触发残留回调
     view.yoga.node.dirtiedHandler = nil
 
@@ -167,13 +170,16 @@ internal func _applyYogaLayout(to view: YKLView) {
     }
     #endif
 
-    // 如果 style 没有显式设宽/高，传 NaN 让 Yoga 按内容自由计算（类似 CSS height: auto）
-    let style = view.yoga.node.style
-    if style.width.unit == .undefined || style.width.unit == .auto {
-        layoutWidth = CGFloat.nan
-    }
-    if style.height.unit == .undefined || style.height.unit == .auto {
-        layoutHeight = CGFloat.nan
+    // 如果 style 没有显式设宽/高，用 view.bounds 作为可用空间（frame 由 UIKit/Auto Layout 管理时适用）。
+    // useBoundsAsFallback=false 时才传 NaN 让 Yoga 按内容自由计算（intrinsicContentSize）。
+    if !useBoundsAsFallback {
+        let style = view.yoga.node.style
+        if style.width.unit == .undefined || style.width.unit == .auto {
+            layoutWidth = CGFloat.nan
+        }
+        if style.height.unit == .undefined || style.height.unit == .auto {
+            layoutHeight = CGFloat.nan
+        }
     }
 
     rootNode.calculateLayout(
