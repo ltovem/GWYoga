@@ -61,7 +61,7 @@ class FlexboxDirectionChainableDemo: UIViewController {
             ))
 //            .cornerRadius(topLeft: 12, topRight: 12,bottomLeft:30,botto)
             .cornerRadius(topLeft: 3, topRight: 8, bottomLeft: 15, bottomRight: 0)
-            
+
         thisview.addChild(subView)
 
         // 信息标签

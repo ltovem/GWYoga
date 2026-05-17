@@ -6,6 +6,7 @@ class SwiftDemoListViewController: UITableViewController {
         ("基础布局", [
             ("Flexbox + 数据绑定", "链式 · flexDirection + @YogaState", FlexboxDirectionChainableDemo.self),
             ("Flexbox 方向", "闭包 · style {}", FlexboxDirectionClosureDemo.self),
+            ("Flexbox 方向", "CSS · css(\"\")", FlexboxDirectionCSSDemo.self),
             ("主轴对齐", "闭包 · justifyContent", JustifyContentDemo.self),
         ]),
         ("尺寸边距", [
@@ -16,13 +17,19 @@ class SwiftDemoListViewController: UITableViewController {
         ("高级布局", [
             ("Grid", "链式 · display:grid", GridDemo.self),
             ("YogaStack", "闭包 · stack", YogaStackDemo.self),
+            ("YogaScrollView", "链式 · scroll", YogaScrollViewDemo.self),
         ]),
         ("视觉样式", [
             ("CornerRadius", "链式 · cornerRadius", CornerRadiusDemo.self),
             ("Shadow", "链式 · shadow", ShadowDemo.self),
+            ("背景渐变", "链式 · linearGradient", BackgroundGradientDemo.self),
+        ]),
+        ("链式代理", [
+            ("Yog Proxy", "链式 · .yog() 代理链", YogProxyDemo.self),
         ]),
         ("CSS", [
-            ("CSS 内联", "CSS · style=\"\"", CSSInlineDemo.self),
+            ("CSS 内联", "CSS · css(\"\")", CSSInlineDemo.self),
+            ("CSS 样式表", "CSS · stylesheet", CSSStylesheetDemo.self),
         ]),
         ("动画", [
             ("Animation", "链式 · animation", AnimationDemo.self),
@@ -31,7 +38,7 @@ class SwiftDemoListViewController: UITableViewController {
             ("DebugPrint", "混合 · debugPrint", DebugPrintDemo.self),
         ]),
         ("综合", [
-            ("Composite", "混合 · 综合示例", CompositeDemo.self),
+            ("Composite", "混合 · 三种写法同屏", CompositeDemo.self),
         ]),
     ]
 

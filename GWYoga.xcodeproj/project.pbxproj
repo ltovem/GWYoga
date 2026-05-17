@@ -381,6 +381,11 @@
 				<string>OBJ_497</string>
 				<string>OBJ_500</string>
 				<string>OBJ_502</string>
+				<string>OBJ_561</string>
+				<string>OBJ_564</string>
+				<string>OBJ_567</string>
+				<string>OBJ_570</string>
+				<string>OBJ_573</string>
 				<string>OBJ_507</string>
 				<string>OBJ_511</string>
 				<string>OBJ_515</string>
@@ -462,6 +467,8 @@
 					<string>GWYogaKitObjCCore</string>
 					<string>-framework</string>
 					<string>GWYogaKitStylesheetObjCCore</string>
+					<string>-framework</string>
+					<string>GWYogaKitStylesheet</string>
 				</array>
 				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
 				<string>com.gwyoga.demo</string>
@@ -522,6 +529,8 @@
 					<string>GWYogaKitObjCCore</string>
 					<string>-framework</string>
 					<string>GWYogaKitStylesheetObjCCore</string>
+					<string>-framework</string>
+					<string>GWYogaKitStylesheet</string>
 				</array>
 				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
 				<string>com.gwyoga.demo</string>
@@ -582,12 +591,38 @@
 			<key>productType</key>
 			<string>com.apple.product-type.application</string>
 		</dict>
+		<key>OBJ_129</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_130</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>OBJ_13</key>
 		<dict>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>path</key>
 			<string>GWEvent.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_130</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_151</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Features</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -786,6 +821,17 @@
 			<string>PBXFileReference</string>
 			<key>path</key>
 			<string>GWYogaKitDSLObjCCore.podspec</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_151</key>
+		<dict>
+			<key>children</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Flexbox</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -1143,6 +1189,19 @@
 			<array/>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
+		</dict>
+		<key>OBJ_178</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_205</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Apps</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>OBJ_179</key>
 		<dict>
@@ -1522,6 +1581,19 @@
 			<key>target</key>
 			<string>gwyoga::GWYoga</string>
 		</dict>
+		<key>OBJ_205</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_222</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>GWYogaDemoApp</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>OBJ_206</key>
 		<dict>
 			<key>buildConfigurations</key>
@@ -1796,6 +1868,19 @@
 			<key>target</key>
 			<string>gwyoga::GWYoga</string>
 		</dict>
+		<key>OBJ_222</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_236</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>OBJ_223</key>
 		<dict>
 			<key>buildConfigurations</key>
@@ -2036,6 +2121,19 @@
 			<key>target</key>
 			<string>gwyoga::GWYoga</string>
 		</dict>
+		<key>OBJ_236</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_249</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Features</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>OBJ_237</key>
 		<dict>
 			<key>buildConfigurations</key>
@@ -2257,6 +2355,17 @@
 			<string>PBXTargetDependency</string>
 			<key>target</key>
 			<string>gwyoga::GWYoga</string>
+		</dict>
+		<key>OBJ_249</key>
+		<dict>
+			<key>children</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Flexbox</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>OBJ_25</key>
 		<dict>
@@ -5842,6 +5951,10 @@
 				<string>OBJ_492</string>
 				<string>OBJ_495</string>
 				<string>OBJ_498</string>
+				<string>OBJ_562</string>
+				<string>OBJ_565</string>
+				<string>OBJ_568</string>
+				<string>OBJ_571</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -6255,6 +6368,7 @@
 			<array>
 				<string>OBJ_499</string>
 				<string>OBJ_501</string>
+				<string>OBJ_560</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -6303,6 +6417,8 @@
 				<string>OBJ_148</string>
 				<string>OBJ_149</string>
 				<string>OBJ_150</string>
+				<string>OBJ_129</string>
+				<string>OBJ_178</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -7027,6 +7143,148 @@
 			<string>GWYogaDemoApp-Bridging-Header.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_560</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Swift/Features/Flexbox/FlexboxDirectionCSSDemo.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_561</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_560</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>OBJ_562</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_563</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>CSSStylesheet</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_563</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Swift/Features/CSSStylesheet/CSSStylesheetDemo.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_564</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_563</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>OBJ_565</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_566</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>BackgroundGradient</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_566</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Swift/Features/BackgroundGradient/BackgroundGradientDemo.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_567</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_566</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>OBJ_568</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_569</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>YogaScrollView</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_569</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Swift/Features/YogaScrollView/YogaScrollViewDemo.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_570</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_569</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>OBJ_571</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>OBJ_572</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>YogProxy</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_572</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Swift/Features/YogProxy/YogProxyDemo.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>OBJ_573</key>
+		<dict>
+			<key>fileRef</key>
+			<string>OBJ_572</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
 		</dict>
 		<key>OBJ_56</key>
 		<dict>

@@ -10,6 +10,7 @@ import UIKit
         swiftNav.tabBarItem = UITabBarItem(title: "Swift", image: UIImage(systemName: "swift"), tag: 0)
 
         let objcNav = UINavigationController(rootViewController: ObjCDemoListViewController())
+        objcNav.tabBarItem = UITabBarItem(title: "ObjC", image: UIImage(systemName: "doc.text"), tag: 1)
 
         let tabBar = UITabBarController()
         tabBar.viewControllers = [swiftNav, objcNav]

@@ -2,51 +2,59 @@ import UIKit
 import GWYoga
 import GWYogaKit
 
-class FlexboxDirectionClosureDemo: UIViewController {
+class FlexboxDirectionCSSDemo: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        addStyleBadge("闭包")
+        addStyleBadge("CSS")
 
         let container = YogaLayoutView()
-        container.style { $0.flexDirection = .row; $0.justifyContent = .center; $0.alignItems = .center; $0.padding = [.all: 16] }
-        container.backgroundColor = .systemGray6
+        container.style.css("""
+            width: 100%;
+            padding: 16px;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        """)
         view.addSubview(container)
 
-        for color in [UIColor.systemRed, .systemGreen, .systemBlue, .systemOrange] {
+        for i in 1...4 {
             let child = UIView()
-            child.backgroundColor = color
-            child.style { $0.width = 60; $0.height = 60; $0.margin = [.all: 8] }
+            child.style.css("width: 60; height: 60; margin: 8;")
+            child.backgroundColor = UIColor(red: 0, green: 0.48 + Double(i) * 0.1, blue: 1, alpha: 1)
             container.addSubview(child)
         }
 
-        // 说明文字
-        let label = UILabel()
-        label.text = "Flexbox with closure style { $0.xxx }"
-        label.font = .systemFont(ofSize: 12)
-        label.textColor = .secondaryLabel
-        label.textAlignment = .center
-        label.style.marginTop(8).alignSelf(.center)
-        view.addSubview(label)
-
-        // Column 示例
+        // Column CSS example
         let colLabel = UILabel()
-        colLabel.text = "Column:"
+        colLabel.text = "Column CSS:"
         colLabel.font = .systemFont(ofSize: 12)
         colLabel.textColor = .secondaryLabel
         colLabel.style.marginTop(20).marginLeft(16)
         view.addSubview(colLabel)
 
         let colContainer = YogaLayoutView()
-        colContainer.style { $0.flexDirection = .column; $0.alignItems = .center; $0.padding = [.all: 12] }
-        colContainer.backgroundColor = .systemGray6
-        colContainer.style.margin(.horizontal, 16).marginTop(4)
+        colContainer.style.css("""
+            width: 90%;
+            margin-left: 16;
+            margin-right: 16;
+            margin-top: 4;
+            padding: 12;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f0f0;
+        """)
         view.addSubview(colContainer)
 
-        for color in [UIColor.systemPurple, UIColor.systemIndigo, UIColor.systemTeal] {
+        for color in ["#AF52DE", "#5856D6", "#30B0C7"] {
             let child = UIView()
-            child.backgroundColor = color
-            child.style { $0.width = 80; $0.height = 30; $0.margin = [.vertical: 4] }
+            if let uiColor = UIColor.hex(color) {
+                child.backgroundColor = uiColor
+            } else {
+                child.backgroundColor = .systemPurple
+            }
+            child.style.css("width: 80; height: 30; margin: 4;")
             colContainer.addSubview(child)
         }
     }
@@ -70,5 +78,14 @@ class FlexboxDirectionClosureDemo: UIViewController {
             badge.frame = CGRect(x: view.bounds.width - badge.frame.width - 16, y: view.safeAreaLayoutGuide.layoutFrame.minY + 8, width: badge.frame.width, height: badge.frame.height)
         }
         view.subviews.compactMap { $0 as? YogaLayoutView }.forEach { $0.performYogaLayout() }
+    }
+}
+
+extension UIColor {
+    static func hex(_ hex: String) -> UIColor? {
+        var str = hex.trimmingCharacters(in: .whitespacesAndNewlines)
+        if str.hasPrefix("#") { str.removeFirst() }
+        guard str.count == 6, let val = Int(str, radix: 16) else { return nil }
+        return UIColor(red: CGFloat((val >> 16) & 0xFF)/255, green: CGFloat((val >> 8) & 0xFF)/255, blue: CGFloat(val & 0xFF)/255, alpha: 1)
     }
 }
