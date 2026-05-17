@@ -4,7 +4,7 @@ class SwiftDemoListViewController: UITableViewController {
 
     let sections: [(title: String, items: [(title: String, subtitle: String, vc: UIViewController.Type)])] = [
         ("基础布局", [
-            ("Flexbox 方向", "链式 · flexDirection", FlexboxDirectionChainableDemo.self),
+            ("Flexbox + 数据绑定", "链式 · flexDirection + @YogaState", FlexboxDirectionChainableDemo.self),
             ("Flexbox 方向", "闭包 · style {}", FlexboxDirectionClosureDemo.self),
             ("主轴对齐", "闭包 · justifyContent", JustifyContentDemo.self),
         ]),

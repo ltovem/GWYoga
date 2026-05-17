@@ -4,6 +4,8 @@ import GWYogaKit
 
 class FlexboxDirectionChainableDemo: UIViewController {
 
+    // MARK: - 自动脏标记演示（已有）
+
     let thisview = UIView()
     let subView = UIView()
     let infoLabel = UILabel()
@@ -17,19 +19,38 @@ class FlexboxDirectionChainableDemo: UIViewController {
     private var isLongText = false
     private var toggleCount = 0
 
+    // MARK: - 数据绑定演示
+
+    @YogaState private var bindWidth: GWValue = 50%       // subView 宽度百分比
+    @YogaState private var bindMargin: CGFloat = 16        // subView margin
+
+    private let binding = YogaBinding()
+    private let widthSlider = UISlider()
+    private let marginSlider = UISlider()
+    private let widthLabel = UILabel()
+    private let marginLabel = UILabel()
+    private let controlPanel = UIView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
 
+        setupAutoMarkDirtyDemo()
+        setupDataBindingDemo()
+        applyBindings()
+    }
+
+    // MARK: - 自动脏标记演示
+
+    private func setupAutoMarkDirtyDemo() {
         // thisview: 100% × 100% 撑满父容器
         thisview.backgroundColor = UIColor.red
         thisview.style.width(100%).height(100%)
         view.addChild(thisview)
 
         // subView: 50% 宽，高度由内容决定（自适应）
-        // 当 label 文本变化时 subView 自动伸缩
         subView.backgroundColor = UIColor.yellow
-        subView.style.width(50%).margin(.all ,100)
+        subView.style.width(50%).margin(.all, 100)
         thisview.addChild(subView)
 
         // 信息标签
@@ -39,8 +60,6 @@ class FlexboxDirectionChainableDemo: UIViewController {
         infoLabel.textAlignment = .center
         infoLabel.style.alignSelf(.center).top(20)
         thisview.addChild(infoLabel)
-
-        // ── 文本变化测试 ──
 
         // 普通文本
         plainLabel.text = shortText
@@ -74,6 +93,83 @@ class FlexboxDirectionChainableDemo: UIViewController {
         subView.addSubview(tapButton)
     }
 
+    // MARK: - 数据绑定演示
+
+    private func setupDataBindingDemo() {
+        // 控制面板 — 放在 thisview 底部（绝对定位）
+        controlPanel.backgroundColor = UIColor.darkGray.withAlphaComponent(0.85)
+        controlPanel.layer.cornerRadius = 12
+        controlPanel.style.position(.absolute).left(12).right(12).bottom(40).padding(.all, 12)
+        thisview.addChild(controlPanel)
+
+        let panelTitle = UILabel()
+        panelTitle.text = "数据绑定 ( @YogaState → style )"
+        panelTitle.font = .boldSystemFont(ofSize: 13)
+        panelTitle.textColor = .white
+        panelTitle.style.alignSelf(.center).marginBottom(8)
+        controlPanel.addSubview(panelTitle)
+
+        // 宽度行
+        let widthRow = UIView()
+        widthRow.style.flexDirection(.row).alignItems(.center).marginBottom(6)
+        controlPanel.addSubview(widthRow)
+
+        widthLabel.text = "width: 50%"
+        widthLabel.font = .monospacedSystemFont(ofSize: 12)
+        widthLabel.textColor = UIColor.systemOrange
+        widthLabel.style.width(90)
+        widthRow.addSubview(widthLabel)
+
+        widthSlider.minimumValue = 10
+        widthSlider.maximumValue = 100
+        widthSlider.value = 50
+        widthSlider.tintColor = .systemOrange
+        widthSlider.addTarget(self, action: #selector(widthSliderChanged), for: .valueChanged)
+        widthRow.addChild(widthSlider)
+
+        // margin 行
+        let marginRow = UIView()
+        marginRow.style.flexDirection(.row).alignItems(.center)
+        controlPanel.addSubview(marginRow)
+
+        marginLabel.text = "margin: 16"
+        marginLabel.font = .monospacedSystemFont(ofSize: 12)
+        marginLabel.textColor = UIColor.systemGreen
+        marginLabel.style.width(90)
+        marginRow.addSubview(marginLabel)
+
+        marginSlider.minimumValue = 0
+        marginSlider.maximumValue = 80
+        marginSlider.value = 16
+        marginSlider.tintColor = .systemGreen
+        marginSlider.addTarget(self, action: #selector(marginSliderChanged), for: .valueChanged)
+        marginRow.addChild(marginSlider)
+    }
+
+    private func applyBindings() {
+        // @YogaState 绑定到 subView 的样式属性
+        // 拖动 slider → @YogaState 变化 → 自动更新 style → 触发 yoga 重排
+        binding
+            .bind($bindWidth) { [weak self] newWidth in
+                self?.subView.style.width = newWidth
+                self?.widthLabel.text = "width: \(Int(newWidth.value))%"
+            }
+            .bind($bindMargin) { [weak self] newMargin in
+                self?.subView.style.setMargin(.all, .points(Float(newMargin)))
+                self?.marginLabel.text = "margin: \(Int(newMargin))"
+            }
+    }
+
+    @objc private func widthSliderChanged(_ sender: UISlider) {
+        bindWidth = GWValue.percent(Double(round(sender.value)))
+    }
+
+    @objc private func marginSliderChanged(_ sender: UISlider) {
+        bindMargin = CGFloat(round(sender.value))
+    }
+
+    // MARK: - 已有方法
+
     private func updateAttributedText() {
         let text = isLongText ? longText : shortText
         let attr = NSMutableAttributedString(string: text)
@@ -92,14 +188,9 @@ class FlexboxDirectionChainableDemo: UIViewController {
         isLongText.toggle()
         toggleCount += 1
 
-        // 文本/按钮内容变化 → swizzle 自动触发 markDirty
-        // 脏标记传播到根节点后自动调用 setNeedsLayout，下个 runloop 刷新布局
         plainLabel.text = isLongText ? longText : shortText
         updateAttributedText()
-
-        // 按钮标题也变化，测试 UIButton 自动脏标记
         tapButton.setTitle(isLongText ? "切换到短文本" : "切换到长文本", for: .normal)
-
         infoLabel.text = "已切换 \(toggleCount) 次"
     }
 
