@@ -115,7 +115,7 @@ class FlexboxDirectionChainableDemo: UIViewController {
         controlPanel.addSubview(widthRow)
 
         widthLabel.text = "width: 50%"
-        widthLabel.font = .monospacedSystemFont(ofSize: 12)
+        widthLabel.font = .monospacedSystemFont(ofSize: 12, weight: .regular)
         widthLabel.textColor = UIColor.systemOrange
         widthLabel.style.width(90)
         widthRow.addSubview(widthLabel)
@@ -133,7 +133,7 @@ class FlexboxDirectionChainableDemo: UIViewController {
         controlPanel.addSubview(marginRow)
 
         marginLabel.text = "margin: 16"
-        marginLabel.font = .monospacedSystemFont(ofSize: 12)
+        marginLabel.font = .monospacedSystemFont(ofSize: 12, weight: .regular)
         marginLabel.textColor = UIColor.systemGreen
         marginLabel.style.width(90)
         marginRow.addSubview(marginLabel)
@@ -161,7 +161,7 @@ class FlexboxDirectionChainableDemo: UIViewController {
     }
 
     @objc private func widthSliderChanged(_ sender: UISlider) {
-        bindWidth = GWValue.percent(Double(round(sender.value)))
+        bindWidth = GWValue.percent(round(sender.value))
     }
 
     @objc private func marginSliderChanged(_ sender: UISlider) {
