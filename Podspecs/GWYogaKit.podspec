@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'GWYogaKit'
-  s.version          = '1.0.5'
+  s.version          = '1.0.6'
   s.summary          = 'Complete GWYoga UIKit integration (Core + Animation + DSL + Stylesheet + LayoutCache)'
   s.description      = <<-DESC
     GWYogaKit provides complete UIKit integration for the GWYoga layout engine:
