@@ -501,36 +501,40 @@ final class GWYogaTests: XCTestCase {
         assertEqual(child.layoutResult.height, 250)  // 50% of 500
     }
 
-    // MARK: - Nested Layout
+    // MARK: - Three-Level Percent Layout (bug reproduction)
 
-    func testNestedLayout() {
+    func testThreeLevelPercentLayout() {
+        // Root: explicit 852x393 (like controller's view in landscape)
         let root = GWYogaNode()
-        root.style.setWidth(.points(500))
-        root.style.setHeight(.points(500))
+        root.style.setWidth(.points(852))
+        root.style.setHeight(.points(393))
 
+        // Container: 100% x 100% (like thisview)
         let container = GWYogaNode()
-        container.style.setWidth(.points(300))
-        container.style.setHeight(.points(300))
-        container.style.setPadding(for: .all, .points(20))
+        container.style.setWidth(.percent(100))
+        container.style.setHeight(.percent(100))
         root.insertChild(container, at: 0)
 
+        // Child: 50% x 50% (like subView)
         let child = GWYogaNode()
-        child.style.setWidth(.points(100))
-        child.style.setHeight(.points(100))
+        child.style.setWidth(.percent(50))
+        child.style.setHeight(.percent(50))
         container.insertChild(child, at: 0)
 
-        root.calculateLayout(width: 500, height: 500, direction: .ltr)
+        root.calculateLayout(width: 852, height: 393, direction: .ltr)
 
-        assertEqual(container.layoutResult.left, 0)
-        assertEqual(container.layoutResult.top, 0)
-        assertEqual(container.layoutResult.width, 300)
-        assertEqual(container.layoutResult.height, 300)
+        // Container should be 100% of 852x393
+        assertEqual(container.layoutResult.width, 852)
+        assertEqual(container.layoutResult.height, 393)
 
-        // Container has 20px padding, child inside
-        assertEqual(child.layoutResult.left, 20)
-        assertEqual(child.layoutResult.top, 20)
-        assertEqual(child.layoutResult.width, 100)
-        assertEqual(child.layoutResult.height, 100)
+        // Child should be 50% of 852 = 426, 50% of 393 = 196.5
+        assertEqual(child.layoutResult.width, 426, tolerance: 0.5)
+        assertEqual(child.layoutResult.height, 196.5, tolerance: 0.5)
+
+        let r1 = container.layoutResult
+        let r2 = child.layoutResult
+        print("container layout: left=\(r1.left) top=\(r1.top) width=\(r1.width) height=\(r1.height)")
+        print("child layout: left=\(r2.left) top=\(r2.top) width=\(r2.width) height=\(r2.height)")
     }
 
     // MARK: - Align Self

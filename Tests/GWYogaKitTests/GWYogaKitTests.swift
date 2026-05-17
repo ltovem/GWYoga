@@ -208,6 +208,72 @@ final class GWYogaKitTests: XCTestCase {
         XCTAssertEqual(v.unit, .percent)
     }
 
+    // MARK: - Reproduction: Three-level UIView with percentage sizes
+
+    func testThreeLevelPercentLayoutViaUIView() {
+        #if os(iOS)
+        // Simulate controller view with explicit size
+        let root = UIView(frame: CGRect(x: 0, y: 0, width: 852, height: 393))
+        root.yoga.width = .points(852)
+        root.yoga.height = .points(393)
+
+        // thisview: 100% x 100%
+        let thisview = UIView()
+        thisview.backgroundColor = .red
+        thisview.style.width(100%).height(100%)
+        root.addChild(thisview)
+        root.performYogaLayout()
+
+        // subView: 50% x 50%
+        let subView = UIView()
+        subView.backgroundColor = .yellow
+        subView.style.width(50%).height(50%)
+        thisview.addChild(subView)
+        thisview.performYogaLayout()
+
+        print("root.frame=\(root.frame)")
+        print("thisview.frame=\(thisview.frame)")
+        print("subView.frame=\(subView.frame)")
+
+        XCTAssertEqual(thisview.frame.width, 852, accuracy: 0.5)
+        XCTAssertEqual(thisview.frame.height, 393, accuracy: 0.5)
+        XCTAssertEqual(subView.frame.width, 426, accuracy: 0.5)
+        XCTAssertEqual(subView.frame.height, 196.5, accuracy: 0.5)
+        #endif
+    }
+
+    func testThreeLevelPercentLayoutReLayout() {
+        #if os(iOS)
+        // Simulate rotation re-layout: init in portrait, then re-layout in landscape
+        let root = UIView(frame: CGRect(x: 0, y: 0, width: 393, height: 852))
+        root.yoga.width = .points(393)
+        root.yoga.height = .points(852)
+
+        let thisview = UIView()
+        thisview.style.width(100%).height(100%)
+        root.addChild(thisview)
+
+        let subView = UIView()
+        subView.style.width(50%).height(50%)
+        thisview.addChild(subView)
+
+        root.performYogaLayout()
+        print("Portrait: thisview=\(thisview.frame) subView=\(subView.frame)")
+
+        // Now simulate rotation: update root bounds and style
+        root.frame = CGRect(x: 0, y: 0, width: 852, height: 393)
+        root.yoga.width = .points(852)
+        root.yoga.height = .points(393)
+        root.performYogaLayout()
+        print("Landscape: thisview=\(thisview.frame) subView=\(subView.frame)")
+
+        XCTAssertEqual(thisview.frame.width, 852, accuracy: 0.5)
+        XCTAssertEqual(thisview.frame.height, 393, accuracy: 0.5)
+        XCTAssertEqual(subView.frame.width, 426, accuracy: 0.5)
+        XCTAssertEqual(subView.frame.height, 196.5, accuracy: 0.5)
+        #endif
+    }
+
     func testGWValuePercentOperatorDouble() {
         let v: GWValue = 33.3%
         XCTAssertEqual(v.value, 33.3)

@@ -21,6 +21,15 @@ extension GWLayoutEngine {
         // Guard against excessive recursion
         if depth > 100 { return }
 
+        // Clear stale layout dimensions from a previous generation.
+        // This ensures measureNodeWithoutChildren's isNaN guard correctly
+        // distinguishes between dimensions set by the parent during THIS
+        // layout pass (preserved) vs leftovers from a prior pass (recomputed).
+        if node.cache.generationCount != gCurrentGenerationCount {
+            node.layout.setDimension(.width, .nan)
+            node.layout.setDimension(.height, .nan)
+        }
+
         assertFatalWithNode(node, isUndefined(availableWidth) ? widthSizingMode == .maxContent : true,
                             "availableWidth is indefinite so widthSizingMode must be MaxContent")
         assertFatalWithNode(node, isUndefined(availableHeight) ? heightSizingMode == .maxContent : true,
@@ -443,9 +452,9 @@ extension GWLayoutEngine {
                     } else {
                         crossSize = childCrossSize
                     }
-                    // 应用 min/max 约束
-                    crossSize = clampDimension(child: item.node, axis: childCrossAxis, value: crossSize,
-                                               direction: node.layout.direction, ownerWidth: ownerWidth)
+                    // 应用 min/max 约束（使用父容器交叉轴方向，确保用正确的 min-height/max-height 约束）
+                    crossSize = clampDimension(child: item.node, axis: crossAxis, value: crossSize,
+                                               direction: node.layout.direction, ownerWidth: ownerWidth, ownerHeight: ownerHeight)
 
                     // Re-layout child with new cross size
                     if performLayout {

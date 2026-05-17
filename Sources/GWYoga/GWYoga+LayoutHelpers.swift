@@ -103,9 +103,10 @@ extension GWLayoutEngine {
     }
 
     static func clampDimension(child: GWYogaNode, axis: GWFlexDirection, value: Float,
-                                direction: GWDirection, ownerWidth: Float) -> Float {
+                                direction: GWDirection, ownerWidth: Float, ownerHeight: Float) -> Float {
+        let axisSize = axis.dimension == .width ? ownerWidth : ownerHeight
         return boundAxis(child, axis: axis, value: value, direction: direction,
-                          axisSize: axis.dimension == .width ? ownerWidth : ownerWidth, widthSize: ownerWidth)
+                          axisSize: axisSize, widthSize: ownerWidth)
     }
 
     // MARK: - Layout Helpers
