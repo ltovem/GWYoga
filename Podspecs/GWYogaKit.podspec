@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'GWYogaKit'
-  s.version          = '1.0.3'
+  s.version          = '1.0.5'
   s.summary          = 'Complete GWYoga UIKit integration (Core + Animation + DSL + Stylesheet + LayoutCache)'
   s.description      = <<-DESC
     GWYogaKit provides complete UIKit integration for the GWYoga layout engine:
@@ -15,7 +15,6 @@ Pod::Spec.new do |s|
   s.swift_version     = '5.6'
   s.source           = { :git => 'https://github.com/ltovem/GWYoga.git', :tag => s.version.to_s }
 
-  s.source_files = 'Sources/GWYogaKit/**/*.swift', 'Sources/GWYogaKit/**/*.{h,m}'
+  s.source_files = 'Sources/GWYogaKit/**/*.swift'
   s.dependency 'GWYoga', '~> 1.0'
-  s.public_header_files = 'Sources/GWYogaKit/**/*.h'
 end
