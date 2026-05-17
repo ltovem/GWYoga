@@ -435,6 +435,11 @@
 				<string>Automatic</string>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>$(PROJECT_DIR)/build/Release-iphonesimulator</string>
+				</array>
 				<key>GCC_PREFIX_HEADER</key>
 				<string></string>
 				<key>INFOPLIST_FILE</key>
@@ -448,25 +453,6 @@
 				</array>
 				<key>MARKETING_VERSION</key>
 				<string>1.0</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.gwyoga.demo</string>
-				<key>PRODUCT_NAME</key>
-				<string>GWYogaDemoApp</string>
-				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
-				<string>Apps/GWYogaDemoApp/GWYogaDemoApp-Bridging-Header.h</string>
-				<key>SWIFT_OBJC_INTERFACE_HEADER_NAME</key>
-				<string>GWYogaDemoApp-Swift.h</string>
-				<key>SWIFT_VERSION</key>
-				<string>5.0</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>$(PROJECT_DIR)/build/Release-iphonesimulator</string>
-				</array>
 				<key>OTHER_LDFLAGS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -477,6 +463,20 @@
 					<string>-framework</string>
 					<string>GWYogaKitStylesheetObjCCore</string>
 				</array>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>com.gwyoga.demo</string>
+				<key>PRODUCT_NAME</key>
+				<string>GWYogaDemoApp</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
+				<string>Apps/GWYogaDemoApp/GWYogaDemoApp-Bridging-Header.h</string>
+				<key>SWIFT_OBJC_INTERFACE_HEADER_NAME</key>
+				<string>GWYogaDemoApp-Swift.h</string>
+				<key>SWIFT_VERSION</key>
+				<string>5.0</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
 			</dict>
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
@@ -495,6 +495,11 @@
 				<string>Automatic</string>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>$(PROJECT_DIR)/build/Release-iphonesimulator</string>
+				</array>
 				<key>GCC_PREFIX_HEADER</key>
 				<string></string>
 				<key>INFOPLIST_FILE</key>
@@ -508,25 +513,6 @@
 				</array>
 				<key>MARKETING_VERSION</key>
 				<string>1.0</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.gwyoga.demo</string>
-				<key>PRODUCT_NAME</key>
-				<string>GWYogaDemoApp</string>
-				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
-				<string>Apps/GWYogaDemoApp/GWYogaDemoApp-Bridging-Header.h</string>
-				<key>SWIFT_OBJC_INTERFACE_HEADER_NAME</key>
-				<string>GWYogaDemoApp-Swift.h</string>
-				<key>SWIFT_VERSION</key>
-				<string>5.0</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>$(PROJECT_DIR)/build/Release-iphonesimulator</string>
-				</array>
 				<key>OTHER_LDFLAGS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -537,6 +523,20 @@
 					<string>-framework</string>
 					<string>GWYogaKitStylesheetObjCCore</string>
 				</array>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>com.gwyoga.demo</string>
+				<key>PRODUCT_NAME</key>
+				<string>GWYogaDemoApp</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
+				<string>Apps/GWYogaDemoApp/GWYogaDemoApp-Bridging-Header.h</string>
+				<key>SWIFT_OBJC_INTERFACE_HEADER_NAME</key>
+				<string>GWYogaDemoApp-Swift.h</string>
+				<key>SWIFT_VERSION</key>
+				<string>5.0</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
 			</dict>
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
@@ -809,6 +809,8 @@
 			<dict>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>ENABLE_TESTABILITY</key>
@@ -818,8 +820,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -879,6 +879,8 @@
 			<dict>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>ENABLE_TESTABILITY</key>
@@ -888,8 +890,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -1173,6 +1173,8 @@
 			<dict>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>ENABLE_TESTABILITY</key>
@@ -1182,8 +1184,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -1243,6 +1243,8 @@
 			<dict>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>ENABLE_TESTABILITY</key>
@@ -1252,8 +1254,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -1542,6 +1542,8 @@
 			<dict>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>ENABLE_TESTABILITY</key>
@@ -1551,8 +1553,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -1612,6 +1612,8 @@
 			<dict>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>ENABLE_TESTABILITY</key>
@@ -1621,8 +1623,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -1816,6 +1816,8 @@
 			<dict>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>ENABLE_TESTABILITY</key>
@@ -1825,8 +1827,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -1886,6 +1886,8 @@
 			<dict>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>ENABLE_TESTABILITY</key>
@@ -1895,8 +1897,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -2058,6 +2058,8 @@
 				<string>YES</string>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>EMBEDDED_CONTENT_CONTAINS_SWIFT</key>
@@ -2067,8 +2069,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -2123,6 +2123,8 @@
 				<string>YES</string>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>EMBEDDED_CONTENT_CONTAINS_SWIFT</key>
@@ -2132,8 +2134,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -2287,6 +2287,8 @@
 			<dict>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>ENABLE_TESTABILITY</key>
@@ -2296,8 +2298,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -2357,6 +2357,8 @@
 			<dict>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>ENABLE_TESTABILITY</key>
@@ -2366,8 +2368,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -2528,6 +2528,8 @@
 			<dict>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>ENABLE_TESTABILITY</key>
@@ -2537,8 +2539,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -2598,6 +2598,8 @@
 			<dict>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>ENABLE_TESTABILITY</key>
@@ -2607,8 +2609,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -2794,6 +2794,8 @@
 				<string>YES</string>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>EMBEDDED_CONTENT_CONTAINS_SWIFT</key>
@@ -2803,8 +2805,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -2859,6 +2859,8 @@
 				<string>YES</string>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>EMBEDDED_CONTENT_CONTAINS_SWIFT</key>
@@ -2868,8 +2870,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -3014,6 +3014,8 @@
 			<dict>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>ENABLE_TESTABILITY</key>
@@ -3023,8 +3025,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -3084,6 +3084,8 @@
 			<dict>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>ENABLE_TESTABILITY</key>
@@ -3093,8 +3095,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -3300,6 +3300,8 @@
 			<dict>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>ENABLE_TESTABILITY</key>
@@ -3309,8 +3311,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -3370,6 +3370,8 @@
 			<dict>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>ENABLE_TESTABILITY</key>
@@ -3379,8 +3381,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -3582,6 +3582,8 @@
 				<string>YES</string>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>EMBEDDED_CONTENT_CONTAINS_SWIFT</key>
@@ -3591,8 +3593,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -3647,6 +3647,8 @@
 				<string>YES</string>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>EMBEDDED_CONTENT_CONTAINS_SWIFT</key>
@@ -3656,8 +3658,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -3802,6 +3802,8 @@
 			<dict>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>ENABLE_TESTABILITY</key>
@@ -3811,8 +3813,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -3872,6 +3872,8 @@
 			<dict>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>ENABLE_TESTABILITY</key>
@@ -3881,8 +3883,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -4070,6 +4070,8 @@
 				<string>YES</string>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>EMBEDDED_CONTENT_CONTAINS_SWIFT</key>
@@ -4079,8 +4081,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -4135,6 +4135,8 @@
 				<string>YES</string>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>EMBEDDED_CONTENT_CONTAINS_SWIFT</key>
@@ -4144,8 +4146,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -4359,6 +4359,8 @@
 			<dict>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>ENABLE_TESTABILITY</key>
@@ -4368,8 +4370,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -4429,6 +4429,8 @@
 			<dict>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>ENABLE_TESTABILITY</key>
@@ -4438,8 +4440,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -4649,6 +4649,8 @@
 			<dict>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>ENABLE_TESTABILITY</key>
@@ -4658,8 +4660,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -4719,6 +4719,8 @@
 			<dict>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>ENABLE_TESTABILITY</key>
@@ -4728,8 +4730,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -4938,6 +4938,8 @@
 				<string>YES</string>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>EMBEDDED_CONTENT_CONTAINS_SWIFT</key>
@@ -4947,8 +4949,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -5003,6 +5003,8 @@
 				<string>YES</string>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>EMBEDDED_CONTENT_CONTAINS_SWIFT</key>
@@ -5012,8 +5014,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -5160,6 +5160,8 @@
 				<string>YES</string>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>EMBEDDED_CONTENT_CONTAINS_SWIFT</key>
@@ -5169,8 +5171,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -5225,6 +5225,8 @@
 				<string>YES</string>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>EMBEDDED_CONTENT_CONTAINS_SWIFT</key>
@@ -5234,8 +5236,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -5546,6 +5546,8 @@
 				<string>YES</string>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>EMBEDDED_CONTENT_CONTAINS_SWIFT</key>
@@ -5555,8 +5557,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -5611,6 +5611,8 @@
 				<string>YES</string>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
 				<key>DRIVERKIT_DEPLOYMENT_TARGET</key>
 				<string>19.0</string>
 				<key>EMBEDDED_CONTENT_CONTAINS_SWIFT</key>
@@ -5620,8 +5622,6 @@
 					<string>$(inherited)</string>
 					<string>$(PLATFORM_DIR)/Developer/Library/Frameworks</string>
 				</array>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
