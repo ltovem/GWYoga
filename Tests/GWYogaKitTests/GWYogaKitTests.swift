@@ -274,6 +274,83 @@ final class GWYogaKitTests: XCTestCase {
         #endif
     }
 
+    // MARK: - Auto Layout via Swizzle (无感 rotation)
+
+    func testAutoLayoutViaLayoutSubviews() {
+        #if os(iOS)
+        // Simulates what UIKit does: addChild → layoutSubviews auto-triggers yoga
+        let root = UIView(frame: CGRect(x: 0, y: 0, width: 852, height: 393))
+
+        let thisview = UIView()
+        thisview.style.width(100%).height(100%)
+        root.addChild(thisview)
+
+        let subView = UIView()
+        subView.style.width(50%).height(50%)
+        thisview.addChild(subView)
+
+        // 不调 performYogaLayout — layoutSubviews 应该自动触发
+        root.layoutSubviews()
+        thisview.layoutSubviews()
+
+        XCTAssertEqual(thisview.frame.width, 852, accuracy: 0.5)
+        XCTAssertEqual(thisview.frame.height, 393, accuracy: 0.5)
+        XCTAssertEqual(subView.frame.width, 426, accuracy: 0.5)
+        XCTAssertEqual(subView.frame.height, 196.5, accuracy: 0.5)
+        #endif
+    }
+
+    func testAutoLayoutRotation() {
+        #if os(iOS)
+        // 模拟 rotation：bounds 变化后 layoutSubviews 自动重算
+        let root = UIView(frame: CGRect(x: 0, y: 0, width: 393, height: 852))
+
+        let thisview = UIView()
+        thisview.style.width(100%).height(100%)
+        root.addChild(thisview)
+
+        let subView = UIView()
+        subView.style.width(50%).height(50%)
+        thisview.addChild(subView)
+
+        root.layoutSubviews()
+        thisview.layoutSubviews()
+
+        // Portrait 验证
+        XCTAssertEqual(thisview.frame.width, 393, accuracy: 0.5)
+        XCTAssertEqual(thisview.frame.height, 852, accuracy: 0.5)
+        XCTAssertEqual(subView.frame.width, 196.5, accuracy: 0.5)
+        XCTAssertEqual(subView.frame.height, 426, accuracy: 0.5)
+
+        // 模拟旋转到 landscape
+        root.frame = CGRect(x: 0, y: 0, width: 852, height: 393)
+        root.layoutSubviews()
+        thisview.layoutSubviews()
+
+        // Landscape 验证
+        XCTAssertEqual(thisview.frame.width, 852, accuracy: 0.5)
+        XCTAssertEqual(thisview.frame.height, 393, accuracy: 0.5)
+        XCTAssertEqual(subView.frame.width, 426, accuracy: 0.5)
+        XCTAssertEqual(subView.frame.height, 196.5, accuracy: 0.5)
+        #endif
+    }
+
+    func testAutoLayoutRootWithoutYogaStyle() {
+        #if os(iOS)
+        // 根 view 不设 yoga style，只靠 bounds — 验证 bounds fallback
+        let root = UIView(frame: CGRect(x: 0, y: 0, width: 400, height: 300))
+
+        let child = UIView()
+        child.style.width(100%).height(100%)
+        root.addChild(child)
+
+        root.layoutSubviews()
+
+        XCTAssertEqual(child.frame.width, 400, accuracy: 0.5)
+        XCTAssertEqual(child.frame.height, 300, accuracy: 0.5)
+        #endif
+    }
+
     func testGWValuePercentOperatorDouble() {
         let v: GWValue = 33.3%
         XCTAssertEqual(v.value, 33.3)
