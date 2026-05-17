@@ -287,13 +287,28 @@ func _yogaAutoLayoutSwizzleOnce() {
 extension YKLView {
     /// Swizzled 版本：在 layoutSubviews 之后自动触发 yoga 布局
     @objc func _yoga_layoutSubviews() {
+        // 检查是否有祖先正在执行 yoga 布局（防止子视图在父 yoga 完成前提前重算）
+        if _yogaAutoLayoutEnabled && !_yogaIsInsideAutoLayout {
+            var ancestor = superview
+            while let sv = ancestor {
+                if sv._yogaIsInsideAutoLayout { return }
+                ancestor = sv.superview
+            }
+        }
+
+        let wasInside = _yogaIsInsideAutoLayout
+        let shouldRunYoga = _yogaAutoLayoutEnabled && !wasInside
+        if shouldRunYoga {
+            _yogaIsInsideAutoLayout = true
+        }
+
         // 调用原始实现（通过 swizzle，现在 _yoga_layoutSubviews 指向原始方法）
         self._yoga_layoutSubviews()
 
-        guard _yogaAutoLayoutEnabled, !_yogaIsInsideAutoLayout else { return }
-        _yogaIsInsideAutoLayout = true
-        performYogaLayout()
-        _yogaIsInsideAutoLayout = false
+        if shouldRunYoga {
+            performYogaLayout()
+            _yogaIsInsideAutoLayout = false
+        }
     }
 }
 #elseif os(macOS)

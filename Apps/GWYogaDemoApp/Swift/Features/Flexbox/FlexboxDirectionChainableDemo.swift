@@ -107,18 +107,18 @@ class FlexboxDirectionChainableDemo: UIViewController {
         panelTitle.font = .boldSystemFont(ofSize: 13)
         panelTitle.textColor = .white
         panelTitle.style.alignSelf(.center).marginBottom(8)
-        controlPanel.addSubview(panelTitle)
+        controlPanel.addChild(panelTitle)
 
         // 宽度行
         let widthRow = UIView()
         widthRow.style.flexDirection(.row).alignItems(.center).marginBottom(6)
-        controlPanel.addSubview(widthRow)
+        controlPanel.addChild(widthRow)
 
         widthLabel.text = "width: 50%"
         widthLabel.font = .monospacedSystemFont(ofSize: 12, weight: .regular)
         widthLabel.textColor = UIColor.systemOrange
         widthLabel.style.width(90)
-        widthRow.addSubview(widthLabel)
+        widthRow.addChild(widthLabel)
 
         widthSlider.minimumValue = 10
         widthSlider.maximumValue = 100
@@ -130,13 +130,13 @@ class FlexboxDirectionChainableDemo: UIViewController {
         // margin 行
         let marginRow = UIView()
         marginRow.style.flexDirection(.row).alignItems(.center)
-        controlPanel.addSubview(marginRow)
+        controlPanel.addChild(marginRow)
 
         marginLabel.text = "margin: 16"
         marginLabel.font = .monospacedSystemFont(ofSize: 12, weight: .regular)
         marginLabel.textColor = UIColor.systemGreen
         marginLabel.style.width(90)
-        marginRow.addSubview(marginLabel)
+        marginRow.addChild(marginLabel)
 
         marginSlider.minimumValue = 0
         marginSlider.maximumValue = 80
@@ -198,7 +198,10 @@ class FlexboxDirectionChainableDemo: UIViewController {
         super.viewDidLayoutSubviews()
         let tf = thisview.frame
         let sf = subView.frame
-        infoLabel.text = "thisview: \(Int(tf.width))×\(Int(tf.height))\nsubView: \(Int(sf.width))×\(Int(sf.height)) @ (\(Int(sf.minX)),\(Int(sf.minY)))"
+        // 延迟一帧更新文本，避免在 layoutSubviews 中触发 markDirty → 重入 → 脏标记循环
+        DispatchQueue.main.async { [weak self] in
+            self?.infoLabel.text = "thisview: \(Int(tf.width))×\(Int(tf.height))\nsubView: \(Int(sf.width))×\(Int(sf.height)) @ (\(Int(sf.minX)),\(Int(sf.minY)))"
+        }
         print("thisview.frame=\(tf) subView.frame=\(sf)")
     }
 }
