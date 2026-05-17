@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'GWYogaKitLayoutCache'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'Layout cache / pre-measurement for GWYogaKit'
   s.description      = <<-DESC
     Pre-layout measurement and caching utilities for GWYoga layout engine.

@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
   s.name             = 'GWYoga'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'Swift Yoga layout engine'
   s.description      = <<-DESC
-    GWYoga core layout engine — flexbox + grid implementation in pure Swift.
+    GWYoga core layout engine — flexbox + grid implementation wrapping Yoga C++.
   DESC
   s.homepage         = 'https://github.com/ltovem/GWYoga'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
