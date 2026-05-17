@@ -123,9 +123,11 @@ class FlexboxDirectionChainableDemo: UIViewController {
         widthSlider.minimumValue = 10
         widthSlider.maximumValue = 100
         widthSlider.value = 50
+        widthSlider.backgroundColor = .systemPink
         widthSlider.tintColor = .systemOrange
         widthSlider.addTarget(self, action: #selector(widthSliderChanged), for: .valueChanged)
         widthRow.addChild(widthSlider)
+        widthSlider.style.width(100%).height(40)
 
         // margin 行
         let marginRow = UIView()
