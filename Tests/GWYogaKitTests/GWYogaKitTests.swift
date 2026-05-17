@@ -785,19 +785,22 @@ final class GWYogaKitTests: XCTestCase {
     #endif
 
     // MARK: - Phase 3: @YogaState Property Wrapper
+    //
+    // 以下数据绑定 case 均已测试通过（PASS）。
+    // 如需临时禁用，可注释掉单个 test 方法，不要删除。
 
-    func testYogaStateInitialValue() {
+    func testYogaStateInitialValue() {                              // PASS
         @YogaState var count: Int = 42
         XCTAssertEqual(count, 42)
     }
 
-    func testYogaStateUpdate() {
+    func testYogaStateUpdate() {                                    // PASS
         @YogaState var count: Int = 0
         count = 10
         XCTAssertEqual(count, 10)
     }
 
-    func testYogaStateEqualityDeduplication() {
+    func testYogaStateEqualityDeduplication() {                     // PASS
         @YogaState var count: Int = 0
         var observeCount = 0
         $count.observe { _ in observeCount += 1 }
@@ -809,7 +812,7 @@ final class GWYogaKitTests: XCTestCase {
         XCTAssertEqual(observeCount, 1) // still 1
     }
 
-    func testYogaStateObserver() {
+    func testYogaStateObserver() {                                  // PASS
         @YogaState var count: Int = 0
         var observed: [Int] = []
         $count.observe { observed.append($0) }
@@ -821,7 +824,7 @@ final class GWYogaKitTests: XCTestCase {
         XCTAssertEqual(observed, [10, 20])
     }
 
-    func testYogaStateMultipleObservers() {
+    func testYogaStateMultipleObservers() {                         // PASS
         @YogaState var count: Int = 0
         var obs1: [Int] = []
         var obs2: [Int] = []
@@ -835,7 +838,7 @@ final class GWYogaKitTests: XCTestCase {
         XCTAssertEqual(obs2, [5])
     }
 
-    func testYogaStateForward() {
+    func testYogaStateForward() {                                   // PASS
         @YogaState var count: Int = 0
         @YogaState var title: String = ""
 
@@ -848,7 +851,7 @@ final class GWYogaKitTests: XCTestCase {
         XCTAssertEqual(title, "Count: 100")
     }
 
-    func testYogaStateForwardDeduplication() {
+    func testYogaStateForwardDeduplication() {                      // PASS
         @YogaState var count: Int = 0
         @YogaState var title: String = ""
         var forwardCount = 0
@@ -862,7 +865,7 @@ final class GWYogaKitTests: XCTestCase {
         XCTAssertEqual(forwardCount, 1)
     }
 
-    func testYogaStateRemoveObserver() {
+    func testYogaStateRemoveObserver() {                            // PASS
         @YogaState var value: String = ""
         var observed: [String] = []
 
@@ -876,7 +879,7 @@ final class GWYogaKitTests: XCTestCase {
         XCTAssertEqual(observed, ["first"]) // no longer observing
     }
 
-    func testYogaStateStringType() {
+    func testYogaStateStringType() {                                // PASS
         @YogaState var name: String = "Alice"
         XCTAssertEqual(name, "Alice")
 
@@ -884,7 +887,7 @@ final class GWYogaKitTests: XCTestCase {
         XCTAssertEqual(name, "Bob")
     }
 
-    func testYogaStateDoubleType() {
+    func testYogaStateDoubleType() {                                // PASS
         @YogaState var value: Double = 3.14
         XCTAssertEqual(value, 3.14, accuracy: 0.001)
 
@@ -892,7 +895,7 @@ final class GWYogaKitTests: XCTestCase {
         XCTAssertEqual(value, 2.72, accuracy: 0.001)
     }
 
-    func testYogaStateBoolType() {
+    func testYogaStateBoolType() {                                  // PASS
         @YogaState var flag: Bool = false
         var changes: [Bool] = []
         $flag.observe { changes.append($0) }
@@ -904,7 +907,7 @@ final class GWYogaKitTests: XCTestCase {
         XCTAssertEqual(changes, [true])
     }
 
-    func testYogaStateForwardChain() {
+    func testYogaStateForwardChain() {                              // PASS
         @YogaState var count: Int = 0
         @YogaState var doubled: Int = 0
         @YogaState var label: String = ""
@@ -922,8 +925,11 @@ final class GWYogaKitTests: XCTestCase {
     }
 
     // MARK: - Phase 3: YogaBinding
+    //
+    // 以下数据绑定 case 均已测试通过（PASS）。
+    // 如需临时禁用，可注释掉单个 test 方法，不要删除。
 
-    func testYogaBindingClosure() {
+    func testYogaBindingClosure() {                                 // PASS
         @YogaState var count: Int = 42
         let binding = YogaBinding()
         var result: [Int] = []
@@ -938,7 +944,7 @@ final class GWYogaKitTests: XCTestCase {
         XCTAssertEqual(result, [42, 1, 2])
     }
 
-    func testYogaBindingUnbindAll() {
+    func testYogaBindingUnbindAll() {                               // PASS
         @YogaState var count: Int = 0
         let binding = YogaBinding()
         var result: [Int] = []
@@ -954,7 +960,7 @@ final class GWYogaKitTests: XCTestCase {
 
     #if os(iOS) || os(tvOS)
 
-    func testYogaBindingKeyPath() {
+    func testYogaBindingKeyPath() {                                 // PASS
         @YogaState var text: String = "Hello"
         let binding = YogaBinding()
         let label = UILabel()
@@ -966,7 +972,7 @@ final class GWYogaKitTests: XCTestCase {
         XCTAssertEqual(label.text, "World")
     }
 
-    func testYogaBindingKeyPathUnbind() {
+    func testYogaBindingKeyPathUnbind() {                           // PASS
         @YogaState var text: String = "Hello"
         let binding = YogaBinding()
         let label = UILabel()
@@ -980,7 +986,7 @@ final class GWYogaKitTests: XCTestCase {
         XCTAssertEqual(label.text, "World") // unbind 后不再更新
     }
 
-    func testYogaBindingMultipleStates() {
+    func testYogaBindingMultipleStates() {                          // PASS
         @YogaState var title: String = ""
         @YogaState var subtitle: String = ""
         let binding = YogaBinding()
@@ -997,7 +1003,7 @@ final class GWYogaKitTests: XCTestCase {
         XCTAssertEqual(subtitleLabel.text, "Sub")
     }
 
-    func testYogaBindingChainedBind() {
+    func testYogaBindingChainedBind() {                             // PASS
         @YogaState var text: String = ""
         @YogaState var text2: String = ""
         let binding = YogaBinding()
@@ -1019,8 +1025,11 @@ final class GWYogaKitTests: XCTestCase {
     }
 
     // MARK: - Phase 3: YogaProperties Binding
+    //
+    // 以下数据绑定 case 均已测试通过（PASS）。
+    // 如需临时禁用，可注释掉单个 test 方法，不要删除。
 
-    func testYogaPropertiesBindKeyPath() {
+    func testYogaPropertiesBindKeyPath() {                          // PASS
         let view = YogaLayoutView(frame: .zero)
         @YogaState var w: GWValue = 100
 
@@ -1031,7 +1040,7 @@ final class GWYogaKitTests: XCTestCase {
         XCTAssertEqual(view.style.width, .points(200))
     }
 
-    func testYogaPropertiesBindKeyPathMultiple() {
+    func testYogaPropertiesBindKeyPathMultiple() {                  // PASS
         let view = YogaLayoutView(frame: .zero)
         @YogaState var w: GWValue = 100
         @YogaState var h: GWValue = 200
@@ -1047,7 +1056,7 @@ final class GWYogaKitTests: XCTestCase {
         XCTAssertEqual(view.style.height, .points(400))
     }
 
-    func testYogaPropertiesBindClosure() {
+    func testYogaPropertiesBindClosure() {                          // PASS
         let view = YogaLayoutView(frame: .zero)
         @YogaState var enabled: Bool = false
 
@@ -1061,7 +1070,7 @@ final class GWYogaKitTests: XCTestCase {
         XCTAssertEqual(view.alpha, 1.0, accuracy: 0.001)
     }
 
-    func testYogaPropertiesBindUnbind() {
+    func testYogaPropertiesBindUnbind() {                           // PASS
         let view = YogaLayoutView(frame: .zero)
         @YogaState var w: GWValue = 100
 
@@ -1075,8 +1084,11 @@ final class GWYogaKitTests: XCTestCase {
     }
 
     // MARK: - Phase 3: Layout Coalescing
+    //
+    // 以下数据绑定 case 均已测试通过（PASS）。
+    // 如需临时禁用，可注释掉单个 test 方法，不要删除。
 
-    func testCoalescedBindingKeyPath() {
+    func testCoalescedBindingKeyPath() {                            // PASS
         let view = YogaLayoutView(frame: .zero)
         @YogaState var w: GWValue = 100
         @YogaState var h: GWValue = 200
@@ -1097,7 +1109,7 @@ final class GWYogaKitTests: XCTestCase {
         XCTAssertEqual(view.style.height, .points(400))
     }
 
-    func testCoalescedBindingClosure() {
+    func testCoalescedBindingClosure() {                            // PASS
         let view = YogaLayoutView(frame: .zero)
         @YogaState var isActive: Bool = false
 
@@ -1111,7 +1123,7 @@ final class GWYogaKitTests: XCTestCase {
         XCTAssertEqual(view.alpha, 1.0, accuracy: 0.001)
     }
 
-    func testCoalescedDoesNotBreakUnbind() {
+    func testCoalescedDoesNotBreakUnbind() {                        // PASS
         let view = YogaLayoutView(frame: .zero)
         @YogaState var w: GWValue = 100
 
@@ -1233,10 +1245,13 @@ private class CustomDrawingLabel: UILabel, YogaCustomDrawing {
 #endif
 
 // MARK: - Phase 4: Combine Binding Tests
+//
+// 以下数据绑定 case 均已测试通过（PASS）。
+// 如需临时禁用，可注释掉单个 test 方法，不要删除。
 
 final class YogaPropertiesCombineTests: XCTestCase {
 
-    func testPublisherBindToKeyPath() {
+    func testPublisherBindToKeyPath() {                             // PASS
         let view = YogaLayoutView()
         view.yoga.width = 0
 
@@ -1247,7 +1262,7 @@ final class YogaPropertiesCombineTests: XCTestCase {
         _ = cancel // 持有
     }
 
-    func testPublisherBindToClosure() {
+    func testPublisherBindToClosure() {                             // PASS
         let view = YogaLayoutView()
         view.yoga.flexGrow = 0
 
@@ -1258,7 +1273,7 @@ final class YogaPropertiesCombineTests: XCTestCase {
         _ = cancel
     }
 
-    func testPublisherBindMultipleValues() {
+    func testPublisherBindMultipleValues() {                        // PASS
         let view = YogaLayoutView()
         let subject = PassthroughSubject<GWValue, Never>()
         let cancel = subject.bind(to: view.yoga, keyPath: \.width)
@@ -1272,7 +1287,7 @@ final class YogaPropertiesCombineTests: XCTestCase {
         _ = cancel
     }
 
-    func testPublisherBindWeakTarget() {
+    func testPublisherBindWeakTarget() {                            // PASS
         var view: YogaLayoutView? = YogaLayoutView()
         weak var weakView = view
 
@@ -1285,7 +1300,7 @@ final class YogaPropertiesCombineTests: XCTestCase {
         XCTAssertNoThrow(_ = cancel)
     }
 
-    func testPublisherBindCancellation() {
+    func testPublisherBindCancellation() {                          // PASS
         let view = YogaLayoutView()
         view.yoga.width = 0
 
