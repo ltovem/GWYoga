@@ -4,56 +4,38 @@ import GWYogaKit
 
 class FlexboxDirectionChainableDemo: UIViewController {
 
-    
-
-    
-    
-    let thisview = UIView();
+    let thisview = UIView()
     let subView = UIView()
+    let infoLabel = UILabel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
 
-        view.style{
-            $0.width(.points(Float(view.bounds.width)))
-            $0.height(.points(Float(view.bounds.height)))
-        }
-       
-        
-        
-        thisview.backgroundColor = UIColor.red;
-        thisview
-            .style
-            .width(100%)
-            .height(100%)
+        // thisview: 100% × 100% 撑满父容器
+        thisview.backgroundColor = UIColor.red
+        thisview.style.width(100%).height(100%)
         view.addChild(thisview)
-        view.performYogaLayout()
-        thisview.performYogaLayout()
-        
-        subView.backgroundColor = .yellow
+
+        // subView: 50% × 50% 居中
+        subView.backgroundColor = UIColor.yellow
         subView.style.width(50%).height(50%)
         thisview.addChild(subView)
-        thisview.performYogaLayout()
-        
+
+        // 信息标签
+        infoLabel.textColor = .white
+        infoLabel.font = .monospacedSystemFont(ofSize: 14, weight: .medium)
+        infoLabel.numberOfLines = 0
+        infoLabel.textAlignment = .center
+        infoLabel.style.alignSelf(.center).top(20)
+        thisview.addChild(infoLabel)
     }
 
-    
-
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-          super.viewWillTransition(to: size, with: coordinator)
-        print("viewWillTransition size=\(size) bounds=\(view.bounds)")
-        view.style
-              .width(.points(Float(size.width)))
-              .height(.points(Float(size.height)))
-        coordinator.animate(alongsideTransition: nil) { _ in
-            print("completion bounds=\(self.view.bounds)")
-                  self.view.performYogaLayout()
-            print("after layout thisview.frame=\(self.thisview.frame) subView.frame=\(self.subView.frame)")
-              }
-      }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-
-        
+        let tf = thisview.frame
+        let sf = subView.frame
+        infoLabel.text = "thisview: \(Int(tf.width))×\(Int(tf.height))\nsubView: \(Int(sf.width))×\(Int(sf.height)) @ (\(Int(sf.minX)),\(Int(sf.minY)))"
+        print("thisview.frame=\(tf) subView.frame=\(sf)")
     }
 }
