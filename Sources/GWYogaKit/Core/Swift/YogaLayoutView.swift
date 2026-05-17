@@ -228,6 +228,77 @@ extension YKLView {
     /// ObjC 调用：`[view performYogaLayout]`
     @objc
     public func performYogaLayout() {
+        _yogaAutoLayoutEnabled = true
         _applyYogaLayout(to: self)
     }
+
+    // MARK: - 自动布局（无感 rotation）
+
+    /// 标记此视图已启用 yoga 自动布局
+    var _yogaAutoLayoutEnabled: Bool {
+        get { (objc_getAssociatedObject(self, &YogaAutoLayoutKeys.enabled) as? NSNumber)?.boolValue ?? false }
+        set { objc_setAssociatedObject(self, &YogaAutoLayoutKeys.enabled, NSNumber(value: newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
+    }
+
+    /// 是否正在执行 yoga 布局（重入防护）
+    var _yogaIsInsideAutoLayout: Bool {
+        get { (objc_getAssociatedObject(self, &YogaAutoLayoutKeys.insideLayout) as? NSNumber)?.boolValue ?? false }
+        set { objc_setAssociatedObject(self, &YogaAutoLayoutKeys.insideLayout, NSNumber(value: newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
+    }
 }
+
+// MARK: - Auto Layout Swizzle
+
+private enum YogaAutoLayoutKeys {
+    static var enabled: UInt8 = 0
+    static var insideLayout: UInt8 = 0
+    static var swizzled: Bool = false
+}
+
+/// 替换 UIView.layoutSubviews，使启用 yoga 的 view 在布局循环中自动触发 yoga 布局。
+/// 仅在 GWYogaKit 加载时执行一次。
+func _yogaAutoLayoutSwizzleOnce() {
+    guard !YogaAutoLayoutKeys.swizzled else { return }
+    YogaAutoLayoutKeys.swizzled = true
+
+    #if os(iOS) || os(tvOS)
+    let selector = #selector(UIView.layoutSubviews)
+    let swizzledSelector = #selector(YKLView._yoga_layoutSubviews)
+    #elseif os(macOS)
+    let selector = #selector(NSView.layout)
+    let swizzledSelector = #selector(YKLView._yoga_layoutSubviews)
+    #endif
+
+    guard let originalMethod = class_getInstanceMethod(YKLView.self, selector),
+          let swizzledMethod = class_getInstanceMethod(YKLView.self, swizzledSelector) else {
+        return
+    }
+
+    method_exchangeImplementations(originalMethod, swizzledMethod)
+}
+
+#if os(iOS) || os(tvOS)
+extension YKLView {
+    /// Swizzled 版本：在 layoutSubviews 之后自动触发 yoga 布局
+    @objc func _yoga_layoutSubviews() {
+        // 调用原始实现（通过 swizzle，现在 _yoga_layoutSubviews 指向原始方法）
+        self._yoga_layoutSubviews()
+
+        guard _yogaAutoLayoutEnabled, !_yogaIsInsideAutoLayout else { return }
+        _yogaIsInsideAutoLayout = true
+        performYogaLayout()
+        _yogaIsInsideAutoLayout = false
+    }
+}
+#elseif os(macOS)
+extension YKLView {
+    @objc func _yoga_layoutSubviews() {
+        self._yoga_layoutSubviews()
+
+        guard _yogaAutoLayoutEnabled, !_yogaIsInsideAutoLayout else { return }
+        _yogaIsInsideAutoLayout = true
+        performYogaLayout()
+        _yogaIsInsideAutoLayout = false
+    }
+}
+#endif

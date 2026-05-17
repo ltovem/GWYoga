@@ -9,6 +9,8 @@ extension UIView {
     /// 访问此视图的 Yoga 样式属性。
     /// 首次访问时自动创建关联的 GWYogaNode。
     public var yoga: YogaProperties {
+        // 首次访问 yoga 时自动注册 layoutSubviews swizzle
+        _yogaAutoLayoutSwizzleOnce()
         if let existing = objc_getAssociatedObject(self, &yogaPropertiesKey) as? YogaProperties {
             return existing
         }
@@ -39,6 +41,7 @@ extension UIView {
         addSubview(view)
         if !(self is YogaLayoutView) {
             self.yoga.node.insertChild(view.yoga.node, at: self.yoga.node.childCount)
+            _yogaAutoLayoutEnabled = true
         }
         return view
     }
@@ -50,6 +53,7 @@ extension UIView {
         insertSubview(view, at: index)
         if !(self is YogaLayoutView) {
             self.yoga.node.insertChild(view.yoga.node, at: index)
+            _yogaAutoLayoutEnabled = true
         }
         return view
     }
